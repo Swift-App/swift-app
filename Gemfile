@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -22,20 +22,42 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# User authentication
+gem 'devise'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'simple_form'
+
+# uploading stuff
+gem "figaro"
+gem 'carrierwave'
+gem 'mini_magick'
+gem "fog", '1.36.0'
+
+# SEO friendly
+gem 'meta-tags'
+
+# Admin functionality
+gem 'activeadmin', github: 'activeadmin'
+# dependency for activeadmin
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'shoulda-matchers', '~> 3.1'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
+  # preview emails
+  gem "letter_opener"
+  gem 'pry-rails'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
