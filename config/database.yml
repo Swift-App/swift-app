@@ -83,3 +83,9 @@ production:
   database: swift-app_production
   username: swift-app
   password: <%= ENV['SWIFT-APP_DATABASE_PASSWORD'] %>
+
+test:
+  adapter: postgresql
+  database: swift-app_test
+  username: travis
+  encoding: utf8
