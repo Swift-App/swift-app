@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926182519) do
+ActiveRecord::Schema.define(version: 20160926191146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160926182519) do
     t.string   "first_name_katakana"
     t.string   "last_name_katakana"
     t.integer  "phone"
-    t.datetime "birthday"
+    t.date     "birthday"
     t.integer  "zip_1"
     t.integer  "zip_2"
     t.string   "prefecture"
