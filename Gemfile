@@ -39,6 +39,8 @@ gem "fog", '1.36.0'
 # SEO friendly
 gem 'meta-tags'
 
+#devise
+gem 'devise'
 # Admin functionality
 gem 'activeadmin', github: 'activeadmin'
 # dependency for activeadmin
