@@ -1,45 +1,116 @@
-<!-- Begin Navigation -->
-<div class="navbar-wrapper">
-  <div class="navbar navbar-main" id="fixed-navbar">
+<header>
+
+  <!-- Begin Top Bar -->
+  <div class="top-bar">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 column-header">
-          <div class="navbar-header">
-            <!-- Brand -->
-            <a href="index.html" class="navbar-brand">
-              <div class="css-logo"></div> <img src="images/logo.png" class="raleway-logo" alt="Raleway Responsive Parallax Bootstrap 3 Template">
-            </a>
-            <!-- Mobile Navigation -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-            </button>
-          </div><!-- /navbar header -->   
-
-          <!-- Main Navigation - Explained in Documentation -->
-          <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown dropdown-main">
-                <a href="index.html" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Home<span class="fa fa-angle-down dropdown-arrow"></span></a>                  
-              </li>
-              <li class="dropdown mega-dropdown dropdown-main">
-                <a href="/" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="fa fa-angle-down dropdown-arrow"></span></span></a>              
-              </li>
-              
-              <li class="dropdown mega-dropdown dropdown-main">
-                <a href="/" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="fa fa-angle-down dropdown-arrow"></span></span></a>              
-              </li>
-
-              <li class="dropdown mega-dropdown dropdown-main">
-                <a href="/" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="fa fa-angle-down dropdown-arrow"></span></span></a>              
-              </li>
-             
-            </ul><!-- /navbar right -->  
-          </nav><!-- /nav -->
+        <!-- Address and Phone -->
+        <div class="col-sm-7 hidden-xs">
+          <span class="ion-android-system-home home-icon"></span>人材派遣・業務請負はスイフトへ<span class="ion-ios7-telephone phone-icon"></span>1702983921
         </div>
-      </div>
-    </div><!-- /container header -->   
-  </div><!-- /navbar -->
-</div><!-- /navbar wrapper -->
+        <!-- Social Buttons -->
+        <div class="col-sm-5 text-right">
+                  <ul class="topbar-list list-inline">
+                    <li>            
+                    <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <li><%= link_to '登録する', new_user_registration_path %></li>
+          </ul>
+        </div>
+      </div><!--/row --> 
+    </div><!--/container header -->   
+  </div><!--/top bar -->   
+  <!-- End Top Bar -->
+
+  <!-- Login -->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="loginLabel">Login</h4>
+              </div>
+              <div class="modal-body">
+                <form role="form">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> Do you flex?
+                      </label>
+                  </div>
+              </form><!-- /form -->
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-rw btn-primary">Login</button>
+              </div>
+          </div><!-- /modal content -->
+      </div><!-- /modal dialog -->
+  </div><!-- /modal holder -->
+  <!-- End Login -->
+    
+  <div class="navbar-wrapper">
+    <div class="navbar navbar-main" id="fixed-navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 column-header">
+            <div class="navbar-header">
+              <!-- Brand -->
+              <%= link_to 'Swift | 人材紹介・人材派遣', root_path, class: 'navbar-brand' %>
+   
+              <!-- Mobile Navigation -->
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+              </button>
+            </div><!-- /navbar header -->   
+
+            <!-- Main Navigation - Explained in Documentation -->
+            <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown dropdown-main">
+                  <a href="index.html" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Home<span class="fa fa-angle-down dropdown-arrow"></span></a>                  
+                </li>
+                <li>
+                  <%= link_to '会社概要', '#' %>
+                </li> 
+
+                <li>
+                  <%= link_to '人材をお探しの企業の方', '#' %>
+                </li> 
+
+                <li>
+                  <%= link_to 'お仕事をお探しの皆様', '#' %>
+                </li> 
+
+                <li>
+                  <%= link_to '採用情報', '#' %>
+                </li>   
+                
+               
+              </ul><!-- /navbar right -->  
+            </nav><!-- /nav -->
+          </div>
+        </div>
+      </div><!-- /container header -->   
+    </div><!-- /navbar -->
+  </div><!-- /navbar wrapper -->
+
+</header>
