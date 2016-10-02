@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161001083044) do
+=======
+ActiveRecord::Schema.define(version: 20161002083022) do
+>>>>>>> dd755ad28b9081d09a451434d768b8012ce16032
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +25,37 @@ ActiveRecord::Schema.define(version: 20161001083044) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -66,6 +101,20 @@ ActiveRecord::Schema.define(version: 20161001083044) do
     t.datetime "updated_at",       null: false
     t.index ["job_id"], name: "index_reservations_on_job_id", using: :btree
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "pay_type"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo"
+    t.text     "comments",   null: false
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.index ["job_id"], name: "index_reports_on_job_id", using: :btree
+    t.index ["user_id", "job_id"], name: "index_reports_on_user_id_and_job_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,10 +141,13 @@ ActiveRecord::Schema.define(version: 20161001083044) do
     t.string   "prefecture"
     t.string   "city"
     t.string   "other_address"
+    t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "reservations", "jobs"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reports", "jobs"
+  add_foreign_key "reports", "users"
 end

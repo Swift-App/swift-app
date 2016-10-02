@@ -22,5 +22,6 @@ FactoryGirl.define do
     area "tokyo"
     duration "2 days"
     category "category"
+    shift_category "Shift category"
   end
 end
