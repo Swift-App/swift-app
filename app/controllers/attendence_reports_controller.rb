@@ -7,6 +7,11 @@ class AttendenceReportsController < ApplicationController
 
   def create
     @attendence_report = current_user.attendence_reports.create(attendence_report_params)
+    if @attendence_report.valid?
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
