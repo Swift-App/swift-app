@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :devise
 
   resources :jobs do 
-    resources :reports
+    resources :completion_reports
   end
 
 end
