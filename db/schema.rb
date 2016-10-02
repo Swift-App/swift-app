@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930141740) do
+ActiveRecord::Schema.define(version: 20161002083022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,10 +67,22 @@ ActiveRecord::Schema.define(version: 20160930141740) do
     t.integer  "pay_range"
     t.string   "area"
     t.string   "shift_category"
-    t.time     "duration"
+    t.string   "duration"
     t.string   "category"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+    t.string   "pay_type"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo"
+    t.text     "comments",   null: false
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.index ["job_id"], name: "index_reports_on_job_id", using: :btree
+    t.index ["user_id", "job_id"], name: "index_reports_on_user_id_and_job_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,8 +109,11 @@ ActiveRecord::Schema.define(version: 20160930141740) do
     t.string   "prefecture"
     t.string   "city"
     t.string   "other_address"
+    t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "reports", "jobs"
+  add_foreign_key "reports", "users"
 end
