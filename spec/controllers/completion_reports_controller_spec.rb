@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ReportsController, type: :controller do
+RSpec.describe CompletionReportsController, type: :controller do
   describe "POST #create" do
     context "attributes are valid" do 
       it "creates a new report" do 
@@ -10,8 +10,8 @@ RSpec.describe ReportsController, type: :controller do
         sign_in user
 
         expect {
-          post :create, job_id: job.id, report: FactoryGirl.attributes_for(:report)
-        }.to change(Report, :count).by(1)
+          post :create, job_id: job.id, completion_report: FactoryGirl.attributes_for(:completion_report)
+        }.to change(CompletionReport, :count).by(1)
       end
 
       it "redirects the user to root page" do
@@ -19,7 +19,7 @@ RSpec.describe ReportsController, type: :controller do
         job = FactoryGirl.create(:job)
 
         sign_in user
-        post :create, job_id: job.id, report: FactoryGirl.attributes_for(:report)
+        post :create, job_id: job.id, completion_report: FactoryGirl.attributes_for(:completion_report)
         
         expect(response).to redirect_to root_path
       end
@@ -33,8 +33,8 @@ RSpec.describe ReportsController, type: :controller do
         sign_in user
 
         expect {
-          post :create, job_id: job.id, report: FactoryGirl.attributes_for(:report, comments: nil)
-        }.to change(Report, :count).by(0)
+          post :create, job_id: job.id, completion_report: FactoryGirl.attributes_for(:completion_report, comments: nil)
+        }.to change(CompletionReport, :count).by(0)
       end
 
       it "renders the new template" do 
@@ -42,7 +42,7 @@ RSpec.describe ReportsController, type: :controller do
         job = FactoryGirl.create(:job)
 
         sign_in user
-        post :create , job_id: job.id, report: FactoryGirl.attributes_for(:report, comments: nil)
+        post :create , job_id: job.id, completion_report: FactoryGirl.attributes_for(:completion_report, comments: nil)
 
         expect(response).to redirect_to root_path
       end

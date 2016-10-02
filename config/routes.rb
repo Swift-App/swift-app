@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :jobs do
     resources :attendence_reports, only: [:new, :create]
-    resources :reports
-  end
+    resources :completion_reports
 
 end
