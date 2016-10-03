@@ -30,6 +30,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'simple_form'
 
+#mail form
+gem 'mail_form'
+
+gem 'capybara'
+
 # uploading stuff
 gem "figaro"
 gem 'carrierwave'
