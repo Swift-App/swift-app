@@ -1,5 +1,0 @@
-<%= simple_form_for @attendence_report, url: job_attendence_reports_path, method: :post do |f| %>
-  <%= f.label :report_type %>
-  <%= f.select :report_type, AttendenceReport.report_types.keys %>
-  <%= f.button :submit, 'Make my attendance!' %>
-<% end %>
