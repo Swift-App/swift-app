@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :devise
 
-  resources :contact, only: [:new, :create]
+  resources "contacts", only: [:new, :create]
 
   resources :jobs do 
     resources :completion_reports
