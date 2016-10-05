@@ -35,6 +35,8 @@ gem 'mail_form'
 
 gem 'capybara'
 
+gem 'delayed_job_active_record'
+
 # preview emails
 gem "letter_opener", :group => :development
 
