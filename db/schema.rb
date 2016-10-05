@@ -10,10 +10,85 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926191146) do
+ActiveRecord::Schema.define(version: 20161003145601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "completion_reports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo"
+    t.text     "comments",   null: false
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.index ["job_id"], name: "index_completion_reports_on_job_id", using: :btree
+    t.index ["user_id", "job_id"], name: "index_completion_reports_on_user_id_and_job_id", using: :btree
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title",                                         null: false
+    t.text     "description",                                   null: false
+    t.decimal  "pay_amount",                    default: "0.0", null: false
+    t.string   "job_type"
+    t.string   "content"
+    t.string   "location"
+    t.string   "nearest_station"
+    t.integer  "number_of_positions"
+    t.date     "work_date"
+    t.integer  "hours"
+    t.string   "holidays"
+    t.string   "certifications_and_experience"
+    t.string   "benefits"
+    t.string   "employment_type"
+    t.string   "person_in_charge",                              null: false
+    t.text     "remarks"
+    t.string   "branch_in_charge",                              null: false
+    t.integer  "pay_range"
+    t.string   "area"
+    t.string   "shift_category"
+    t.string   "duration"
+    t.string   "category"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "pay_type"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,8 +114,11 @@ ActiveRecord::Schema.define(version: 20160926191146) do
     t.string   "prefecture"
     t.string   "city"
     t.string   "other_address"
+    t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "completion_reports", "jobs"
+  add_foreign_key "completion_reports", "users"
 end
