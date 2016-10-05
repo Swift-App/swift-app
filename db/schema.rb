@@ -46,17 +46,6 @@ ActiveRecord::Schema.define(version: 20161005050155) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "completion_reports", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "photo"
-    t.text     "comments",   null: false
-    t.integer  "user_id"
-    t.integer  "job_id"
-    t.index ["job_id"], name: "index_completion_reports_on_job_id", using: :btree
-    t.index ["user_id", "job_id"], name: "index_completion_reports_on_user_id_and_job_id", using: :btree
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -134,6 +123,4 @@ ActiveRecord::Schema.define(version: 20161005050155) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "completion_reports", "jobs"
-  add_foreign_key "completion_reports", "users"
 end
