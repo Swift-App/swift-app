@@ -6,4 +6,6 @@ class Job < ApplicationRecord
 
   belongs_to :user
   has_many :reservations
+  has_many :attendence_reports
+  has_many :completion_reports
 end

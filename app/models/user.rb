@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :jobs, through: :reservations
   has_many :reservations, dependent: :destroy
+  has_many :attendence_reports
+  has_many :completion_reports
+  
+  mount_uploader :photo, PhotoUploader
+
 end
