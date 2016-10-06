@@ -10,9 +10,19 @@ RSpec.describe ReservationsController, type: :controller do
 
           sign_in user
 
-          post :create, reservation: FactoryGirl.attributes_for(:reservation)
-          
+          expect{
+            post :create, reservation: FactoryGirl.attributes_for(:reservation)
+          }.to change(Reservation, :count).by(1)
+        end
 
+        it "sends an email to the user" do
+          user = FactoryGirl.create(:user)
+
+          sign_in
+
+          expect {
+            post :create, reservation: FactoryGirl.attributes_for(:reservation)
+          }.to change { ActionMailer::Base.deliveries.count }.by(1)
         end
       end
 
