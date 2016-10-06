@@ -15,7 +15,7 @@ RSpec.describe ReservationsController, type: :controller do
           }.to change(Reservation, :count).by(1)
         end
 
-        it "sends an email to the user" do
+        it "sends an email to the admin" do
           user = FactoryGirl.create(:user)
 
           sign_in

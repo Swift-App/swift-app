@@ -1,5 +1,5 @@
-FactoryGirl.define do
+aFactoryGirl.define do
   factory :admin_user do
-    
+
   end
 end
