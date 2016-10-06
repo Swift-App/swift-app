@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
+  get 'companies', to: 'static_pages#companies'
+  get 'staff', to: 'static_pages#staff'
 
   resources "contacts", only: [:new, :create]
 
