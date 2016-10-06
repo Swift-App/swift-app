@@ -9,7 +9,10 @@ RSpec.describe ReservationsController, type: :controller do
           job = FactoryGirl.create(:job)
 
           sign_in user
+
           post :create, reservation: FactoryGirl.attributes_for(:reservation)
+          
+
         end
       end
 
