@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20161006084422) do
-
+ActiveRecord::Schema.define(version: 20161006112649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,13 +47,11 @@ ActiveRecord::Schema.define(version: 20161006084422) do
   end
 
   create_table "attendence_reports", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "job_id"
     t.integer  "report_type"
+    t.integer  "job_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["job_id"], name: "index_attendence_reports_on_job_id", using: :btree
-    t.index ["user_id"], name: "index_attendence_reports_on_user_id", using: :btree
   end
 
   create_table "completion_reports", force: :cascade do |t|
@@ -88,9 +84,9 @@ ActiveRecord::Schema.define(version: 20161006084422) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "title",                                         null: false
-    t.text     "description",                                   null: false
-    t.decimal  "pay_amount",                    default: "0.0", null: false
+    t.string   "title",                                     null: false
+    t.text     "description",                               null: false
+    t.integer  "pay_amount",                    default: 0, null: false
     t.string   "job_type"
     t.string   "content"
     t.string   "location"
@@ -102,17 +98,43 @@ ActiveRecord::Schema.define(version: 20161006084422) do
     t.string   "certifications_and_experience"
     t.string   "benefits"
     t.string   "employment_type"
-    t.string   "person_in_charge",                              null: false
+    t.string   "person_in_charge",                          null: false
     t.text     "remarks"
-    t.string   "branch_in_charge",                              null: false
-    t.integer  "pay_range"
+    t.string   "branch_in_charge",                          null: false
+    t.string   "pay_range"
     t.string   "area"
     t.string   "shift_category"
     t.string   "duration"
     t.string   "category"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.string   "pay_type"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo"
+    t.text     "comments",   null: false
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.index ["job_id"], name: "index_reports_on_job_id", using: :btree
+    t.index ["user_id", "job_id"], name: "index_reports_on_user_id_and_job_id", using: :btree
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "date_1"
+    t.datetime "date_2"
+    t.datetime "date_3"
+    t.datetime "date_4"
+    t.datetime "date_5"
+    t.datetime "date_6"
+    t.datetime "date_7"
+    t.text     "additional_notes"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -132,7 +154,7 @@ ActiveRecord::Schema.define(version: 20161006084422) do
     t.string   "last_name"
     t.string   "first_name_katakana"
     t.string   "last_name_katakana"
-    t.integer  "phone"
+    t.string   "phone"
     t.date     "birthday"
     t.integer  "zip_1"
     t.integer  "zip_2"
@@ -144,4 +166,7 @@ ActiveRecord::Schema.define(version: 20161006084422) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "reports", "jobs"
+  add_foreign_key "reports", "users"
+  add_foreign_key "reservations", "users"
 end

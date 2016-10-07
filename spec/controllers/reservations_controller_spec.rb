@@ -6,7 +6,6 @@ RSpec.describe ReservationsController, type: :controller do
       context "attributes are valid" do
         it "creates a new reservation" do
           user = FactoryGirl.create(:user)
-          job = FactoryGirl.create(:job)
 
           sign_in user
 
@@ -18,7 +17,7 @@ RSpec.describe ReservationsController, type: :controller do
         it "sends an email to the admin" do
           user = FactoryGirl.create(:user)
 
-          sign_in
+          sign_in user
 
           expect {
             post :create, reservation: FactoryGirl.attributes_for(:reservation)
@@ -28,14 +27,22 @@ RSpec.describe ReservationsController, type: :controller do
 
       context "attributes are not valid" do
         it "does not create a new reservation" do
+          user = FactoryGirl.create(:user)
 
+          sign_in user
+
+          expect{
+            post :create, reservation: FactoryGirl.attributes_for(:reservation, date_1: nil)
+          }.to change(Reservation, :count).by(0)
+          expect(response).to render_template :new
         end
       end
     end
 
     context "User is not signed in" do
       it "redirects the user to sign in page" do
-
+          post :create, reservation: FactoryGirl.attributes_for(:reservation)
+          expect(response).to redirect_to new_user_session_path
       end
     end
   end

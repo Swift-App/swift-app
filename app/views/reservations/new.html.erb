@@ -1,0 +1,11 @@
+<%= simple_form_for @reservation do |f| %>
+  <%= f.input :date_1,as: :date %>
+  <%= f.input :date_2,as: :date, required: false %>
+  <%= f.input :date_3,as: :date, required: false %>
+  <%= f.input :date_4,as: :date, required: false %>
+  <%= f.input :date_5,as: :date, required: false %>
+  <%= f.input :date_6,as: :date, required: false %>
+  <%= f.input :date_7,as: :date, required: false %>
+  <%= f.input :additional_notes,as: :text, required: false %>
+  <%= f.button :submit %>
+  <% end %>

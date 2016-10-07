@@ -1,0 +1,5 @@
+<p><strong><%= @user.email %></strong> has just made a reservation for:
+  <%= @form_params.each do |key,value| %>
+    <%= key %>: <%=value %>
+  <% end %>
+</p>
