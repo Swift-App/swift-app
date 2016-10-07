@@ -1,6 +1,12 @@
 ===================================
-<%= @user.email %> has just made a reservation for:
-<%= @form_params.each do |key,value| %>
-  <%= key %>: <%=value %>
-<% end %>
+<p><strong><%= @user.email %></strong> has just made a reservation for:</p>
+
+<p>Date 1: <%= @reservation.date_1.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+<p>Date 2: <%= @reservation.date_2.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+<p>Date 3: <%= @reservation.date_3.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+<p>Date 4: <%= @reservation.date_4.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+<p>Date 5: <%= @reservation.date_5.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+<p>Date 6: <%= @reservation.date_6.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+<p>Date 7: <%= @reservation.date_7.try(:strftime, ("%m/%d/%Y")) || "Empty" %></p>
+
 ===================================

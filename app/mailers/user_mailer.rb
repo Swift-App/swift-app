@@ -27,7 +27,7 @@ class UserMailer < ApplicationMailer
   end
 
   def reservation_made(args)
-    @form_params = args.fetch(:params)
+    @reservation = args.fetch(:reservation)
     @user = args.fetch(:user)
     mail(subject: "Reservation made by #{@user.email}")
   end

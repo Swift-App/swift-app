@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
   private
 
   def send_new_reservation_email
-    UserMailer.reservation_made(user: current_user, params: reservation_params).deliver_now
+    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_now
   end
 
   def reservation_params
