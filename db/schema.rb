@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005050155) do
+ActiveRecord::Schema.define(version: 20161006105213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,26 @@ ActiveRecord::Schema.define(version: 20161005050155) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "attendence_reports", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.integer  "report_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["job_id"], name: "index_attendence_reports_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_attendence_reports_on_user_id", using: :btree
+  end
+
+  create_table "completion_reports", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "job_id"
+    t.string  "photo"
+    t.text    "comments"
+    t.index ["job_id"], name: "index_completion_reports_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_completion_reports_on_user_id", using: :btree
+  end
+
+>>>>>>> 9bbf50e9eafa7155ecb85a392fecc9e265c9d576
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

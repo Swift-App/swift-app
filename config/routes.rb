@@ -12,8 +12,10 @@ Rails.application.routes.draw do
 
   resources "contacts", only: [:new, :create]
 
+
   resources :jobs do 
-    resources :completion_reports
+    resources :completion_reports, only: [:new, :create]
+    resources :attendence_reports, only: [:new, :create]
   end
 
 end
