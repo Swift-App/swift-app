@@ -1,4 +1,4 @@
-@import 'variables/colors';
+@import 'components/main';
 
 .merit-box {
   border: 4px solid $orange;
@@ -36,7 +36,7 @@
   }
   td {
     font-weight: 600;
-    padding: 20px;
+    padding: 20px !important;
   }
 }
 

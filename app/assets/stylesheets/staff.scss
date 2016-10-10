@@ -1,10 +1,16 @@
-@import 'variables/colors';
+@import 'components/main';
 
 .staff {
   h2 {
     background: $blue;
     color: white;
     padding: 20px;
+    position: relative;
+    margin-bottom: 40px;
+
+    &:after {
+      @include arrow-down(20px, $blue);
+    }
   }
 
   img {
@@ -24,22 +30,18 @@
   height: 250px;
   margin-bottom: 40px;
 
+  p {
+    font-size: 18px;
+
+    .fa {
+      color: $orange;
+    }
+  }
+
   h3 {
     color: $blue;
     font-size: 40px;
     font-weight: 600;
-  }
-  &:after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 20px solid $orange;
-    border-bottom: 20px solid transparent;
-    border-top: 20px solid transparent;
-    clear: both;
-    position: absolute;
-    top: 0px;
-    left: 120px;
   }
 }
 
@@ -52,17 +54,13 @@
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
+  position: relative;
+
   .point-number {
     font-size: 26px;
   }
-}
 
-.arrow {
-  // width: 0; 
-  // height: 0; 
-  // border-top: 20px solid transparent;
-  // border-bottom: 20px solid transparent;    
-  // border-left: 20px solid $blue;
-  // position: absolute;
-  // left: 223px;
+  &:after {
+    @include arrow-right(20px, $orange);
+  }
 }

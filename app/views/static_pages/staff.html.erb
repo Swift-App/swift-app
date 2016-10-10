@@ -1,5 +1,5 @@
 <section class="staff">
-  <h2>スイフトで働こう！４つのメリット！</h2>
+  <h2 class="text-center">スイフトで働こう！４つのメリット！</h2>
 
   <div class="point-container">
     <%= image_tag 'top/running.jpg', class: 'img-responsive' %>
@@ -10,8 +10,8 @@
     <h3>短期<span class="alt-color">1日~OK!</span></h3>    
 
     <p>
-      空いた時間に<br />
-      自分らしく稼ぐ！
+      <i class="fa fa-check-circle" aria-hidden="true"></i> 空いた時間に<br />
+      <i class="fa fa-check-circle" aria-hidden="true"></i> 自分らしく稼ぐ！
      </p>
 
      <div class="arrow"></div>
@@ -26,8 +26,8 @@
     <h3>全額翌日払い<span class="alt-color">OK</span></h3>
 
     <p>
-      財布がピンチ！<br />
-      すぐに給料ゲット！
+      <i class="fa fa-check-circle" aria-hidden="true"></i> 財布がピンチ！<br />
+      <i class="fa fa-check-circle" aria-hidden="true"></i> すぐに給料ゲット！
     </p>
 
     <div class="arrow"></div>
@@ -41,10 +41,9 @@
 
     <h3>登録<span class="alt-color">超簡単！</span></h3>
 
-    めんどくさがっているいる画像
     <p>
-      履歴書不要！<br />
-      20分で終了！
+      <i class="fa fa-check-circle" aria-hidden="true"></i> 履歴書不要！<br />
+      <i class="fa fa-check-circle" aria-hidden="true"></i> 20分で終了！
     </p>
 
     <div class="arrow"></div>
@@ -59,9 +58,7 @@
 
     <h3>選べる<span class="alt-color">勤務地</span></h3>
 
-    頭を抱える画像
-
-    <p>自宅の近くで勤務可能！</p>
+    <p><i class="fa fa-check-circle" aria-hidden="true"></i> 自宅の近くで勤務可能！</p>
 
     <div class="arrow"></div>
   </div>
@@ -70,31 +67,5 @@
 
   <h2>こんなお仕事を紹介しています！</h2>
 
-  <table class="table table-responsive">
-    <tr>
-      <td><strong>ログスティクス</strong></td>
-      <td>物流センター内ピッキング・仕分け・梱包作業、商品在庫管理、荷揚げ、荷卸し等</td>
-    </tr>
-
-    <tr>
-      <td><strong>イベント</strong></td>
-      <td>イベント会場設営・撤去、イベント管理・運営、各種販売促進、プラカード持ち等</td>
-    </tr>
-
-    <tr>
-      <td><strong>トランスポート</strong></td>
-      <td>引越助手、事務所の移転作業、家具などの配送助手、什器の搬入出等</td>
-    </tr>
-
-    <tr>
-      <td><strong>オフィス</strong></td>
-      <td>一般事務、データ入力、ファイリング、テレマーケティング、各種清掃作業、等</td>
-    </tr>
-
-    <tr>
-      <td><strong>その他</strong></td>
-      <td>工場内ライン作業、棚卸し、各種清掃作業など</td>
-    </tr>
-
-  </table>
+  <%= render 'shared/job_table' %>
 </section>

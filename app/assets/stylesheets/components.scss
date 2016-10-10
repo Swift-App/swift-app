@@ -1,21 +1,8 @@
-@import 'variables/colors';
+@import 'components/main';
 
 @mixin header {
   text-align: center;
   padding: 20px;
-}
-
-@mixin arrow-down($size, $color) {
-  content:'';
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  margin-left: -$size;
-  width: 0;
-  height: 0;
-  border-top: solid $size $color;
-  border-left: solid $size transparent;
-  border-right: solid $size transparent; 
 }
 
 .header-text {
