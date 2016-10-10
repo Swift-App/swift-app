@@ -836,17 +836,18 @@ ul.list-arrow-2-color li:before {
 }
 
 .navbar.navbar-main ul.nav a { 
-	color:#8F8F8F;
-	background:transparent;
+	color: #0880d7;
+	border-bottom: 2px solid transparent;
+	background: transparent;
+	text-decoration: none;
 }
 
 .navbar.navbar-main ul.nav li:hover > a { 
-	color:#00B7EB;
-	background-color:transparent;
-	-webkit-transition:color 0.1s ease;
-	-moz-transition:color 0.1s ease;
-	-o-transition:color 0.1s ease;
-	transition:color 0.1s ease;
+	border-bottom: 2px solid #00b7eb;
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	transition:all 0.5s ease;
 }
 
 .navbar.navbar-main .nav li.active a {
