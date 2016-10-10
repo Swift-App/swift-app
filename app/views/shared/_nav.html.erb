@@ -40,9 +40,10 @@
             <!-- Main Navigation - Explained in Documentation -->
             <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
               <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown dropdown-main">
-                  <a href="index.html" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Home<span class="fa fa-angle-down dropdown-arrow"></span></a>                  
-                </li>
+                <li>
+                  <%= link_to 'Home', root_path %>
+                </li> 
+                
                 <li>
                   <%= link_to '会社概要', about_path %>
                 </li> 
