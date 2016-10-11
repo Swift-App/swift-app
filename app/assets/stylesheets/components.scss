@@ -2,7 +2,7 @@
 
 @mixin header {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .header-text {
@@ -15,18 +15,19 @@
     color: white;
     font-weight: 300;
     margin-bottom: 0px;
+    text-transform: none;
   }
 
   h3 {
     color: white;
+    margin-bottom: 0px;
   }
 }
 
-.header-text-orange {
+.header-text-sub-blue {
   @include header;
 
-  background: $orange;
-
+  background: $secondary-blue;
   h2 {
     color: white;
     margin-bottom: 0px;
