@@ -1,0 +1,28 @@
+$orange: #e59501;
+$blue: #337ab7;
+$secondary-blue: #00b7eb;
+
+@mixin arrow-down($size, $color) {
+  content:'';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -$size;
+  width: 0;
+  height: 0;
+  border-top: solid $size $color;
+  border-left: solid $size transparent;
+  border-right: solid $size transparent; 
+}
+
+@mixin arrow-right($size, $color) {
+  content: '';
+    position: absolute;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-top: solid $size transparent;
+    border-left: solid $size $color;
+    border-right: solid $size transparent;
+    border-bottom: solid $size transparent;
+}

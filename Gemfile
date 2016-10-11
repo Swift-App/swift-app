@@ -51,6 +51,8 @@ gem 'activeadmin', github: 'activeadmin'
 # dependency for activeadmin
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+# Font Awesome
+gem 'font-awesome-sass', '~> 4.6.2'
 
 
 group :development, :test do

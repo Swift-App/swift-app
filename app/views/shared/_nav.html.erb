@@ -1,0 +1,72 @@
+<header>
+
+  <!-- Begin Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="row">
+        <!-- Address and Phone -->
+        <div class="col-sm-7 hidden-xs">
+          人材派遣・業務請負はスイフトへ
+        </div>
+
+        <div class="col-sm-5 text-right">
+          <ul class="topbar-list list-inline">                    
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+          </ul>
+        </div>
+      </div><!--/row --> 
+    </div><!--/container header -->   
+  </div><!--/top bar -->   
+  <!-- End Top Bar -->
+
+  <div class="navbar-wrapper">
+    <div class="navbar navbar-main" id="fixed-navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 column-header">
+            <div class="navbar-header">
+              <!-- Brand -->
+              <a class="navbar-brand" href="/"><%= image_tag 'swift-logo.png', class: "logo" %></a>
+   
+              <!-- Mobile Navigation -->
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+              </button>
+            </div><!-- /navbar header -->   
+
+            <!-- Main Navigation - Explained in Documentation -->
+            <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to 'Home', root_path %>
+                </li> 
+                
+                <li>
+                  <%= link_to '会社概要', about_path %>
+                </li> 
+
+                <li>
+                  <%= link_to '人材をお探しの企業の方', companies_path %>
+                </li> 
+
+                <li>
+                  <%= link_to 'お仕事をお探しの皆様', staff_path %>
+                </li> 
+
+                <li>
+                  <%= link_to '採用情報', '#' %>
+                </li>   
+                
+               
+              </ul><!-- /navbar right -->  
+            </nav><!-- /nav -->
+          </div>
+        </div>
+      </div><!-- /container header -->   
+    </div><!-- /navbar -->
+  </div><!-- /navbar wrapper -->
+
+</header>

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  root 'jobs#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, path_names: { sign_up: '' }
 
   ActiveAdmin.routes(self)
 
-  root "jobs#index"
+  root "static_pages#index"
+  get 'about', to: 'static_pages#about'
+  get 'companies', to: 'static_pages#companies'
+  get 'staff', to: 'static_pages#staff'
+
   resources "contacts", only: [:new, :create]
 
   resources :jobs do
