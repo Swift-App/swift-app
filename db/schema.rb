@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009185822) do
+ActiveRecord::Schema.define(version: 20161011101823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,31 +86,30 @@ ActiveRecord::Schema.define(version: 20161009185822) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "title",                                         null: false
-    t.text     "description",                                   null: false
-    t.decimal  "pay_amount",                    default: "0.0", null: false
+    t.string   "title",                         null: false
+    t.text     "description",                   null: false
     t.string   "job_type"
     t.string   "content"
     t.string   "location"
     t.string   "nearest_station"
-    t.integer  "number_of_positions"
-    t.date     "work_date"
-    t.integer  "hours"
+    t.string   "number_of_positions"
+    t.string   "work_date"
+    t.string   "hours"
     t.string   "holidays"
     t.string   "certifications_and_experience"
     t.string   "benefits"
     t.string   "employment_type"
-    t.string   "person_in_charge",                              null: false
+    t.string   "person_in_charge",              null: false
     t.text     "remarks"
-    t.string   "branch_in_charge",                              null: false
+    t.string   "branch_in_charge",              null: false
     t.integer  "pay_range"
     t.string   "area"
     t.string   "shift_category"
     t.string   "duration"
     t.string   "category"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "pay_type"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "pay_amount"
   end
 
   create_table "reservations", force: :cascade do |t|

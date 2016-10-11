@@ -1,0 +1,63 @@
+@import 'components/main';
+
+$border-color: #dddddd;
+
+@mixin job-border {
+  border: 2px solid $border-color;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+.job_box {
+  @include job-border;
+
+  table {
+    margin-bottom: 40px;
+  }
+}
+
+.job_box_title {
+  h3 {
+    a {
+      color: $blue;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+}
+
+.btn-job-details {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+.sidebar {
+  @include job-border;
+
+  h3 {
+    color: $blue;
+    border-bottom: 2px solid $blue;
+    font-size: 18px;
+  }
+}
+
+.sidebar-contents {
+  margin-bottom: 20px;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+    a {
+      color: #333;
+    }
+  }
+}
+
+.gray-alt {
+  font-size: 14px; 
+  color: #777777;
+}

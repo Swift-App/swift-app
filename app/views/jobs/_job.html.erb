@@ -1,0 +1,41 @@
+<div class="job_box">
+  <div class="job_box_title">
+    <h3><%= link_to job.title, job %></h3>
+  </div><!-- job_box_title -->
+
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+
+
+    </div><!-- col-xs-12 col-md-4 -->
+
+    <div class="col-xs-12 col-md-8">
+      <div class="job_box_description">
+        <%= job.description %>
+      </div>
+
+      <table class="table table-responsive">
+        <tr>
+          <td><strong>給与</strong></td>
+          <td><%= job.pay_amount %></td>
+        </tr>
+
+        <tr>
+          <td><strong>勤務地</strong></td>
+          <td><%= job.location %></td>
+        </tr>
+
+        <tr>
+          <td><strong>最寄駅</strong></td>
+          <td><%= job.nearest_station %></td>
+        </tr> 
+      </table>
+
+      <%= link_to '詳細を見る', job, class: 'btn btn-primary btn-job-details' %>
+
+    </div><!-- col-xs-12 col-md-4 -->
+
+  </div><!-- row -->
+
+
+</div><!-- job_box -->
