@@ -2,70 +2,93 @@
   <h2 class="text-center">スイフトで働こう！４つのメリット！</h2>
 
   <div class="point-container">
-    <%= image_tag 'top/running.jpg', class: 'img-responsive' %>
-    <div class="point">
-      POINT <span class="point-number">1</span>
+    <div class="col-xs-12 col-md-8">
+       <div class="point">
+          POINT <span class="point-number">1</span>
+        </div>
+
+        <h3>短期<span class="alt-color">1日~OK!</span></h3>    
+
+        <p>
+          <i class="fa fa-check-circle" aria-hidden="true"></i> 空いた時間に<br />
+          <i class="fa fa-check-circle" aria-hidden="true"></i> 自分らしく稼ぐ！
+        </p>
+
+        <div class="arrow"></div>
     </div>
 
-    <h3>短期<span class="alt-color">1日~OK!</span></h3>    
-
-    <p>
-      <i class="fa fa-check-circle" aria-hidden="true"></i> 空いた時間に<br />
-      <i class="fa fa-check-circle" aria-hidden="true"></i> 自分らしく稼ぐ！
-     </p>
-
-     <div class="arrow"></div>
+    <div class="col-xs-12 col-md-4">
+      <%= image_tag 'top/running.jpg', class: 'img-responsive' %>
+    </div>
+    
+   
   </div>
 
   <div class="point-container">
-    <%= image_tag 'top/wallet.jpg', class: 'img-responsive' %>
-    <div class="point">
-      POINT <span class="point-number">2</span>
+    <div class="col-xs-12 col-md-8">
+       <%= image_tag 'top/wallet.jpg', class: 'img-responsive' %>
     </div>
 
-    <h3>全額翌日払い<span class="alt-color">OK</span></h3>
+    <div class="col-xs-12 col-md-4">
+      <div class="point-right">
+        POINT <span class="point-number">2</span>
+      </div>
 
-    <p>
-      <i class="fa fa-check-circle" aria-hidden="true"></i> 財布がピンチ！<br />
-      <i class="fa fa-check-circle" aria-hidden="true"></i> すぐに給料ゲット！
-    </p>
+      <h3>全額翌日払い<span class="alt-color">OK</span></h3>
 
-    <div class="arrow"></div>
+      <p>
+        <i class="fa fa-check-circle" aria-hidden="true"></i> 財布がピンチ！<br />
+        <i class="fa fa-check-circle" aria-hidden="true"></i> すぐに給料ゲット！
+      </p>
+
+      <div class="arrow"></div>
+    </div>
   </div>
 
   <div class="point-container">
-    <%= image_tag 'top/mendou.jpg', class: 'img-responsive' %>
-    <div class="point">
-      POINT <span class="point-number">3</span>
+    
+    <div class="col-xs-12 col-md-8">
+      <div class="point">
+        POINT <span class="point-number">3</span>
+      </div>
+
+      <h3>登録<span class="alt-color">超簡単！</span></h3>
+
+      <p>
+        <i class="fa fa-check-circle" aria-hidden="true"></i> 履歴書不要！<br />
+        <i class="fa fa-check-circle" aria-hidden="true"></i> 20分で終了！
+      </p>
+
+      <div class="arrow"></div>
     </div>
 
-    <h3>登録<span class="alt-color">超簡単！</span></h3>
-
-    <p>
-      <i class="fa fa-check-circle" aria-hidden="true"></i> 履歴書不要！<br />
-      <i class="fa fa-check-circle" aria-hidden="true"></i> 20分で終了！
-    </p>
-
-    <div class="arrow"></div>
+    <div class="col-xs-12 col-md-4">
+      <%= image_tag 'top/mendou.jpg', class: 'img-responsive' %>
+    </div>
   </div>
 
 
   <div class="point-container">
-    <%= image_tag 'top/head.jpg', class: 'img-responsive' %>
-    <div class="point">
-      POINT <span class="point-number">4</span>
+    <div class="col-xs-12 col-md-8">
+       <%= image_tag 'top/head.jpg', class: 'img-responsive' %>
     </div>
+    
+    <div class="col-xs-12 col-md-4">
+      <div class="point-right">
+        POINT <span class="point-number">4</span>
+      </div>
 
-    <h3>選べる<span class="alt-color">勤務地</span></h3>
+      <h3>選べる<span class="alt-color">勤務地</span></h3>
 
-    <p><i class="fa fa-check-circle" aria-hidden="true"></i> 自宅の近くで勤務可能！</p>
+      <p><i class="fa fa-check-circle" aria-hidden="true"></i> 自宅の近くで勤務可能！</p>
 
-    <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
   </div>
 
 
 
-  <h2>こんなお仕事を紹介しています！</h2>
+  <h2 class="text-center">こんなお仕事を紹介しています！</h2>
 
   <%= render 'shared/job_table' %>
 </section>

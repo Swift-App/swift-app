@@ -14,7 +14,6 @@
   }
 
   img {
-    float: right;
     height: 250px;
     width: 380px;
   }
@@ -40,27 +39,10 @@
 
   h3 {
     color: $blue;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
+    margin-top: 10px;
   }
 }
 
-.point {
-  height: 40px;
-  width: 120px;
-  background: $orange;
-  font-weight: 600;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 20px;
-  position: relative;
 
-  .point-number {
-    font-size: 26px;
-  }
-
-  &:after {
-    @include arrow-right(20px, $orange);
-  }
-}
