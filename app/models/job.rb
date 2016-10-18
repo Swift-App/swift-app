@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+  include Filterable
+
   validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
             :number_of_positions, :work_date, :hours, :holidays, :certifications_and_experience,
             :benefits, :employment_type, :person_in_charge, :remarks, :branch_in_charge,
@@ -7,6 +9,13 @@ class Job < ApplicationRecord
   has_many :completion_reports
   has_many :attendence_reports
   has_many :completion_reports
+
+  scope :job_type, -> (job_type) { where job_type: job_type }
+  scope :area, -> (area) { where area: area }
+  scope :employment_type, -> (employment_type) { where employment_type: employment_type }
+  scope :duration, -> (duration) { where duration: duration }
+  scope :shift_category, -> (shift_category) { where shift_category: shift_category }
+  scope :categories, -> (categories) { where categories: categories }
 
   AREAS = %w(関西エリア 中部エリア 関東エリア)
 

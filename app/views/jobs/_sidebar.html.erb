@@ -13,7 +13,7 @@
   <div class="sidebar-contents">
     <ul>
       <% Job::AREAS.each do |area| %>
-        <li><%= link_to area, '' %></li>
+        <li><%= link_to area, jobs_path(area: area) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->
@@ -23,7 +23,7 @@
    <div class="sidebar-contents">
     <ul>
       <% Job::SHIFT_CATEGORIES.each do |category| %>
-        <li><%= link_to category, '' %></li>
+        <li><%= link_to category, jobs_path(shift_category: category) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->
@@ -33,7 +33,7 @@
   <div class="sidebar-contents">
     <ul>
     <% Job::DURATIONS.each do |duration| %>
-      <li><%= link_to duration, '' %></li>
+      <li><%= link_to duration, jobs_path(duration: duration) %></li>
     <% end %>
     </ul>
   </div><!-- sidebar-contents -->
@@ -44,7 +44,7 @@
   <div class="sidebar-contents">
     <ul>
       <% Job::DURATIONS.each do |duration| %>
-        <li><%= link_to duration, '' %></li>
+        <li><%= link_to duration, jobs_path(pay_range: duration) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->
@@ -54,7 +54,7 @@
   <div class="sidebar-contents">
     <ul>
       <% Job::CATEGORIES.each do |category| %>
-        <li><%= link_to category, '' %></li>
+        <li><%= link_to category, jobs_path(category: category) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->
@@ -64,7 +64,7 @@
   <div class="sidebar-contents">
     <ul>
       <% Job::JOB_TYPE.each do |type| %>
-        <li><%= link_to type, '' %></li>
+        <li><%= link_to type, jobs_path(job_type: type) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->
