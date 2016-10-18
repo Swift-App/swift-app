@@ -8,7 +8,7 @@
 .header-text {
   @include header;
 
-  background: $blue;
+  background: $secondary-blue;
   margin: 40px 0px;
 
   h2 {
@@ -87,5 +87,16 @@
 
   &:after {
     @include arrow-down(15px, white);
+  }
+}
+
+.service-line {
+  margin-bottom: 50px;
+  h5 {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  img {
+    width: 80%;
   }
 }
