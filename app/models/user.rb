@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :completion_reports
 
   mount_uploader :photo, PhotoUploader
+
+  def name
+    "#{last_name} #{first_name}"
+  end
 end

@@ -26,8 +26,8 @@
 
 .point-container {
   position: relative;
-  height: 250px;
   margin-bottom: 40px;
+  border: 1px solid #eee;
 
   p {
     font-size: 18px;
@@ -52,3 +52,14 @@
   text-align: center;
 }
 
+.point-container-details {
+  height: 80px;
+}
+
+.point-container-text {
+  padding: 20px 20px 0px;
+}
+
+.point-container-image {
+  // height: 300px;
+}

@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       send_new_reservation_email
 
-      redirect_to root_path
+      redirect_to staff_index_path
     else
       render :new
     end
@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
   private
 
   def send_new_reservation_email
-    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_now
+    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_later
   end
 
   def reservation_params

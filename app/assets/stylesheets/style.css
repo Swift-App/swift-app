@@ -2418,8 +2418,11 @@ h6.progress-head {
 
 .topbar-list li {
 	border-left:1px solid #eee;
-	border-right:1px solid #eee;
 	padding:0 14px;
+}
+
+.topbar-list li:last-child {
+	border-right:1px solid #eee;
 }
 
 .topbar-list li a {
