@@ -295,8 +295,8 @@ ul.list-arrow-2-color li:before {
 	border-bottom-right-radius:0;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-	background-color:#00B7EB;
-	border-color:#00B7EB;
+	background-color: #00329a;
+	border-color: #00379c;
 }
 
 .pagination>li>a, .pagination>li>span {
@@ -310,8 +310,8 @@ ul.list-arrow-2-color li:before {
 	border-color:#27AED4;
 }
 
-.pagination>li>a, .pagination>li>span { border-radius:50% !important;margin:0 5px;}
-
+/*.pagination>li>a, .pagination>li>span { border-radius:50% !important;margin:0 5px;}
+*/
 /* =Buttons
 -------------------------------------------------------------- */
 .btn-rw {

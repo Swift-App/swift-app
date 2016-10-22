@@ -1,5 +1,6 @@
-class Job < ApplicationRecord
+class Job < ApplicationRecord  
   include Filterable
+  mount_uploader :photo, JobPhotoUploader
 
   validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
             :number_of_positions, :work_date, :hours, :holidays, :certifications_and_experience,

@@ -5,7 +5,11 @@
 </div>
 
 <div class="col-xs-9">
+  <%= paginate @jobs, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-sm pagination-centered" %>
+
   <%= render @jobs %>
+
+  <%= paginate @jobs, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-sm pagination-centered" %>
 </div>
 
 

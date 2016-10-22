@@ -31,10 +31,6 @@
 </div>
 
 
-<!-- <div class="header-text-arrow">
-  <h3>こんな時はスイフトにお問い合わせください！</h3>
-</div>
- -->
 <section class="point container-full">
   <div class="row">
     <div class="col-xs-12 col-md-4">
@@ -104,7 +100,7 @@
 <div class="cta text-center">
   <h2 style="color:#00329a; font-weight: 300;">年中無休・即日対応！まずはお問い合わせを！</h2>
 
-  <h3><%= link_to '企業用申し込みフォーム', new_company_contact_path, class: 'btn btn-success' %></h3>
+  <h3><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 企業用申し込みフォーム'.html_safe, new_company_contact_path, class: 'btn btn-success' %></h3>
 </div>
 
 <br>
@@ -160,7 +156,7 @@
 <br />
 
 <div class="header-text">
-  <h2>サービスライン</h2>
+  <h2 class="service-line-text">サービスライン</h2>
 </div>
 
 <%= render 'shared/job_table' %>
@@ -171,7 +167,7 @@
 
   <h2 style="color:#00329a; font-weight: 300;">年中無休・即日対応！まずはお問い合わせを！</h2>
 
-  <h3><%= link_to '企業用申し込みフォーム', new_company_contact_path, class: 'btn btn-success' %></h3>
+  <h3><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 企業用申し込みフォーム'.html_safe, new_company_contact_path, class: 'btn btn-success' %></h3>
 </div>
 
 <br>
