@@ -6,6 +6,7 @@ class Staff::ContactsController < ApplicationController
   def create
     @contact = StaffContact.new(contact_params)
     @contact.request = request
+    binding.pry
     if @contact.deliver
       flash.now[:success] = 'ご連絡ありがとうございました。'
       redirect_to root_path
@@ -18,6 +19,6 @@ class Staff::ContactsController < ApplicationController
   private 
 
   def contact_params
-    params.require(:company_contact).permit(:name, :furigana, :terms_and_conditions, :phone, :email, :interview_date)
+    params.require(:staff_contact).permit(:name, :furigana, :birthday, :terms_and_conditions, :phone, :email, :interview_date)
   end
 end
