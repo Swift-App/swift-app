@@ -1,0 +1,2 @@
+class JobConfirmationsController < ApplicationController
+end

@@ -5,7 +5,7 @@
       <%= f.input :name, required: true, label: 'お名前', placeholder: '田中太郎' %>
       <%= f.input :furigana, required: true, label: 'ふりがな', placeholder: 'たなかたろう' %>
       <%= f.input :birthday, as: :string, required: true, label: 'お誕生日', start_year: Date.today.year - 65,
-                              end_year: Date.today.year - 12, default: Date.today - 35.years %>
+                              end_year: Date.today.year - 16, default: Date.today - 35.years %>
       <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
       <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
       <%= f.input :interview_date, as: :text, required: true, label: '面接希望日', placeholder: '', input_html: {rows: 5} %>

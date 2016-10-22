@@ -1,11 +1,21 @@
 ja:
   activerecord:
     models:      
-      user: Dude
-      mail_form: Dude
+      user: ユーザー      
     attributes:
       user:
-        name: test
+        first_name: 名
+        last_name: 姓
+        first_name_katakana: 名（カタカナ）
+        last_name_katakana: 姓（カタカナ）
+        email: メールアドレス
+        phone: 電話番号
+        birthday: お誕生日
+        postal_code: 郵便番号        
+        prefecture: 都道府県
+        city: 市町村
+        address_details: 番地・アパート名
+        photo: 写真
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

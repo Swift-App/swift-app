@@ -64,7 +64,10 @@ $border-color: #dddddd;
 
 .job-details-container {
   @include job-border;
-
+  position: relative;
+  table {
+    margin-bottom: 80px;
+  }
 
   .job-details-title {
     color: $blue;

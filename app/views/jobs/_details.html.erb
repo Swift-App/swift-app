@@ -10,6 +10,10 @@
     <div class="col-xs-12 col-md-8">
       <div class="job_box_description">
         <%= job.description %>
+
+        <br />
+
+        <%= link_to 'お申し込み', new_job_confirmation_path, class: 'btn btn-lg btn-success pull-right', style: 'margin-top: 20px' %>
       </div>
 
     </div><!-- col-xs-12 col-md-4 -->
@@ -89,6 +93,12 @@
       <td><%= job.branch_in_charge %></td>
     </tr> 
   </table>
+
+  <% if user_signed_in? %>
+    <%= link_to 'お申し込み', new_job_confirmation_path, class: 'btn btn-lg btn-success', style: 'position: absolute; right: 10px; bottom: 10px;' %>
+  <% else %>
+    <%= link_to 'お申し込み', new_staff_contact_path, class: 'btn btn-lg btn-success', style: 'position: absolute; right: 10px; bottom: 10px;' %>
+  <% end %>
 </div>
 
 

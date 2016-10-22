@@ -1,10 +1,11 @@
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <h3 class="text-center">出発報告</h3>
+    <h3 class="text-center">終了報告</h3>
 
-    <%= simple_form_for @attendence_report do |f| %>
+    <%= simple_form_for @completion_report do |f| %>
       <%= f.input :job_id, collection: current_user.jobs %>
-      <%= f.input :report_type %>      
+      <%= f.input :photo %>
+      <%= f.input :comments %>
       <%= f.submit '完了', class: 'btn btn-success pull-right' %>
     <% end %>
   </div>

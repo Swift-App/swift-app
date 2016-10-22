@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
   def index
+    if current_user.present?
+      redirect_to staff_path
+    end
   end
 
   def about

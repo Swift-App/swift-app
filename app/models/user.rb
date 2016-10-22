@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :jobs, through: :reservations
+  has_many :job_confirmations, dependent: :destroy
+  has_many :jobs, through: :job_confirmations
   has_many :reservations, dependent: :destroy
   has_many :attendence_reports
   has_many :completion_reports

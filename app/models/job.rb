@@ -10,6 +10,8 @@ class Job < ApplicationRecord
   has_many :attendence_reports
   has_many :completion_reports
 
+  default_scope { order('created_at DESC') }
+
   scope :job_type, -> (job_type) { where job_type: job_type }
   scope :area, -> (area) { where area: area }
   scope :employment_type, -> (employment_type) { where employment_type: employment_type }
