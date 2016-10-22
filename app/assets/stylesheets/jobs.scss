@@ -61,3 +61,12 @@ $border-color: #dddddd;
   font-size: 14px; 
   color: #777777;
 }
+
+.job-details-container {
+  @include job-border;
+
+
+  .job-details-title {
+    color: $blue;
+  }
+}
