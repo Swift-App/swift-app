@@ -6,8 +6,8 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = current_user.reservations.create(reservation_params)
-    if @reservation.valid?
+    @reservation = current_user.reservations.new(reservation_params)
+    if @reservation.save
       send_new_reservation_email
 
       redirect_to root_path

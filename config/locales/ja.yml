@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:      
+      user: Dude
+      mail_form: Dude
+    attributes:
+      user:
+        name: test
+    messages:
+      blank: を入力してください。
+      invalid: は不正な値です。
+  mail_form:
+    models:
+      contact: お問い合わせ
+    attributes:
+      contact:
+        email: メールアドレス
+        name: お名前
+        furigana: ふりがな
+        birthday: お誕生日
+        interview_date: 面接希望日
+        phone: 電話番号
+        company_name: 企業名
+        department: 部署名
+        person_in_charge: 担当者名
+        postal_code: 郵便番号
+        prefecture: 都道府県
+        city: 市町村
+        address_details: 番地・アパート名
+        website: HP
+        inquiry: ご依頼内容
+        remarks: 備考・相談内容

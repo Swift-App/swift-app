@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <h3 class="text-center">新規登録スタッフ</h3>
+    <%= simple_form_for @contact, url: '/staffs/contacts', html: {class: 'form-horizontal' } do |f| %>
+      <%= f.input :name, required: true, label: 'お名前', placeholder: '田中太郎' %>
+      <%= f.input :furigana, required: true, label: 'ふりがな', placeholder: 'たなかたろう' %>
+      <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
+      <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
+      <%= f.input :interview_date, as: :text, required: true, label: '面接希望日', placeholder: '', input_html: {rows: 5} %>
+      <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
+
+      <div class="terms">
+        <p>
+          【プライバシーポリシー／ご応募に伴う個人情報の取り扱いについて】<br />
+          １．事業者は、株式会社スイフトです。<br />
+          １．当社に登録いただいた情報は、登録会参加予約に関する準備、連絡、採用選考に利用します。尚、登録いただいた情報は当サイトへの登録情報として、以降当社からの重要なお知らせをご案内する場合があります。<br />
+          １．ご応募に際して、個人情報の登録は任意ですが、情報の全部または一部をご提供いただけない場合は、当社が提供するサービスをご利用になれないことがあります。<br />
+          １．当社に登録いただいた個人情報は、原則第三者に提供することはありません。<br />
+          １．当社に登録いただいた個人情報の処理を産廃業者、警備会社、サーバメンテナンス会社へ委託する場合があります。委託する場合は、当社が個人情報保護体制について一定の水準に達していると認める委託先とします。<br />
+          １．当社に登録いただいた個人情報の利用目的の通知、開示、内容の訂正、追加または削除、利用の停止、消去および第三者への提供の停止の申し出は、ご本人であることの確認後、遅滞なくおこないます。<br />
+          １．個人情報に関する相談、苦情、開示等のお申し出は、下記の個人情報保護管理者宛に文書でお申し出ください。<br />
+          　　〔個人情報保護管理者〕<br />
+          　　　所属：代表取締役　松本　慶一<br />
+          　　　住所：〒500-0022　愛知県名古屋市中区<br />
+          　　　FAX：06-0000-0000<br />
+          １．当社に登録いただいた個人情報は、次のいずれかに該当する場合、情報を取り消しまたは削除します。<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;・応募者から登録取り消しの申し出があったとき<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;・応募者に帰すべき事由で当社が必要と判断したとき<br />
+          １．当社に提供・登録いただいた個人情報は、登録取り消し（本人の申し出、当社による取り消しかは問わない）に際しては、本人および第三者にいかなる媒体によっても返却する義務を負わないこととします。<br />
+          １．当社は、登録者が容易に認識できない方法によって個人情報を取得することはありません。<br />
+          上記、記載事項に対し同意いたします。<br />
+
+        </p>
+      </div><!-- terms -->
+      </br>
+
+      <%= f.button :submit, '送信', class: "btn btn-primary pull-right"%>
+    <% end %>
+  </div><!-- col-xs-12 col-md-6 col-md-offset-3 -->
+</div><!-- row -->

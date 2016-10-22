@@ -70,3 +70,10 @@ $border-color: #dddddd;
     color: $blue;
   }
 }
+
+
+.terms {  
+  height: 200px; 
+  overflow: auto;
+  border: 2px solid $border-color;
+}
