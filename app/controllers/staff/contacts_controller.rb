@@ -6,7 +6,6 @@ class Staff::ContactsController < ApplicationController
   def create
     @contact = StaffContact.new(contact_params)
     @contact.request = request
-    binding.pry
     if @contact.deliver
       flash.now[:success] = 'ご連絡ありがとうございました。'
       redirect_to root_path

@@ -11,14 +11,20 @@ ja:
       invalid: は不正な値です。
   mail_form:
     models:
-      contact: お問い合わせ
+      staff_contact: スタッフ新規登録
+      company_contact: 企業様お問い合わせ
     attributes:
-      contact:
+      staff_contact:
         email: メールアドレス
         name: お名前
         furigana: ふりがな
         birthday: お誕生日
         interview_date: 面接希望日
+        phone: 電話番号        
+      company_contact:
+        staff_contact:
+        email: メールアドレス
+        furigana: ふりがな
         phone: 電話番号
         company_name: 企業名
         department: 部署名
