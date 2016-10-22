@@ -103,8 +103,8 @@ pre[class*="htmlCodeCollapse"] {
 .seagul-css-square { height:20px; width:20px; background-color:#65C6BB;margin-top:3px; }
 .pinkish-css-square { height:20px; width:20px; background-color:#F64747;margin-top:3px; }
 
-a { color:#00B7EB; cursor:pointer; }
-a:hover { color:#00B7EB; text-decoration:underline; cursor:pointer; }
+a { color:#00329a; cursor:pointer; }
+a:hover { color:#00329a; text-decoration:underline; cursor:pointer; }
 .link-white a { color:#fff; }
 .link-white a:hover { color:#fafafa; text-decoration:none; }
 
@@ -843,7 +843,7 @@ ul.list-arrow-2-color li:before {
 }
 
 .navbar.navbar-main ul.nav li:hover > a { 
-	border-bottom: 2px solid #00b7eb;
+	border-bottom: 2px solid #00329a;
 	-webkit-transition:all 0.5s ease;
 	-moz-transition:all 0.5s ease;
 	-o-transition:all 0.5s ease;

@@ -31,16 +31,17 @@
 
   p {
     font-size: 18px;
+    color: #333;
 
     .fa {
-      color: $orange;
+      color: $blue;
     }
   }
 
   h3 {
     color: $blue;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 10px;
   }
 }
