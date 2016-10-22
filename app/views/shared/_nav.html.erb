@@ -15,7 +15,7 @@
               <li><%= link_to '会員用ページ', staff_index_path %></li>          
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>              
             <% else %>
-              <li><%= link_to 'ログイン', new_user_session_path %></li>
+              <li><%= link_to '<i class="fa fa-lock" aria-hidden="true"></i> ログイン'.html_safe, new_user_session_path %></li>
             <% end %>
           </ul>
         </div>

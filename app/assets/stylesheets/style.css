@@ -1681,7 +1681,8 @@ blockquote {
 	margin:0 0 -2px 0;
 	padding-bottom:15px;
 	display:inline-block;
-	border-bottom:2px solid #00B7EB;
+	border-bottom: 2px solid #00308f;
+	color: #00308f;
 }
 .heading {
 	display:block;
@@ -2412,19 +2413,25 @@ h6.progress-head {
 }
 
 .topbar-list:last-child {
-	border-right:1px solid #eee;
+/*	border-right:1px solid #eee;*/
 }
 
 .topbar-list li {
 	border-left:1px solid #eee;
+	border-right:1px solid #eee;
 	padding:0 14px;
 }
 
 .topbar-list li a {
 	color:#8F8F8F; -webkit-transition:color 0.8s ease; -moz-transition:color 0.8s ease; -o-transition:color 0.8s ease; transition:color 0.8s ease;
+	text-decoration: none;
+	color: #333;
+	line-height: 1;
+	font-size: 12px;
 }
 .topbar-list li a:hover {
 	color:#00B7EB;
+	text-decoration: underline;
 }
 
 .home-icon {
@@ -2994,6 +3001,8 @@ h6.progress-head {
 
 .footer-light a {
 	font-weight:400;
+	text-decoration: none;
+	color: #337ab7;
 }
 
 .footer-light .thumbnail {
@@ -3012,9 +3021,9 @@ h6.progress-head {
 	padding-bottom:20px;
 	display:inline-block;
 	font-weight:400;
-	border-bottom:2px solid #00B7EB;
+	border-bottom:2px solid #00308f;
 	font-family:'Raleway', sans-serif;
-	color:#5F5F5F;
+	color:#333;
 	font-size:14px;
 }
 
