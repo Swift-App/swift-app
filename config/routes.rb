@@ -23,12 +23,12 @@ Rails.application.routes.draw do
   get 'staff/contact/new', to: 'staff/contacts#new', as: 'new_staff_contact'
   post 'staff/contacts', to: 'staff/contacts#create', as: 'staff_contacts'
 
-  resources :jobs
+  resources :jobs do
+    resources :confirmations, only: [:index, :new, :create]
+  end
 
   resources :completion_reports, only: [:new, :create]
   resources :attendence_reports, only: [:new, :create]
-
-  resources :job_confirmations, only: [:index, :new, :create]
 
   resources :reservations, only: [:new, :create]
 end

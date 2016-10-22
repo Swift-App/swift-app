@@ -1,7 +1,8 @@
 ja:
   activerecord:
     models:      
-      user: ユーザー      
+      user: ユーザー  
+      job: お仕事    
     attributes:
       user:
         first_name: 名
@@ -16,6 +17,9 @@ ja:
         city: 市町村
         address_details: 番地・アパート名
         photo: 写真
+      attendence_reports:
+        job_id: お仕事
+        report_type: 出退勤
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

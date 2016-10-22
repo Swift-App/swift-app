@@ -17,3 +17,8 @@
 //= require jquery-ui/datepicker-ja
 //= require turbolinks
 //= require_tree .
+
+
+$(document).on("turbolinks:load", function(){
+    $("input.datepicker").datepicker();
+});

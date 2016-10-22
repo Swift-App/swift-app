@@ -3,8 +3,8 @@
     <h3 class="text-center">出発報告</h3>
 
     <%= simple_form_for @attendence_report do |f| %>
-      <%= f.input :job_id, collection: current_user.jobs %>
-      <%= f.input :report_type %>      
+      <%= f.input :job_id, collection: current_user.jobs, label: 'お仕事' %>
+      <%= f.input :report_type, label: '出退勤' %>      
       <%= f.submit '完了', class: 'btn btn-success pull-right' %>
     <% end %>
   </div>

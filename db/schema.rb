@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022124627) do
+ActiveRecord::Schema.define(version: 20161022152514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 20161022124627) do
     t.index ["user_id"], name: "index_completion_reports_on_user_id", using: :btree
   end
 
+  create_table "confirmations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_confirmations_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_confirmations_on_user_id", using: :btree
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,15 +92,6 @@ ActiveRecord::Schema.define(version: 20161022124627) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
-  end
-
-  create_table "job_confirmations", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "job_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["job_id"], name: "index_job_confirmations_on_job_id", using: :btree
-    t.index ["user_id"], name: "index_job_confirmations_on_user_id", using: :btree
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -122,15 +122,15 @@ ActiveRecord::Schema.define(version: 20161022124627) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "date_1"
-    t.datetime "date_2"
-    t.datetime "date_3"
-    t.datetime "date_4"
-    t.datetime "date_5"
-    t.datetime "date_6"
-    t.datetime "date_7"
-    t.text     "additional_notes"
-    t.integer  "user_id"
+    t.date    "date_1"
+    t.date    "date_2"
+    t.date    "date_3"
+    t.date    "date_4"
+    t.date    "date_5"
+    t.date    "date_6"
+    t.date    "date_7"
+    t.text    "additional_notes"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
 
@@ -162,6 +162,6 @@ ActiveRecord::Schema.define(version: 20161022124627) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "job_confirmations", "jobs"
-  add_foreign_key "job_confirmations", "users"
+  add_foreign_key "confirmations", "jobs"
+  add_foreign_key "confirmations", "users"
 end

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :job_confirmation do
+  factory :confirmation do
     user nil
     job nil
   end
