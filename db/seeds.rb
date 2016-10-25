@@ -70,4 +70,4 @@ Job.create([
               category: "category",
               shift_category: "Shift category"
             }
-          ])
+          ])AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :reservations, only: [:new, :create]
+  resources :news_articles
 end
