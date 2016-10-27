@@ -13,5 +13,21 @@ ActiveAdmin.register NewsArticle do
 #   permitted
 # end
 
+	permit_params :title, :content
+
+	index do
+		column :title do |news_article|
+			link_to news_article.title, [:admin, news_article]
+		end
+		column :content
+	end
+
+	form do |f|
+		f.inputs "News Articles Details" do 
+			f.input :title
+			f.input :content, id: "editor"
+		end
+		f.actions
+	end
 
 end

@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20161025031437) do
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "pay_type"
+    t.string   "photo"
   end
 
   create_table "morrigan_editor_rails_editor_images", force: :cascade do |t|
@@ -144,20 +145,18 @@ ActiveRecord::Schema.define(version: 20161025031437) do
     t.index ["user_id", "job_id"], name: "index_reports_on_user_id_and_job_id", using: :btree
   end
 
-
-
   create_table "reservations", force: :cascade do |t|
-    t.date    "date_1"
-    t.date    "date_2"
-    t.date    "date_3"
-    t.date    "date_4"
-    t.date    "date_5"
-    t.date    "date_6"
-    t.date    "date_7"
-    t.text    "additional_notes"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer "user_id"
+    t.integer  "user_id"
+    t.date     "date_1"
+    t.date     "date_2"
+    t.date     "date_3"
+    t.date     "date_4"
+    t.date     "date_5"
+    t.date     "date_6"
+    t.date     "date_7"
+    t.text     "additional_notes"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
 
@@ -189,9 +188,9 @@ ActiveRecord::Schema.define(version: 20161025031437) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "confirmations", "jobs"
+  add_foreign_key "confirmations", "users"
   add_foreign_key "reports", "jobs"
   add_foreign_key "reports", "users"
   add_foreign_key "reservations", "users"
-  add_foreign_key "confirmations", "jobs"
-  add_foreign_key "confirmations", "users"
 end

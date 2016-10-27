@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
   get 'steps', to: 'static_pages#steps'
@@ -31,7 +32,6 @@ Rails.application.routes.draw do
   resources :attendence_reports, only: [:new, :create]
 
   resources :reservations, only: [:new, :create]
-  resources :news_articles
 
   mount MorriganEditorRails::Engine => "/morrigan_editor_rails" 
 end
