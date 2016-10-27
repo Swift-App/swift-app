@@ -1,5 +1,6 @@
-class Job < ApplicationRecord
+class Job < ApplicationRecord  
   include Filterable
+  mount_uploader :photo, JobPhotoUploader
 
   validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
             :number_of_positions, :work_date, :hours, :holidays, :certifications_and_experience,
@@ -9,6 +10,8 @@ class Job < ApplicationRecord
   has_many :completion_reports
   has_many :attendence_reports
   has_many :completion_reports
+
+  default_scope { order('created_at DESC') }
 
   scope :job_type, -> (job_type) { where job_type: job_type }
   scope :area, -> (area) { where area: area }

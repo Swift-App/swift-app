@@ -11,9 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-ja
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
+
+$(document).on("turbolinks:load", function(){
+    $("input.datepicker").datepicker();
+});

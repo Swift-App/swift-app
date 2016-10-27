@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe CompletionReportsController, type: :controller do
+  describe "GET #new" do
+    it "renders the new template" do
+      user = FactoryGirl.create(:user)
+
+      sign_in user
+      get :new
+
+      expect(response).to render_template :new
+    end
+  end
+
   describe "POST #create" do
     context "attributes are valid" do 
       it "creates a new report" do 

@@ -103,8 +103,8 @@ pre[class*="htmlCodeCollapse"] {
 .seagul-css-square { height:20px; width:20px; background-color:#65C6BB;margin-top:3px; }
 .pinkish-css-square { height:20px; width:20px; background-color:#F64747;margin-top:3px; }
 
-a { color:#00B7EB; cursor:pointer; }
-a:hover { color:#00B7EB; text-decoration:underline; cursor:pointer; }
+a { color:#00329a; cursor:pointer; }
+a:hover { color:#00329a; text-decoration:underline; cursor:pointer; }
 .link-white a { color:#fff; }
 .link-white a:hover { color:#fafafa; text-decoration:none; }
 
@@ -295,8 +295,8 @@ ul.list-arrow-2-color li:before {
 	border-bottom-right-radius:0;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-	background-color:#00B7EB;
-	border-color:#00B7EB;
+	background-color: #00329a;
+	border-color: #00379c;
 }
 
 .pagination>li>a, .pagination>li>span {
@@ -310,8 +310,8 @@ ul.list-arrow-2-color li:before {
 	border-color:#27AED4;
 }
 
-.pagination>li>a, .pagination>li>span { border-radius:50% !important;margin:0 5px;}
-
+/*.pagination>li>a, .pagination>li>span { border-radius:50% !important;margin:0 5px;}
+*/
 /* =Buttons
 -------------------------------------------------------------- */
 .btn-rw {
@@ -843,7 +843,7 @@ ul.list-arrow-2-color li:before {
 }
 
 .navbar.navbar-main ul.nav li:hover > a { 
-	border-bottom: 2px solid #00b7eb;
+	border-bottom: 2px solid #00329a;
 	-webkit-transition:all 0.5s ease;
 	-moz-transition:all 0.5s ease;
 	-o-transition:all 0.5s ease;
@@ -1681,7 +1681,8 @@ blockquote {
 	margin:0 0 -2px 0;
 	padding-bottom:15px;
 	display:inline-block;
-	border-bottom:2px solid #00B7EB;
+	border-bottom: 2px solid #00308f;
+	color: #00308f;
 }
 .heading {
 	display:block;
@@ -2412,7 +2413,7 @@ h6.progress-head {
 }
 
 .topbar-list:last-child {
-	border-right:1px solid #eee;
+/*	border-right:1px solid #eee;*/
 }
 
 .topbar-list li {
@@ -2420,11 +2421,20 @@ h6.progress-head {
 	padding:0 14px;
 }
 
+.topbar-list li:last-child {
+	border-right:1px solid #eee;
+}
+
 .topbar-list li a {
 	color:#8F8F8F; -webkit-transition:color 0.8s ease; -moz-transition:color 0.8s ease; -o-transition:color 0.8s ease; transition:color 0.8s ease;
+	text-decoration: none;
+	color: #333;
+	line-height: 1;
+	font-size: 12px;
 }
 .topbar-list li a:hover {
 	color:#00B7EB;
+	text-decoration: underline;
 }
 
 .home-icon {
@@ -2985,6 +2995,7 @@ h6.progress-head {
 	color:#8F8F8F;
 	vertical-align:bottom;
 	border-top:1px dotted #d2d2d2;
+	margin-top: 40px;
 }
 
 .footer-light p {
@@ -2993,6 +3004,8 @@ h6.progress-head {
 
 .footer-light a {
 	font-weight:400;
+	text-decoration: none;
+	color: #337ab7;
 }
 
 .footer-light .thumbnail {
@@ -3011,9 +3024,9 @@ h6.progress-head {
 	padding-bottom:20px;
 	display:inline-block;
 	font-weight:400;
-	border-bottom:2px solid #00B7EB;
+	border-bottom:2px solid #00308f;
 	font-family:'Raleway', sans-serif;
-	color:#5F5F5F;
+	color:#333;
 	font-size:14px;
 }
 

@@ -21,9 +21,9 @@
           <!-- Contact -->
           <div class="col-sm-3 mg25-xs">
               <div class="heading-footer"><h4>お問い合わせ</h4></div>
-              <p>
-                <%= link_to 'スタッフ様お問い合わせ', '' %><br>
-                <%= link_to '企業様お問い合わせ', '' %>
+              <ul style="list-style-type: none;">
+                <li><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> スタッフ様お問い合わせ'.html_safe, new_staff_contact_path %></li>
+                <li><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 企業様お問い合わせ'.html_safe, new_company_contact_path %></li>
               </p>
           </div>
 
