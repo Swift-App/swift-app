@@ -32,4 +32,6 @@ Rails.application.routes.draw do
 
   resources :reservations, only: [:new, :create]
   resources :news_articles
+
+  mount MorriganEditorRails::Engine => "/morrigan_editor_rails" 
 end

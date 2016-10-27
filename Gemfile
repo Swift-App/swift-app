@@ -92,3 +92,4 @@ gem 'rails-controller-testing'
 gem "font-awesome-rails"
 
 gem 'jquery-ui-rails'
+gem 'morrigan_editor_rails'
