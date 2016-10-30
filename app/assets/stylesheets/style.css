@@ -60,7 +60,7 @@ body {
 	background:#fff;
 	font:normal 14px 'Open Sans', sans-serif;
 	font-weight:300;
-	color:#616161;
+	color: #333;
 	height:100%;
 	line-height:1.6;
 	min-height:100% !important;
@@ -189,7 +189,7 @@ section {
 /* =Typography
 -------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6 {
-	color:#5F5F5F;
+	color: #333;
 	font-family:'Raleway', sans-serif;
 	font-weight:400;
 	margin:0 0 14px;
