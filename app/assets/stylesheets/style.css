@@ -836,10 +836,11 @@ ul.list-arrow-2-color li:before {
 }
 
 .navbar.navbar-main ul.nav a { 
-	color: #337ab7;
+	color: #00329a;
 	border-bottom: 2px solid transparent;
 	background: transparent;
 	text-decoration: none;
+	font-size: 14px;
 }
 
 .navbar.navbar-main ul.nav li:hover > a { 
@@ -2801,7 +2802,10 @@ h6.progress-head {
 
 .table>thead>tr>th { background-color:#F7F7F7; }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th { border-top:1px solid #E4E9F0; }
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th { 
+	border-top:1px solid #E4E9F0; 
+	padding: 20px;
+}
 
 .cart-table {
 	margin-bottom:0;

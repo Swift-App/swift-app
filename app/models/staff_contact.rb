@@ -1,4 +1,4 @@
-class StaffContact < MailForm::Base 
+class StaffContact < MailForm::Base  
   attr_accessor :terms_and_conditions
   
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i

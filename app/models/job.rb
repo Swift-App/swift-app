@@ -3,8 +3,7 @@ class Job < ApplicationRecord
   mount_uploader :photo, JobPhotoUploader
 
   validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
-            :number_of_positions, :work_date, :hours, :holidays, :certifications_and_experience,
-            :benefits, :person_in_charge, :remarks, :pay_range, :area, :shift_category, :duration, :category, presence: true
+            :number_of_positions, :work_date, :hours, :holidays, :person_in_charge, :pay_range, :area, :shift_category, :duration, :category, :photo, presence: true
 
   has_many :completion_reports
   has_many :attendence_reports
@@ -23,7 +22,7 @@ class Job < ApplicationRecord
 
   SHIFT_CATEGORIES = %w(平日勤務 週末勤務 シフト勤務 自由勤務)
 
-  DURATIONS = %w(短期（１日〜２か月） 中期（２〜６か月） 長期（６か月〜）)
+  DURATIONS = %w(短期（1日~2か月） 中期（2~6か月） 長期（6か月~）)
 
   CATEGORIES = %w(イベント・キャンペーン系 物流・軽作業系 製造系 引越・梱包系 販売・接客系 オフィス系)
 

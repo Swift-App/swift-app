@@ -1,28 +1,75 @@
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <h3 class="text-center">給与受取り予約</h3>
-    <p><small>クリックして日程を選択してください。</small></p>
+    <%= link_to '戻る', staff_index_path, class: 'btn btn-warning btn-round' %>
+    <h3 class="text-center" style="margin-bottom: 0px;">給与受取り予約</h3>
+    <p class="text-center" style="margin-bottom: 20px;"><small>クリックして日程を選択してください。</small></p>
 
+    
     <%= simple_form_for @payment_reservation do |f| %>
-      <label>支払い希望日 *</label> 
-      <%= f.text_field :request_date,　as: :string, required: true, class: 'form-control' %>
-      <label>勤務日1</label><br>
-      <%= f.text_field :date_1,　as: :string, required: false, class: 'form-control' %>
-      <br />
-      <label>勤務日2</label><br>
-      <%= f.text_field :date_2,　as: :string, required: false, class: 'form-control' %>
+      <% if @payment_reservation.confirming.blank? %>
+        <label>支払い希望日 *</label> 
+        <%= f.text_field :request_date,　as: :string, required: true, class: 'form-control' %>
+        <label>勤務日1</label><br>
+        <%= f.text_field :date_1,　as: :string, required: false, class: 'form-control' %>
+        <br />
+        <label>勤務日2</label><br>
+        <%= f.text_field :date_2,　as: :string, required: false, class: 'form-control' %>
 
-      <label>勤務日3</label><br>
-      <%= f.text_field :date_3,　as: :string, required: false, class: 'form-control' %>
+        <label>勤務日3</label><br>
+        <%= f.text_field :date_3,　as: :string, required: false, class: 'form-control' %>
 
-      <label>勤務日4</label><br>
-      <%= f.text_field :date_4,　as: :string, required: false, class: 'form-control' %>
+        <label>勤務日4</label><br>
+        <%= f.text_field :date_4,　as: :string, required: false, class: 'form-control' %>
 
-      <label>勤務日5</label><br>
-      <%= f.text_field :date_5,　as: :string, required: false, class: 'form-control' %>
+        <label>勤務日5</label><br>
+        <%= f.text_field :date_5,　as: :string, required: false, class: 'form-control' %>
 
-      <%= f.input :comments, as: :text, required: false, label: '備考' %>
-      <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
+        <%= f.input :comments, as: :text, required: false, label: '備考' %>
+        <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
+      <% else %>
+        <table class="table table-responsive">
+          <tr>
+            <th>支払い希望日<th>
+            <td><%= @payment_reservation.request_date %><td>
+          <tr>
+            <th>勤務日1<th>
+            <td><%= @payment_reservation.date_1 %><td>
+          </tr>
+          <tr>
+            <th>勤務日2<th>
+            <td><%= @payment_reservation.date_2 %><td>
+          </tr>
+          <tr>
+            <th>勤務日3<th>
+            <td><%= @payment_reservation.date_3 %><td>
+          </tr>
+          <tr>
+            <th>勤務日4<th>
+            <td><%= @payment_reservation.date_4 %><td>
+          </tr>
+          <tr>
+            <th>勤務日5<th>
+            <td><%= @payment_reservation.date_5 %><td>
+          </tr>
+          <tr>
+            <th>備考<th>
+            <td><%= @payment_reservation.comments %><td>
+          </tr>
+        </table>
+        <%= f.hidden_field :request_date,　as: :string, required: true, class: 'form-control' %>
+        <%= f.hidden_field :date_1,　as: :string, required: false, class: 'form-control' %>
+        <%= f.hidden_field :date_2,　as: :string, required: false, class: 'form-control' %>
+        <%= f.hidden_field :date_3,　as: :string, required: false, class: 'form-control' %>
+        <%= f.hidden_field :date_4,　as: :string, required: false, class: 'form-control' %>
+        <%= f.hidden_field :date_5,　as: :string, required: false, class: 'form-control' %>
+
+        <% f.input :comments, as: :text, required: false, label: '備考' %>
+        <p>この内容でよろしいでしょうか？</p>
+        <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
+        
+      <% end %>
+
+      <%= f.hidden_field :confirming %>
     <% end %>
   </div>
 </div>

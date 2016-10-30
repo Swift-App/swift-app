@@ -31,6 +31,6 @@ Rails.application.routes.draw do
   resources :attendence_reports, only: [:new, :create]
 
   resources :payment_reservations, only: [:new, :create]
-
+  
   resources :reservations, only: [:new, :create]
 end

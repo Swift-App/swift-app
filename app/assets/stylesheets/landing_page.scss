@@ -1,30 +1,28 @@
 .nav-box {
-  background: #337ab7;
-  padding: 50px;
-  height: 200px;  
+  padding: 20px; 
+  transition: all 0.5s ease;
 
   &:hover {
-    background-color: rgba(8, 128, 215, 0.9);
-    transition: all 0.5s ease;
+    background: #eee;
+    transition: all 1s ease;
   }
 
   .fa {
     font-size: 50px;
-    color: white;
+    color: #00329a;
     margin-bottom: 20px;
-  }
-
-  h3 {
-    color: white;
-    width: 50%;
-    top: 30%;
-    position: absolute;
-    left: 25%;
+    display: block;
+    margin: 0 auto;
     text-align: center;
-
-    a {
-      color: white;
-      text-decoration: none;
-    }
   }
+
+  .btn-navbox {
+    display: block;
+    background: #e59501;
+    border-radius: 120px;
+    padding: 10px 20px;
+    color: white;
+    margin: 20px auto;
+  }
+
 }

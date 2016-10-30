@@ -6,7 +6,7 @@ ActiveAdmin.register Job do
                 :number_of_positions, :work_date, :hours, :holidays, 
                 :certifications_and_experience, 
                 :benefits, :employment_type, :person_in_charge, :remarks, :branch_in_charge, 
-                :pay_range, :area, :shift_category, :duration, :category
+                :pay_range, :area, :shift_category, :duration, :category, :photo
 
   index do 
     column :id
@@ -17,7 +17,7 @@ ActiveAdmin.register Job do
     column :job_type
   end
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs "お仕事登録" do    
       f.input :title, placeholder: '【有料職業紹介】ネットワークエンジニア■ネットワークの運用・保守業務のお仕事をしていただきます。'
       f.input :description, placeholder: '職歴、経験、資格、新卒・既卒は一切関係ございません。
@@ -57,6 +57,7 @@ CCNA（Cisco Certified Network Associate）の取得をしてもらっていま�
 　大卒　　　：220,000円+インセンティブ
 　専門学校卒：220,000円+インセンティブ
 '
+      f.input :photo
     end
     f.actions
   end

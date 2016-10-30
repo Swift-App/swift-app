@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+ï»¿class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
@@ -7,13 +7,13 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = current_user.reservations.new(reservation_params)
+        
     if @reservation.save
       send_new_reservation_email
       
-      flash[:success] = "×·¼ÓÓè¼s¤¬ÍêÁË¤¤¤¿¤·¤Þ¤·¤¿¡£"
+      flash[:success] = "çµ¦ä¸Žå—å–ã‚Šäºˆç´„ãŒå®Œäº†ã„ãŸã—ã¾ã—ãŸã€‚"
       redirect_to staff_index_path
     else
-      flash[:alert] = "¥¨¥é©`¤¬Æð¤­¤Þ¤·¤¿¡£´ó‰äÉê¤·ÔU¤´¤¶¤¤¤Þ¤»¤ó¤¬¡¢¤â¤¦Ò»¶ÈÄÚÈÝ¤ò¤´´_ÕJ¤ÎÉÏËÍÐÅ¤·¤Æ¤¯¤À¤µ¤¤¡£"
       render :new
     end
   end
@@ -25,6 +25,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit( :user_id, :date_1, :date_2, :date_3, :date_4, :date_5, :date_6, :date_7)
+    params.require(:reservation).permit( :user_id, :date_1, :date_2, :date_3, :date_4, :date_5, :date_6, :date_7, :confirming)
   end
 end
