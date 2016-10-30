@@ -41,6 +41,9 @@ ja:
         shift_category: シフト
         duration: 期間
         category: カテゴリー
+      completion_report:
+        job_id: お仕事
+        comments: 備考
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

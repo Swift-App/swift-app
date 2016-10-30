@@ -6,8 +6,8 @@ class AttendenceReportsController < ApplicationController
   end
 
   def create
-    @attendence_report = current_user.attendence_reports.create(attendence_report_params)
-    if @attendence_report.valid?
+    @attendence_report = current_user.attendence_reports.new(attendence_report_params)
+    if @attendence_report.save
 
       send_attendance_report_email
 

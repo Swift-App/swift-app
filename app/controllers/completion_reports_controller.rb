@@ -6,8 +6,8 @@ class CompletionReportsController < ApplicationController
   end
 
   def create    
-    @completion_report = current_user.completion_reports.create(completion_report_params)
-    if @completion_report.valid?
+    @completion_report = current_user.completion_reports.new(completion_report_params)
+    if @completion_report.save
 
       send_job_completion_email
 
@@ -15,7 +15,7 @@ class CompletionReportsController < ApplicationController
       redirect_to staff_index_path
     else
       flash[:alert] = "エラーが起きました。申し訳ございませんが、もう一度内容をご確認の上送信してください。"
-      redirect_to staff_index_path
+      render :new
     end
   end
 
