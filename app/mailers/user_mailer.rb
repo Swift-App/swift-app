@@ -11,12 +11,12 @@ class UserMailer < ApplicationMailer
     @user = args.fetch(:user)
     @attendance_report = args.fetch(:attendance_report)
 
-    mail(subject: "#{@user.name}が出発報告をしました")
+    mail(subject: "#{@user.name}から#{@attendance_report.report_type}がありました。")
   end
 
   def reservation(user)
     @user = user
-    mail(to: @user.email, subject: 'Job reservation')
+    mail(to: @user.email, subject: "#{@user.name}　追加予約")
   end
 
   def job_confirmation(args)
@@ -27,16 +27,16 @@ class UserMailer < ApplicationMailer
 
   def report_completion(args)
     @user = args.fetch(:user)
-    @completion_report_params = args.fetch(:completion_report_params)
-    @job = Job.find(@completion_report_params.job_id)
-    attachments.inline['photo.png'] = File.read(image_path(@completion_report_params[:photo]))
+    @completion_report = args.fetch(:completion_report)
+    @job = @completion_report.job
+    attachments.inline['attachment.png'] = File.read(image_path(@completion_report.photo))
 
-    mail(subject: "仕事終了報告")
+    mail(subject: "<%= @user.name %>「終了報告」")
   end
 
   def reservation_made(args)
     @reservation = args.fetch(:reservation)
     @user = args.fetch(:user)
-    mail(subject: "#{@user.name}がお仕事予約しました")
+    mail(subject: "#{@user.name}　追加予約")
   end
 end

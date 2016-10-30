@@ -19,11 +19,22 @@ $border-color: #dddddd;
 .job_box_title {
   h3 {
     a {
-      color: $blue;
+      color: $secondary-blue;
+      color: #337ab7;
       font-weight: 600;
       font-size: 18px;
+      text-decoration: underline;
     }
   }
+}
+
+.job-information {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.job_box_description {
+  margin-bottom: 50px;
 }
 
 .btn-job-details {
