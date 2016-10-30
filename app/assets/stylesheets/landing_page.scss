@@ -2,11 +2,10 @@
   padding: 20px; 
   transition: all 0.5s ease;
 
-  &:hover {
-    background: #eee;
-    transition: all 1s ease;
+  img {
+    border: 2px solid #eee;
   }
-
+  
   .fa {
     font-size: 50px;
     color: #00329a;
