@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:      
       user: ユーザー  
-      job: お仕事    
+      job: お仕事
     attributes:
       user:
         first_name: 名
@@ -17,9 +17,32 @@ ja:
         city: 市町村
         address_details: 番地・アパート名
         photo: 写真
-      attendence_reports:
+      attendence_report:
         job_id: お仕事
         report_type: 出退勤
+      job:
+        title: 題名
+        description: 説明
+        pay_amount: 給与
+        job_type: 仕事種類
+        content: 仕事内容
+        location: 勤務地
+        nearest_station: 最寄り駅
+        number_of_positions: 募集人数
+        work_date: 勤務日
+        hours: 勤務時間
+        holidays: 休日
+        certifications_and_experience: 資格・経験
+        benefits: 待遇
+        employment_type: 雇用形態
+        person_in_charge: 担当者
+        remarks: 備考
+        branch_in_charge: 担当支店
+        pay_range: 給与範囲
+        area: エリア
+        shift_category: シフト
+        duration: 期間
+        category: カテゴリー
     messages:
       blank: を入力してください。
       invalid: は不正な値です。
