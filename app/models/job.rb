@@ -15,7 +15,6 @@ class Job < ApplicationRecord
 
   scope :job_type, -> (job_type) { where job_type: job_type }
   scope :area, -> (area) { where area: area }
-  scope :employment_type, -> (employment_type) { where employment_type: employment_type }
   scope :duration, -> (duration) { where duration: duration }
   scope :shift_category, -> (shift_category) { where shift_category: shift_category }
   scope :categories, -> (categories) { where categories: categories }
@@ -26,7 +25,7 @@ class Job < ApplicationRecord
 
   DURATIONS = %w(短期（１日〜２か月） 中期（２〜６か月） 長期（６か月〜）)
 
-  CATEGORIES = %w(イベント・キャンペーン系 物流・軽作業系 製造系 引越・梱包系 配送・引越助手系 飲食店フード系 販売・接客系 オフィス系)
+  CATEGORIES = %w(イベント・キャンペーン系 物流・軽作業系 製造系 引越・梱包系 販売・接客系 オフィス系)
 
   JOB_TYPE = %w(正社員募集 転職支援 紹介予定派遣)
 end

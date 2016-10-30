@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022174247) do
+ActiveRecord::Schema.define(version: 20161030044233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,8 +97,7 @@ ActiveRecord::Schema.define(version: 20161022174247) do
   create_table "jobs", force: :cascade do |t|
     t.string   "title",                         null: false
     t.text     "description",                   null: false
-    t.string   "job_type"
-    t.string   "content"
+    t.text     "content"
     t.string   "location"
     t.string   "nearest_station"
     t.string   "number_of_positions"
@@ -107,10 +106,8 @@ ActiveRecord::Schema.define(version: 20161022174247) do
     t.string   "holidays"
     t.string   "certifications_and_experience"
     t.string   "benefits"
-    t.string   "employment_type"
     t.string   "person_in_charge",              null: false
     t.text     "remarks"
-    t.string   "branch_in_charge",              null: false
     t.integer  "pay_range"
     t.string   "area"
     t.string   "shift_category"
@@ -120,6 +117,7 @@ ActiveRecord::Schema.define(version: 20161022174247) do
     t.datetime "updated_at",                    null: false
     t.string   "pay_amount"
     t.string   "photo"
+    t.string   "job_type"
   end
 
   create_table "reservations", force: :cascade do |t|

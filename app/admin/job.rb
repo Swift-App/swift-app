@@ -49,7 +49,6 @@ CCNA（Cisco Certified Network Associate）の取得をしてもらっていま�
       f.input :certifications_and_experience, placeholder: '学歴不問 未経験者歓迎　 普通自動車免許'
       f.input :benefits, placeholder: '【保険】
 　雇用、労災、健康、厚生年金保険'
-      f.input :employment_type, placeholder: '有料職業紹介'
       f.input :person_in_charge, placeholder: '東京支店　担当：鈴木 000-000-0000'
       f.input :remarks, placeholder: '【想定年収】350万円～
 　※ご経験、前年収、ご年齢に応じて決定します。
@@ -58,7 +57,6 @@ CCNA（Cisco Certified Network Associate）の取得をしてもらっていま�
 　大卒　　　：220,000円+インセンティブ
 　専門学校卒：220,000円+インセンティブ
 '
-      f.input :branch_in_charge, placeholder: '〒000-0000　東京都渋谷区　○○ビル1F'
     end
     f.actions
   end

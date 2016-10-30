@@ -32,12 +32,10 @@ ja:
         work_date: 勤務日
         hours: 勤務時間
         holidays: 休日
-        certifications_and_experience: 資格・経験
+        certifications_and_experience: 応募資格
         benefits: 待遇
-        employment_type: 雇用形態
         person_in_charge: 担当者
         remarks: 備考
-        branch_in_charge: 担当支店
         pay_range: 給与範囲
         area: エリア
         shift_category: シフト
