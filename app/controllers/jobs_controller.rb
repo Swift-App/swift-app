@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.filter(params.slice(:job_type, :area, :duration, :shift_category, :categories)).page(params[:page])
+    @jobs = Job.filter(params.slice(:job_type, :area, :duration, :shift_category, :categories, :pay_range)).page(params[:page])
   end
 
   def show

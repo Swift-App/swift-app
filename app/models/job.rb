@@ -18,6 +18,7 @@ class Job < ApplicationRecord
   scope :duration, -> (duration) { where duration: duration }
   scope :shift_category, -> (shift_category) { where shift_category: shift_category }
   scope :categories, -> (categories) { where categories: categories }
+  scope :pay_range, -> (pay_range) { where pay_range: pay_range }
 
   AREAS = %w(関西エリア 中部エリア 関東エリア)
 
@@ -28,4 +29,6 @@ class Job < ApplicationRecord
   CATEGORIES = %w(イベント・キャンペーン系 物流・軽作業系 製造系 引越・梱包系 販売・接客系 オフィス系)
 
   JOB_TYPE = %w(正社員募集 転職支援 紹介予定派遣)
+
+  PAY_RANGE = %w(時給800円以上 時給900円以上 時給1000円以上 日給7000円以上 日給8000円以上 日給9000円以上 月給10万円以上 月給15万円以上 月給20万円以上 月給25万円以上 日給10000円以上)
 end

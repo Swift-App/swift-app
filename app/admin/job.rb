@@ -33,7 +33,7 @@ ActiveAdmin.register Job do
 CCNA（Cisco Certified Network Associate）の取得をしてもらっていますが、
 その資格取得にかかる一切の学費は無料で受講することが可能です。'
       f.input :pay_amount, placeholder: '200000円／月収'
-      f.input :pay_range, placeholder: '月給20万円以上'
+      f.input :pay_range, as: :select, collection: Job::PAY_RANGE
       f.input :area, as: :select, collection: Job::AREAS
       f.input :shift_category, as: :select, collection: Job::SHIFT_CATEGORIES
       f.input :duration, as: :select, collection: Job::DURATIONS

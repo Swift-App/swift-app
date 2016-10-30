@@ -43,8 +43,8 @@
 
   <div class="sidebar-contents">
     <ul>
-      <% Job::DURATIONS.each do |duration| %>
-        <li><%= link_to duration, jobs_path(pay_range: duration) %></li>
+      <% Job::PAY_RANGE.each do |pay_range| %>
+        <li><%= link_to pay_range, jobs_path(pay_range: pay_range) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->
