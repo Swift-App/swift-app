@@ -30,5 +30,7 @@ Rails.application.routes.draw do
   resources :completion_reports, only: [:new, :create]
   resources :attendence_reports, only: [:new, :create]
 
+  resources :payment_reservations, only: [:new, :create]
+
   resources :reservations, only: [:new, :create]
 end

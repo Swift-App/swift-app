@@ -240,7 +240,7 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
-    font-awesome-sass (4.6.2)
+    font-awesome-sass (4.7.0)
       sass (>= 3.2)
     formatador (0.2.5)
     formtastic (3.1.4)
@@ -432,7 +432,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   figaro
   fog (= 1.36.0)
-  font-awesome-sass (~> 4.6.2)
+  font-awesome-sass (~> 4.7.0)
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails

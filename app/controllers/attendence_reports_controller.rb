@@ -8,7 +8,6 @@ class AttendenceReportsController < ApplicationController
   def create
     @attendence_report = current_user.attendence_reports.new(attendence_report_params)
     if @attendence_report.save
-
       send_attendance_report_email
 
       flash[:success] = "終了報告が完了いたしました。"

@@ -39,4 +39,10 @@ class UserMailer < ApplicationMailer
     @user = args.fetch(:user)
     mail(subject: "#{@user.name}　追加予約")
   end
+
+  def payment_reservation_made(args)
+    @payment_reservation = args.fetch(:payment_reservation)
+    @user = args.fetch(:user)
+    mail(subject: "#{@user.name} 給与予約")
+  end
 end

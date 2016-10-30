@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <h3 class="text-center">給与受取り予約</h3>
+    <p><small>クリックして日程を選択してください。</small></p>
+
+    <%= simple_form_for @payment_reservation do |f| %>
+      <label>支払い希望日 *</label> 
+      <%= f.text_field :request_date,　as: :string, required: true, class: 'form-control' %>
+      <label>勤務日1</label><br>
+      <%= f.text_field :date_1,　as: :string, required: false, class: 'form-control' %>
+      <br />
+      <label>勤務日2</label><br>
+      <%= f.text_field :date_2,　as: :string, required: false, class: 'form-control' %>
+
+      <label>勤務日3</label><br>
+      <%= f.text_field :date_3,　as: :string, required: false, class: 'form-control' %>
+
+      <label>勤務日4</label><br>
+      <%= f.text_field :date_4,　as: :string, required: false, class: 'form-control' %>
+
+      <label>勤務日5</label><br>
+      <%= f.text_field :date_5,　as: :string, required: false, class: 'form-control' %>
+
+      <%= f.input :comments, as: :text, required: false, label: '備考' %>
+      <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+  let today = new Date().toJSON().slice(0,10);
+  $("input[type=text]").datepicker({defaultDate: today, dateFormat: 'yy-mm-dd', orientation: "bottom"});
+});
+</script>

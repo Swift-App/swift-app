@@ -7,8 +7,9 @@ class User < ApplicationRecord
   has_many :confirmations, dependent: :destroy
   has_many :jobs, through: :confirmations
   has_many :reservations, dependent: :destroy
-  has_many :attendence_reports
-  has_many :completion_reports
+  has_many :attendence_reports, dependent: :destroy
+  has_many :completion_reports, dependent: :destroy
+  has_many :payment_reservations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 

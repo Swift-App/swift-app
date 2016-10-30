@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030102411) do
+ActiveRecord::Schema.define(version: 20161030104904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,20 @@ ActiveRecord::Schema.define(version: 20161030102411) do
     t.string   "job_type"
   end
 
+  create_table "payment_reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "request_date"
+    t.date     "date_1"
+    t.date     "date_2"
+    t.date     "date_3"
+    t.date     "date_4"
+    t.date     "date_5"
+    t.date     "comments"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_payment_reservations_on_user_id", using: :btree
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.date    "date_1"
     t.date    "date_2"
@@ -163,4 +177,5 @@ ActiveRecord::Schema.define(version: 20161030102411) do
 
   add_foreign_key "confirmations", "jobs"
   add_foreign_key "confirmations", "users"
+  add_foreign_key "payment_reservations", "users"
 end
