@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def name
     "#{last_name} #{first_name}"
   end
+
+  def registered?(job:)
+    jobs.include?(job)
+  end
 end

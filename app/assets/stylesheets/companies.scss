@@ -1,5 +1,11 @@
 @import 'components/main';
 
+.btn-job-action {
+  position: absolute; 
+  right: 10px; 
+  bottom: 10px;
+}
+
 .merit-box {
   border: 4px solid $orange;
   padding: 20px;

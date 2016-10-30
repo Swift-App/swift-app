@@ -26,6 +26,6 @@ class AttendenceReportsController < ApplicationController
   end
 
   def attendence_report_params
-    params.require(:attendence_report).permit(:report_type, :job_id, :user_id).merge(job_id: params[:job_id])
+    params.require(:attendence_report).permit(:report_type, :job_id, :user_id)
   end
 end

@@ -4,7 +4,7 @@
 
     <%= simple_form_for @attendence_report do |f| %>
       <%= f.input :job_id, collection: current_user.jobs, label: 'お仕事' %>
-      <%= f.input :report_type, label: '出退勤', collection: ["出発報告", "集合報告"] %>      
+      <%= f.input :report_type, label: '出退勤', collection: AttendenceReport::REPORT_TYPES %>      
       <%= f.submit '完了', class: 'btn btn-success pull-right' %>
     <% end %>
   </div>

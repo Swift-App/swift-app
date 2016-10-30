@@ -43,22 +43,20 @@ RSpec.describe CompletionReportsController, type: :controller do
 
     context "attributes are not valid" do 
       it "does not create a new report" do 
-        user = FactoryGirl.create(:user)
-        job = FactoryGirl.create(:job)
+        user = FactoryGirl.create(:user)        
 
         sign_in user
 
         expect {
-          post :create, completion_report: FactoryGirl.attributes_for(:completion_report, comments: nil, job_id: job.id)
+          post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_id: nil)
         }.to change(CompletionReport, :count).by(0)
       end
 
       it "renders the new template" do 
         user = FactoryGirl.create(:user) 
-        job = FactoryGirl.create(:job)
 
         sign_in user
-        post :create , completion_report: FactoryGirl.attributes_for(:completion_report, comments: nil, job_id: job.id)
+        post :create , completion_report: FactoryGirl.attributes_for(:completion_report, job_id: nil)
 
         expect(response).to render_template :new
       end

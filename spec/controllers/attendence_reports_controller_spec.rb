@@ -38,7 +38,7 @@ RSpec.describe AttendenceReportsController, type: :controller do
           sign_in user
 
           expect {
-            post :create, job_id: job.id, attendence_report: FactoryGirl.attributes_for(:attendence_report)
+            post :create, attendence_report: FactoryGirl.attributes_for(:attendence_report, job_id: job.id)
           }.to change(AttendenceReport, :count).by(1)
           expect(response).to redirect_to staff_index_path
           expect(UserMailer).to have_received(:attendance_report)
@@ -54,7 +54,7 @@ RSpec.describe AttendenceReportsController, type: :controller do
           sign_in user
 
           expect {
-            post :create, job_id: job.id, attendence_report: FactoryGirl.attributes_for(:attendence_report, report_type: nil)
+            post :create, attendence_report: FactoryGirl.attributes_for(:attendence_report, report_type: nil, job_id: job.id)
           }.to change(AttendenceReport, :count).by(0)
           expect(response).to render_template :new
         end

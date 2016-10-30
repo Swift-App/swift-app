@@ -3,8 +3,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-md-4">
-
-
+      <%= image_tag job.photo, class: 'img-responsive center-block' %>
     </div><!-- col-xs-12 col-md-4 -->
 
     <div class="col-xs-12 col-md-8">
@@ -13,7 +12,11 @@
 
         <br />
 
-        <%= link_to 'お申し込み', new_job_confirmation_path(job), class: 'btn btn-lg btn-success pull-right', style: 'margin-top: 20px' %>
+        <% if current_user.registered?(job: job) %>
+          <a class="btn btn-sm btn-warning pull-right" style="margin-top: 20px;"><i class="fa fa-check-square-o" aria-hidden="true"></i> もうすでにお申し込みされています</a>
+        <% else %>
+          <%= link_to 'お申し込み', new_job_confirmation_path(job), class: 'btn btn-lg btn-success pull-right', style: 'margin-top: 20px;' %>
+        <% end %>
       </div>
 
     </div><!-- col-xs-12 col-md-4 -->
@@ -74,11 +77,6 @@
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>雇用形態</strong></td>
-      <td><%= job.employment_type %></td>
-    </tr> 
-
-    <tr>
       <td class="col-xs-3"><strong>担当者</strong></td>
       <td><%= job.person_in_charge %></td>
     </tr> 
@@ -88,16 +86,14 @@
       <td><%= job.remarks %></td>
     </tr> 
 
-    <tr>
-      <td class="col-xs-3"><strong>担当支店</strong></td>
-      <td><%= job.branch_in_charge %></td>
-    </tr> 
   </table>
 
-  <% if user_signed_in? %>
-    <%= link_to 'お申し込み', new_job_confirmation_path(job), class: 'btn btn-lg btn-success', style: 'position: absolute; right: 10px; bottom: 10px;' %>
+  <% if user_signed_in? %> 
+    <% unless current_user.registered?(job: job) %>      
+      <%= link_to 'お申し込み', new_job_confirmation_path(job), class: 'btn btn-lg btn-success btn-job-action' %>
+    <% end %>
   <% else %>
-    <%= link_to 'お申し込み', new_staff_contact_path, class: 'btn btn-lg btn-success', style: 'position: absolute; right: 10px; bottom: 10px;' %>
+    <%= link_to 'お申し込み', new_staff_contact_path, class: 'btn btn-lg btn-success btn-job-action' %>
   <% end %>
 </div>
 
