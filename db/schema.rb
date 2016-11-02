@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161102155151) do
-=======
-ActiveRecord::Schema.define(version: 20161030192902) do
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
+ActiveRecord::Schema.define(version: 20161025031437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,15 +47,9 @@ ActiveRecord::Schema.define(version: 20161030192902) do
   end
 
   create_table "attendence_reports", force: :cascade do |t|
-<<<<<<< HEAD
-    t.integer  "report_type"
-    t.integer  "job_id"
-    t.integer  "user_id"
-=======
     t.integer  "user_id"
     t.integer  "job_id"
     t.string   "report_type"
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -118,17 +108,11 @@ ActiveRecord::Schema.define(version: 20161030192902) do
   end
 
   create_table "jobs", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string   "title",                                       null: false
-    t.text     "description",                                 null: false
     t.string   "pay_amount",                    default: "0", null: false
     t.string   "job_type"
-    t.string   "content"
-=======
     t.string   "title",                         null: false
     t.text     "description",                   null: false
     t.text     "content"
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
     t.string   "location"
     t.string   "nearest_station"
     t.string   "number_of_positions"
@@ -137,25 +121,25 @@ ActiveRecord::Schema.define(version: 20161030192902) do
     t.string   "holidays"
     t.string   "certifications_and_experience"
     t.string   "benefits"
-<<<<<<< HEAD
     t.string   "employment_type"
-    t.string   "person_in_charge",                            null: false
-    t.text     "remarks"
     t.string   "branch_in_charge",                            null: false
-=======
     t.string   "person_in_charge",              null: false
     t.text     "remarks"
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
     t.string   "pay_range"
     t.string   "area"
     t.string   "shift_category"
     t.string   "duration"
     t.string   "category"
-<<<<<<< HEAD
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "pay_type"
     t.string   "photo"
+  end
+
+  create_table "morrigan_editor_rails_editor_images", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "morrigan_editor_rails_editor_images", force: :cascade do |t|
@@ -182,32 +166,17 @@ ActiveRecord::Schema.define(version: 20161030192902) do
     t.index ["user_id", "job_id"], name: "index_reports_on_user_id_and_job_id", using: :btree
   end
 
-  create_table "reservations", force: :cascade do |t|
-    t.integer  "user_id"
-=======
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.string   "pay_amount"
-    t.string   "photo"
-    t.string   "job_type"
-  end
-
   create_table "payment_reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.date     "request_date"
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
     t.date     "date_1"
     t.date     "date_2"
     t.date     "date_3"
     t.date     "date_4"
     t.date     "date_5"
-<<<<<<< HEAD
     t.date     "date_6"
     t.date     "date_7"
     t.text     "additional_notes"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-=======
     t.date     "comments"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -223,8 +192,9 @@ ActiveRecord::Schema.define(version: 20161030192902) do
     t.date    "date_6"
     t.date    "date_7"
     t.text    "additional_notes"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer "user_id"
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
 
@@ -258,11 +228,13 @@ ActiveRecord::Schema.define(version: 20161030192902) do
 
   add_foreign_key "confirmations", "jobs"
   add_foreign_key "confirmations", "users"
-<<<<<<< HEAD
   add_foreign_key "reports", "jobs"
   add_foreign_key "reports", "users"
   add_foreign_key "reservations", "users"
-=======
   add_foreign_key "payment_reservations", "users"
->>>>>>> 296856425019f3d2a367be08e3b2a36dfe91b67d
+  add_foreign_key "reports", "jobs"
+  add_foreign_key "reports", "users"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "confirmations", "jobs"
+  add_foreign_key "confirmations", "users"
 end

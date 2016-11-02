@@ -37,4 +37,6 @@ Rails.application.routes.draw do
   
   resources :payment_reservations, only: [:new, :create]
   resources :reservations, only: [:new, :create]
+
+  resources :news_articles
 end
