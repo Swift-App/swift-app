@@ -5,26 +5,26 @@
           <!-- About -->
           <div class="col-sm-3">
               <div class="heading-footer"><h4>会社概要</h4></div>
-              <p>
-                株式会社スイフトの会社情報となります。 
-              </p>
+              <ul style="list-style-type: none; padding-left: 0px;">
+                <li><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 株式会社スイフト'.html_safe, about_path %></li>
+              </ul>
           </div>
           
           <!-- Social -->
           <div class="col-sm-3 mg25-xs">
               <div class="heading-footer"><h4>採用情報</h4></div>
-               <p>
-                採用情報はこちらから
-               </p>
+              <ul style="list-style-type: none; padding-left: 0px;">
+                <li><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 採用情報はこちらから'.html_safe, "#" %></li>
+              </ul>
           </div>
 
           <!-- Contact -->
           <div class="col-sm-3 mg25-xs">
               <div class="heading-footer"><h4>お問い合わせ</h4></div>
-              <p>
-                <%= link_to 'スタッフ様お問い合わせ', '' %><br>
-                <%= link_to '企業様お問い合わせ', '' %>
-              </p>
+              <ul style="list-style-type: none; padding-left: 0px;">
+                <li><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> スタッフ様お問い合わせ'.html_safe, new_staff_contact_path %></li>
+                <li><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 企業様お問い合わせ'.html_safe, new_company_contact_path %></li>
+              </ul>
           </div>
 
           <!-- Recent Work -->

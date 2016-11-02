@@ -10,8 +10,13 @@
         </div>
 
         <div class="col-sm-5 text-right">
-          <ul class="topbar-list list-inline">                    
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <ul class="topbar-list list-inline">    
+            <% if user_signed_in? %>      
+              <li><%= link_to '<i class="fa fa-user" aria-hidden="true"></i> 会員用ページ'.html_safe, staff_index_path %></li>          
+              <li><%= link_to '<i class="fa fa-lock" aria-hidden="true"></i> ログアウト'.html_safe, destroy_user_session_path, method: :delete %></li>              
+            <% else %>
+              <li><%= link_to '<i class="fa fa-lock" aria-hidden="true"></i> ログイン'.html_safe, new_user_session_path %></li>
+            <% end %>
           </ul>
         </div>
       </div><!--/row --> 
@@ -23,7 +28,7 @@
     <div class="navbar navbar-main" id="fixed-navbar">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 column-header">
+          <div class="col-xs-12 column-header">
             <div class="navbar-header">
               <!-- Brand -->
               <a class="navbar-brand" href="/"><%= image_tag 'swift-logo.png', class: "logo" %></a>
@@ -53,7 +58,7 @@
                 </li> 
 
                 <li>
-                  <%= link_to 'スタッフ登録希望の方', staff_path %>
+                  <%= link_to 'スタッフ登録希望の方', staff_recruit_path %>
                 </li> 
 
                 <li>

@@ -52,10 +52,16 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # Font Awesome
-gem 'font-awesome-sass', '~> 4.6.2'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 # i18n
 gem 'rails-i18n'
+
+gem 'jquery-ui-rails'
+
+# pagination
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 
 group :development, :test do

@@ -1,0 +1,4 @@
+<p><%= @user.name %>から<%= @attendance_report.report_type %>がありました。</p>
+
+<p><strong>送信された時間</strong> <%= @attendance_report.created_at.strftime("%m/%d/%Y %l:%M %p") %></p>
+<p><strong><%= @attendance_report.report_type %></strong></p>

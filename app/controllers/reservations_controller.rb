@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+﻿class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
@@ -6,11 +6,13 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = current_user.reservations.create(reservation_params)
-    if @reservation.valid?
+    @reservation = current_user.reservations.new(reservation_params)
+        
+    if @reservation.save
       send_new_reservation_email
-
-      redirect_to root_path
+      
+      flash[:success] = "給与受取り予約が完了いたしました。"
+      redirect_to staff_index_path
     else
       render :new
     end
@@ -19,10 +21,10 @@ class ReservationsController < ApplicationController
   private
 
   def send_new_reservation_email
-    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_now
+    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_later
   end
 
   def reservation_params
-    params.require(:reservation).permit( :user_id, :date_1, :date_2, :date_3, :date_4, :date_5, :date_6, :date_7)
+    params.require(:reservation).permit( :user_id, :date_1, :date_2, :date_3, :date_4, :date_5, :date_6, :date_7, :confirming)
   end
 end

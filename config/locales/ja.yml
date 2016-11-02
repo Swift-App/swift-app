@@ -1,0 +1,82 @@
+ja:
+  activerecord:
+    models:      
+      user: ユーザー  
+      job: お仕事
+    attributes:
+      user:
+        first_name: 名
+        last_name: 姓
+        first_name_katakana: 名（カタカナ）
+        last_name_katakana: 姓（カタカナ）
+        email: メールアドレス
+        phone: 電話番号
+        birthday: お誕生日
+        postal_code: 郵便番号        
+        prefecture: 都道府県
+        city: 市町村
+        address_details: 番地・アパート名
+        photo: 写真
+      attendence_report:
+        job_id: お仕事
+        report_type: 出退勤
+      job:
+        title: 題名
+        description: 説明
+        pay_amount: 給与
+        job_type: 仕事種類
+        content: 仕事内容
+        location: 勤務地
+        nearest_station: 最寄り駅
+        number_of_positions: 募集人数
+        work_date: 勤務日
+        hours: 勤務時間
+        holidays: 休日
+        certifications_and_experience: 応募資格
+        benefits: 待遇
+        person_in_charge: 担当者
+        remarks: 備考
+        pay_range: 給与範囲
+        area: エリア
+        shift_category: シフト
+        duration: 期間
+        category: カテゴリー
+      completion_report:
+        job_id: お仕事
+        comments: 備考
+    messages:
+      blank: を入力してください。
+      invalid: は不正な値です。
+  mail_form:
+    models:
+      staff_contact: スタッフ新規登録
+      company_contact: 企業様お問い合わせ
+    attributes:
+      staff_contact:
+        email: メールアドレス
+        name: お名前
+        furigana: ふりがな
+        birthday: お誕生日
+        interview_date: 面接希望日
+        phone: 電話番号        
+      company_contact:
+        staff_contact:
+        email: メールアドレス
+        furigana: ふりがな
+        phone: 電話番号
+        company_name: 企業名
+        department: 部署名
+        person_in_charge: 担当者名
+        postal_code: 郵便番号
+        prefecture: 都道府県
+        city: 市町村
+        address_details: 番地・アパート名
+        website: HP
+        inquiry: ご依頼内容
+        remarks: 備考・相談内容
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"

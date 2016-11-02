@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+    <h3 class="text-center">「<%= @job.title %>」へお申し込み</h3>
+
+    <%= simple_form_for @confirmation, url: job_confirmations_path, method: :post do |f| %>
+      <%= f.input :terms_and_conditions, as: :boolean, label: '利用規約に同意する' %>
+
+      <%= render 'shared/terms' %>
+      <br />
+      <%= f.submit '申し込みする', class: 'btn btn-lg btn-success center-block', data: {confirm_with: "本当によろしいですか？"} %>
+    <% end %>
+
+  </div>
+</div>
