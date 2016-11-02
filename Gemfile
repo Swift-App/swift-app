@@ -37,6 +37,9 @@ gem 'capybara'
 
 gem 'delayed_job_active_record'
 
+#CKEditor
+gem 'ckeditor'
+
 # uploading stuff
 gem "figaro"
 gem 'carrierwave'
