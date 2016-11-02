@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019022355) do
+ActiveRecord::Schema.define(version: 20161102155151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,21 @@ ActiveRecord::Schema.define(version: 20161019022355) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  end
+
   create_table "completion_reports", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
@@ -61,6 +76,15 @@ ActiveRecord::Schema.define(version: 20161019022355) do
     t.text    "comments"
     t.index ["job_id"], name: "index_completion_reports_on_job_id", using: :btree
     t.index ["user_id"], name: "index_completion_reports_on_user_id", using: :btree
+  end
+
+  create_table "confirmations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_confirmations_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_confirmations_on_user_id", using: :btree
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -109,6 +133,13 @@ ActiveRecord::Schema.define(version: 20161019022355) do
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "pay_type"
+    t.string   "photo"
+  end
+
+  create_table "morrigan_editor_rails_editor_images", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "news_articles", force: :cascade do |t|
@@ -131,13 +162,13 @@ ActiveRecord::Schema.define(version: 20161019022355) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "date_1"
-    t.datetime "date_2"
-    t.datetime "date_3"
-    t.datetime "date_4"
-    t.datetime "date_5"
-    t.datetime "date_6"
-    t.datetime "date_7"
+    t.date     "date_1"
+    t.date     "date_2"
+    t.date     "date_3"
+    t.date     "date_4"
+    t.date     "date_5"
+    t.date     "date_6"
+    t.date     "date_7"
     t.text     "additional_notes"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -163,16 +194,17 @@ ActiveRecord::Schema.define(version: 20161019022355) do
     t.string   "last_name_katakana"
     t.string   "phone"
     t.date     "birthday"
-    t.integer  "zip_1"
-    t.integer  "zip_2"
+    t.string   "postal_code"
     t.string   "prefecture"
     t.string   "city"
-    t.string   "other_address"
+    t.string   "address_details"
     t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "confirmations", "jobs"
+  add_foreign_key "confirmations", "users"
   add_foreign_key "reports", "jobs"
   add_foreign_key "reports", "users"
   add_foreign_key "reservations", "users"
