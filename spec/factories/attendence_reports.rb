@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :attendence_report do
-      report_type :reached_the_workplace
+      report_type AttendenceReport::REPORT_TYPES[0]
   end
 end

@@ -1,6 +1,4 @@
-<p>Congratulations 
-  <strong><%= @user.name %></strong> you have recently completed a job called <%= @job.title %>. 
-</p>
-<p>Comment:<%= @completion_report_params.comment %></p>
-<p>photo</p>
-<%= image_tag attachments['photo.png'].url -%>
+<p><%= @user.name %>様から終了報告がありました。</p>
+<p><%= @completion_report.comments %></p>
+
+<%= image_tag attachments['attachment.png'].url -%>

@@ -1,5 +1,7 @@
 class Reservation < ApplicationRecord
-  validates :user_id, :date_1, presence: true
+  include Confirmable
 
   belongs_to :user
+
+  validates :user, :date_1, presence: true
 end

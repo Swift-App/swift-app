@@ -16,12 +16,15 @@ RSpec.describe ReservationsController, type: :controller do
 
         it "sends an email to the admin" do
           user = FactoryGirl.create(:user)
+          mock_reservation_made_email = double("mock_reservation_made_email")
+          allow(UserMailer).to receive(:reservation_made).and_return(mock_reservation_made_email)
+          allow(mock_reservation_made_email).to receive(:deliver_later)
 
           sign_in user
+          post :create, reservation: FactoryGirl.attributes_for(:reservation)
 
-          expect {
-            post :create, reservation: FactoryGirl.attributes_for(:reservation)
-          }.to change { ActionMailer::Base.deliveries.count }.by(1)
+          expect(UserMailer).to have_received(:reservation_made)
+          expect(mock_reservation_made_email).to have_received(:deliver_later)
         end
       end
 
