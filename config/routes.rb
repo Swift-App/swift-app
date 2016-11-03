@@ -6,10 +6,7 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  namespace :admin do
-    resources :news_articles
-  end
-
+  
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
   get 'steps', to: 'static_pages#steps'
@@ -36,4 +33,6 @@ Rails.application.routes.draw do
   resources :attendence_reports, only: [:new, :create]
 
   resources :reservations, only: [:new, :create]
+
+  resources :news_articles, only: [:index, :show]
 end
