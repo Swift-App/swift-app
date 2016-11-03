@@ -1,5 +1,11 @@
 @import 'components/main';
 
+.btn-job-action {
+  position: absolute; 
+  right: 10px; 
+  bottom: 10px;
+}
+
 .merit-box {
   border: 4px solid $orange;
   padding: 20px;
@@ -42,4 +48,19 @@
 
 .emphasize {
   font-weight: 600;
+}
+
+.companies-header {
+  h2 {
+    color: #00329a;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 80px;
+  }
+}
+
+.service-line-text {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 40px !important; 
 }

@@ -1,0 +1,81 @@
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <h3 class="text-center">お問い合わせ</h3>
+    <%= simple_form_for @contact, url: '/companies/contacts', method: :post, html: {class: 'form-horizontal' } do |f| %>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :company_name, required: true, label: '企業名', placeholder: '株式会社スイフト' %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :department, required: true, label: '部署名' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :person_in_charge, required: true, label: 'ご担当者名', placeholder: '田中太郎' %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :furigana, required: true, label: 'ふりがな', placeholder: 'たなかたろう' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :postal_code, required: true, label: '郵便番号', placeholder: '111-1111' %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :prefecture, required: true, label: '都道府県' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :address_details, required: true, label: '番地・アパート名' %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :website, required: true, label: 'HP' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.input :inquiry, collection: %w(人材派遣 紹介予定派遣 人材紹介 その他) , required: true, label: 'ご依頼内容' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.input :remarks, as: :text, required: true, label: '備考・相談内容', input_html: {rows: 5}%>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12">
+        <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
+      </div>
+
+      <%= render 'shared/terms' %>
+      </br>
+
+      <%= f.button :submit, '送信', class: "btn btn-primary pull-right"%>
+    <% end %>
+  </div><!-- col-xs-12 col-md-6 col-md-offset-3 -->
+</div><!-- row -->

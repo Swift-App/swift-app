@@ -1,11 +1,9 @@
-<%= render 'carousel' %>
-
 <section class="mt40 mb40">
   <div class="container">
 
     <div class="row">
       <!-- Panel -->
-      <div class="col-sm-8" data-sr="enter left">
+      <div class="col-xs-12 col-sm-6" data-sr="enter left">
         <div class="heading mb20">
           <h4>ニュース</h4>
         </div>
@@ -16,17 +14,11 @@
         <% end %>
         <br>
 
-        <!-- Button -->
-        <div class="text-center">
-          <%= link_to 'ニュース一覧を見る', '', class: 'btn btn-primary btn-rw' %>    
-        </div><!-- /button -->   
+        <%= link_to 'ニュース一覧を見る', '', class: 'btn btn-sm btn-primary' %>    
+
       </div>   
 
-
-
     </div>
-
-    
 
   </div><!-- /container -->
 </section><!-- /content -->
@@ -38,8 +30,8 @@
 
     <!-- Begin Title -->
     <div class="row">
-      <div class="col-sm-12 mb20">
-        <div class="heading"><h4>企業理念</h4></div>
+      <div class="col-sm-6 mb20">
+        
       </div>
     </div>
 
@@ -47,7 +39,7 @@
     <div class="row">
 
       <div class="col-sm-6" data-sr="enter left">
-
+        <div class="heading"><h4>企業理念</h4></div>
         <!-- Begin Accordion -->
         <div class="panel-group" id="accordion">
           <!-- Item 1 -->
@@ -100,15 +92,12 @@
         </div><!-- /panel group -->
 
         <!-- Button -->
-        <div class="text-center">
-          <a href="/about" class="btn btn-rw btn-primary">
-            About us
-          </a>
-        </div><!-- /button -->
+        <a href="/about" class="btn btn-sm btn-primary">
+          About us
+        </a>
 
       </div><!-- /column -->
-      
-
+    
     </div><!-- /row -->
     <!-- End Accordion Row -->
     
@@ -116,32 +105,31 @@
 </div><!-- /content -->
 <!-- End Accordion + IMG -->
 
-<section>
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="">
-        <div class="nav-box">            
-            <h3>
-              <i class="fa fa-building-o" aria-hidden="true"></i><br>
-              人材をお探しの企業の方<br>
-            </h3>                  
-        </div><!-- nav-box -->
-      </a>
-    </div><!-- col-xs-12 col-md-6 -->
+<section class="mt40 mb40">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        
+          <div class="nav-box">
+              <%= image_tag 'top/salaryman.jpg', class: 'img-responsive' %>
+              <a href="/companies" style="text-decoration: none;" class="btn btn-navbox">
+                人材をお探しの企業の方
+              </a>                  
+          </div><!-- nav-box -->
 
-    <div class="col-xs-12 col-md-6">
-      <a href="">
-        <div class="nav-box">
-          <div class="layer">
-            <h3>
-              <i class="fa fa-users" aria-hidden="true"></i><br>
-              お仕事をお探しの方
-            </h3>            
-          </div>        
-        </div><!-- nav-box -->
-      </a>
-    </div><!-- col-xs-12 col-md-6 -->
+      </div><!-- col-xs-12 col-md-6 -->
+
+      <div class="col-xs-12 col-md-6">
+          <div class="nav-box">
+            <div class="layer">
+              <%= image_tag 'top/h-1.jpg', class: 'img-responsive' %>
+              <a href="/companies" style="text-decoration: none;" class="btn btn-navbox">
+                お仕事をお探しの方
+              </a>            
+            </div>        
+          </div><!-- nav-box -->
+
+      </div><!-- col-xs-12 col-md-6 -->
+    </div>
   </div>
 </section>  
-
-<br>

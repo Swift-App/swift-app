@@ -1,11 +1,92 @@
-<%= simple_form_for @reservation do |f| %>
-  <%= f.input :date_1,as: :date %>
-  <%= f.input :date_2,as: :date, required: false, include_blank: true %>
-  <%= f.input :date_3,as: :date, required: false, include_blank: true %>
-  <%= f.input :date_4,as: :date, required: false, include_blank: true %>
-  <%= f.input :date_5,as: :date, required: false, include_blank: true %>
-  <%= f.input :date_6,as: :date, required: false, include_blank: true %>
-  <%= f.input :date_7,as: :date, required: false, include_blank: true %>
-  <%= f.input :additional_notes,as: :text, required: false %>
-  <%= f.button :submit %>
-  <% end %>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <%= link_to '戻る', staff_index_path, class: 'btn btn-warning btn-round' %>
+    <h3 class="text-center" style="margin-bottom: 0px;">お仕事予約</h3>
+    <p class="text-center" style="margin-bottom: 20px;"><small>クリックして日程を選択してください。</small></p>
+
+    <%= simple_form_for @reservation do |f| %>
+      <% if @reservation.confirming.blank? %>
+        <label>予約日1 *</label><br>
+        <%= f.text_field :date_1,　as: :string, label: '予約日1', class: 'form-control' %>
+        <br />
+        <label>予約日2</label><br>
+        <%= f.text_field :date_2,　as: :string, required: false, class: 'form-control' %>
+
+        <label>予約日3</label><br>
+        <%= f.text_field :date_3,　as: :string, required: false, class: 'form-control' %>
+
+        <label>予約日4</label><br>
+        <%= f.text_field :date_4,　as: :string, required: false, class: 'form-control' %>
+
+        <label>予約日5</label><br>
+        <%= f.text_field :date_5,　as: :string, required: false, class: 'form-control' %>
+
+        <label>予約日6</label><br>
+        <%= f.text_field :date_6,　as: :string, required: false, class: 'form-control' %>
+
+        <label>予約日7</label><br>
+        <%= f.text_field :date_7,　as: :string, required: false, class: 'form-control' %>
+        <%= f.input :additional_notes, as: :text, required: false, label: '備考／相談内容等' %>
+        <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
+
+      <% else %>
+
+        <table class="table table-responsive">
+          <tr>
+            <th>予約日1<th>
+            <td><%= @reservation.date_1 %><td>
+          </tr>
+          <tr>
+            <th>予約日2<th>
+            <td><%= @reservation.date_2 %><td>
+          </tr>
+          <tr>
+            <th>予約日3<th>
+            <td><%= @reservation.date_3 %><td>
+          </tr>
+          <tr>
+            <th>予約日4<th>
+            <td><%= @reservation.date_4 %><td>
+          </tr>
+          <tr>
+            <th>予約日5<th>
+            <td><%= @reservation.date_5 %><td>
+          </tr>
+          <tr>
+            <th>予約日6<th>
+            <td><%= @reservation.date_6 %><td>
+          </tr>
+          <tr>
+            <th>予約日7<th>
+            <td><%= @reservation.date_7 %><td>
+          </tr>
+          <tr>
+            <th>備考<th>
+            <td><%= @reservation.additional_notes %><td>
+          </tr>
+        </table>
+        <%= f.hidden_field :date_1 %>
+        <%= f.hidden_field :date_2 %>
+        <%= f.hidden_field :date_3 %>
+        <%= f.hidden_field :date_4 %>
+        <%= f.hidden_field :date_5 %>
+        <%= f.hidden_field :date_6 %>
+        <%= f.hidden_field :date_7 %>
+        <%= f.hidden_field :additional_notes %>
+
+        <p>この内容でよろしいでしょうか？</p>
+        <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
+      <% end %>
+
+      <%= f.hidden_field :confirming %>
+
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+  let today = new Date().toJSON().slice(0,10);
+  $("input[type=text]").datepicker({defaultDate: today, dateFormat: 'yy-mm-dd', orientation: "bottom"});
+});
+</script>
