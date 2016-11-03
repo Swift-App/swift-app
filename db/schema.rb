@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20161103143413) do
   end
 
   create_table "attendence_reports", force: :cascade do |t|
-    t.integer  "report_type"
+    t.string   "report_type"
     t.integer  "job_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
@@ -78,6 +78,15 @@ ActiveRecord::Schema.define(version: 20161103143413) do
     t.index ["user_id"], name: "index_completion_reports_on_user_id", using: :btree
   end
 
+  create_table "confirmations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_confirmations_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_confirmations_on_user_id", using: :btree
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,8 +111,7 @@ ActiveRecord::Schema.define(version: 20161103143413) do
     t.string   "title",                                       null: false
     t.text     "description",                                 null: false
     t.string   "pay_amount",                    default: "0", null: false
-    t.string   "job_type"
-    t.string   "content"
+    t.text     "content"
     t.string   "location"
     t.string   "nearest_station"
     t.string   "number_of_positions"
@@ -112,10 +120,8 @@ ActiveRecord::Schema.define(version: 20161103143413) do
     t.string   "holidays"
     t.string   "certifications_and_experience"
     t.string   "benefits"
-    t.string   "employment_type"
     t.string   "person_in_charge",                            null: false
     t.text     "remarks"
-    t.string   "branch_in_charge",                            null: false
     t.string   "pay_range"
     t.string   "area"
     t.string   "shift_category"
@@ -124,6 +130,8 @@ ActiveRecord::Schema.define(version: 20161103143413) do
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "pay_type"
+    t.string   "photo"
+    t.string   "job_type"
   end
 
   create_table "news_articles", force: :cascade do |t|
@@ -131,6 +139,20 @@ ActiveRecord::Schema.define(version: 20161103143413) do
     t.text     "content",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "request_date"
+    t.date     "date_1"
+    t.date     "date_2"
+    t.date     "date_3"
+    t.date     "date_4"
+    t.date     "date_5"
+    t.date     "comments"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_payment_reservations_on_user_id", using: :btree
   end
 
   create_table "reports", force: :cascade do |t|
@@ -146,13 +168,13 @@ ActiveRecord::Schema.define(version: 20161103143413) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "date_1"
-    t.datetime "date_2"
-    t.datetime "date_3"
-    t.datetime "date_4"
-    t.datetime "date_5"
-    t.datetime "date_6"
-    t.datetime "date_7"
+    t.date     "date_1"
+    t.date     "date_2"
+    t.date     "date_3"
+    t.date     "date_4"
+    t.date     "date_5"
+    t.date     "date_6"
+    t.date     "date_7"
     t.text     "additional_notes"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -178,16 +200,18 @@ ActiveRecord::Schema.define(version: 20161103143413) do
     t.string   "last_name_katakana"
     t.string   "phone"
     t.date     "birthday"
-    t.integer  "zip_1"
-    t.integer  "zip_2"
+    t.string   "postal_code"
     t.string   "prefecture"
     t.string   "city"
-    t.string   "other_address"
+    t.string   "address_details"
     t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "confirmations", "jobs"
+  add_foreign_key "confirmations", "users"
+  add_foreign_key "payment_reservations", "users"
   add_foreign_key "reports", "jobs"
   add_foreign_key "reports", "users"
   add_foreign_key "reservations", "users"
