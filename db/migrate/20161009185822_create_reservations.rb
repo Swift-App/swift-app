@@ -1,5 +1,6 @@
 class CreateReservations < ActiveRecord::Migration[5.0]
   def change
+    return if table_exists? :reservations
     create_table :reservations do |t|
       t.datetime :date_1
       t.datetime :date_2

@@ -37,6 +37,8 @@ gem 'capybara'
 
 gem 'delayed_job_active_record'
 
+gem 'ckeditor'
+
 # uploading stuff
 gem "figaro"
 gem 'carrierwave'
@@ -88,3 +90,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails-controller-testing'
+
+gem "font-awesome-rails"
+
+gem 'jquery-ui-rails'

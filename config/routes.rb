@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, path_names: { sign_up: '' }
 
   ActiveAdmin.routes(self)
 
+  
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
   get 'steps', to: 'static_pages#steps'
@@ -29,8 +31,10 @@ Rails.application.routes.draw do
 
   resources :completion_reports, only: [:new, :create]
   resources :attendence_reports, only: [:new, :create]
-
+  
   resources :payment_reservations, only: [:new, :create]
   
   resources :reservations, only: [:new, :create]
+
+  resources :news_articles, only: [:index, :show]
 end

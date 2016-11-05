@@ -99,6 +99,13 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -240,6 +247,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.7.0.0)
+      railties (>= 3.2, < 5.1)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -426,12 +435,14 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave
+  ckeditor
   coffee-rails (~> 4.2)
   delayed_job_active_record
   devise
   factory_girl_rails (~> 4.0)
   figaro
   fog (= 1.36.0)
+  font-awesome-rails
   font-awesome-sass (~> 4.7.0)
   inherited_resources!
   jbuilder (~> 2.5)

@@ -27,12 +27,10 @@ Job.create([
               holidays: "シフトによる",
               certifications_and_experience: "未経験可 オフィスマナーをお持ちの方 初歩的なＰＣ入力が可能な方",
               benefits: "月162時間以内のシフト制（お休み：日・祝・隔週土曜日）※相談下さい。",
-              employment_type: "人材派遣",
               person_in_charge: "高橋　06-6376-4400",
               remarks: "シフトは原則月～金＋隔週土曜日出勤ですが、急募の為ご相談可能です。
                         歯科医院でのアルバイト経験者の方、歯科助手の資格をお持ちの方など優遇します。
                         お気軽にお問合せ下さいね。",
-              branch_in_charge: "〒530-0012　大阪市北区芝田1-4-14　芝田町ビル4F",
               pay_range: "pay range",
               area: "tokyo",
               duration: "2 days",
@@ -58,12 +56,10 @@ Job.create([
               holidays: "シフトによる",
               certifications_and_experience: "未経験可 オフィスマナーをお持ちの方 初歩的なＰＣ入力が可能な方",
               benefits: "月162時間以内のシフト制（お休み：日・祝・隔週土曜日）※相談下さい。",
-              employment_type: "人材派遣",
               person_in_charge: "高橋　06-6376-4400",
               remarks: "シフトは原則月～金＋隔週土曜日出勤ですが、急募の為ご相談可能です。
                         歯科医院でのアルバイト経験者の方、歯科助手の資格をお持ちの方など優遇します。
                         お気軽にお問合せ下さいね。",
-              branch_in_charge: "〒530-0012　大阪市北区芝田1-4-14　芝田町ビル4F",
               pay_range: "pay range",
               area: "tokyo",
               duration: "2 days",
@@ -71,3 +67,4 @@ Job.create([
               shift_category: "Shift category"
             }
           ])
+
