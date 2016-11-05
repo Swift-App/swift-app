@@ -29,6 +29,13 @@
         <div class="container">
           <section class="mt40 mb40">
             <%= render 'shared/flash_messages' %>
+            
+            <div class="row">
+              <div class="col-xs-12">
+                <%= breadcrumbs style: :bootstrap %>
+              </div>
+            </div>
+
             <%= yield %>
           </section>
         </div>

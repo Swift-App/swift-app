@@ -1716,7 +1716,6 @@ blockquote {
 }
 .breadcrumb {
 	padding:0;
-	margin-bottom:0;
 	list-style:none;
 	float:left;
 	background-color:transparent;
@@ -1729,7 +1728,7 @@ blockquote {
 }
 
 .breadcrumb a {
-	color:#8F8F8F;
+/*	color:#8F8F8F;*/
 }
 
 .header.header-dark {

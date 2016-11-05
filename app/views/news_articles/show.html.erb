@@ -2,6 +2,8 @@
                  description: "#{@news_article.meta_description || @news_article.content.truncate(140)}"
                   %>
 
+<% breadcrumb :news_article, @news_article %>
+
 <%= link_to '<i class="fa fa-list" aria-hidden="true"></i> ニュース一覧'.html_safe, news_articles_path, class: 'btn btn-primary btn-round' %>
 
 <section class="mt40 mb40">
