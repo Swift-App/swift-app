@@ -156,24 +156,26 @@
   </div><!-- col-xs-12 col-md-8 col-md-offset-2 -->
 </div><!-- row -->
 
-<br />
 
-<div class="header-text">
-  <h2 class="service-line-text">サービスライン</h2>
-</div>
 
-<%= render 'shared/job_table' %>
+<section class="mt40 mb40">
+  <div class="header-text">
+    <h2 class="service-line-text">サービスライン</h2>
+  </div>
 
-<div class="row">
-  <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <div class="cta text-center">
-      
-      <h4>どんなお仕事でも一度ご相談ください！</h4>
+  <%= render 'shared/job_table' %>
 
-      <h2>年中無休・即日対応！<br>まずはお問い合わせを！</h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="cta text-center">
+        
+        <h4>どんなお仕事でも一度ご相談ください！</h4>
 
-      <h3><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 企業用申し込みフォーム'.html_safe, new_company_contact_path, class: 'btn btn-lg btn-warning' %></h3>
+        <h2>年中無休・即日対応！<br>まずはお問い合わせを！</h2>
+
+        <h3><%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> 企業用申し込みフォーム'.html_safe, new_company_contact_path, class: 'btn btn-lg btn-warning' %></h3>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
