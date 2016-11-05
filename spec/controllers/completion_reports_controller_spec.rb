@@ -24,7 +24,7 @@ RSpec.describe CompletionReportsController, type: :controller do
         sign_in user
 
         expect {
-          post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_id: job.id)
+          post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_name: "Job Name")
         }.to change(CompletionReport, :count).by(1)
         expect(UserMailer).to have_received(:report_completion)
         expect(mock_report_completion_email).to have_received(:deliver_later)
@@ -35,7 +35,7 @@ RSpec.describe CompletionReportsController, type: :controller do
         job = FactoryGirl.create(:job)
 
         sign_in user
-        post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_id: job.id)
+        post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_name: "Job Name")
         
         expect(response).to redirect_to staff_index_path
       end
@@ -48,7 +48,7 @@ RSpec.describe CompletionReportsController, type: :controller do
         sign_in user
 
         expect {
-          post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_id: nil)
+          post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_name: nil)
         }.to change(CompletionReport, :count).by(0)
       end
 
@@ -56,7 +56,7 @@ RSpec.describe CompletionReportsController, type: :controller do
         user = FactoryGirl.create(:user) 
 
         sign_in user
-        post :create , completion_report: FactoryGirl.attributes_for(:completion_report, job_id: nil)
+        post :create , completion_report: FactoryGirl.attributes_for(:completion_report, job_name: nil)
 
         expect(response).to render_template :new
       end

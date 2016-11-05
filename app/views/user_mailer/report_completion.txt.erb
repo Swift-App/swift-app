@@ -1,4 +1,7 @@
 <%= @user.name %>様から終了報告がありました。
-<%= @completion_report.comments %>
+
+お仕事 <%= @completion_report.job_name %>
+送信された時間 <%= @completion_report.created_at.strftime("%m/%d/%Y %l:%M %p") %>
+備考 <%= @completion_report.comments %>
 
 <%= image_tag attachments['attachment.png'].url -%>

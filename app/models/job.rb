@@ -3,11 +3,7 @@ class Job < ApplicationRecord
   mount_uploader :photo, JobPhotoUploader
 
   validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
-            :number_of_positions, :work_date, :hours, :holidays, :person_in_charge, :pay_range, :area, :shift_category, :duration, :category, :photo, presence: true
-
-  has_many :completion_reports
-  has_many :attendence_reports
-  has_many :completion_reports
+            :number_of_positions, :work_date, :hours, :holidays, :person_in_charge, :pay_range, :area, :shift_category, :duration, :category, presence: true
 
   default_scope { order('created_at DESC') }
 

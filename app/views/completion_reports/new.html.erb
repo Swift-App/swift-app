@@ -4,7 +4,7 @@
     <h3 class="text-center">終了報告</h3>
 
     <%= simple_form_for @completion_report do |f| %>
-      <%= f.input :job_id, collection: current_user.jobs, label: 'お仕事' %>
+      <%= f.input :job_name, label: 'お仕事', placeholder: 'お仕事名' %>
       <%= f.input :photo, label: '画像添付' %>
       <%= f.input :comments, label: '備考' %>
       <%= f.submit '完了', class: 'btn btn-success pull-right' %>

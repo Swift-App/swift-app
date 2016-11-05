@@ -28,7 +28,7 @@ class UserMailer < ApplicationMailer
   def report_completion(args)
     @user = args.fetch(:user)
     @completion_report = args.fetch(:completion_report)
-    @job = @completion_report.job
+    @job_name = @completion_report.job_name
     attachments.inline['attachment.png'] = File.read(image_path(@completion_report.photo))
 
     mail(subject: "<%= @user.name %>「終了報告」")

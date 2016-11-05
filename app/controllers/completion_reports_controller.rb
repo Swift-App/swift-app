@@ -26,6 +26,6 @@ class CompletionReportsController < ApplicationController
   end
 
   def completion_report_params
-    params.require(:completion_report).permit(:photo, :comments, :job_id)
+    params.require(:completion_report).permit(:photo, :comments, :job_name)
   end
 end

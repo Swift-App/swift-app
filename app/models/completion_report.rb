@@ -1,8 +1,7 @@
 class CompletionReport < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
-  belongs_to :user
-  belongs_to :job
+  belongs_to :user  
   
-  validates :photo, :user_id, :job_id, presence: true
+  validates :photo, :user_id, presence: true
 end
