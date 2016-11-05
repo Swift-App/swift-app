@@ -9,12 +9,12 @@
         </div>
 
         <% @news_articles.each do |news_article| %>
-          <h1><p class="lead mb10"><%= news_article.title %></p></h1>
-          <p><%= truncate(news_article.content, length: 50, escape: false, emission: (link_to '...', news_article_path(id: news_article.id)))%></p>
+          <h2><%= link_to news_article.title, news_article %></h2>
+          <p class="lead mb10"><%= truncate(news_article.content, length: 50, escape: false, emission: (link_to '...', news_article_path(id: news_article.id)))%></p>
         <% end %>
         <br>
 
-        <%= link_to 'ニュース一覧を見る', '', class: 'btn btn-sm btn-primary' %>    
+        <%= link_to 'ニュース一覧を見る', '', class: 'btn btn-sm btn-primary pull-right' if @news_articles.any? %>    
 
       </div>   
 
@@ -28,75 +28,37 @@
 <div class="mt40 mb40">
   <div class="container">
 
-    <!-- Begin Title -->
-    <div class="row">
-      <div class="col-sm-6 mb20">
-        
-      </div>
-    </div>
-
     <!-- Begin Accordion Row -->
     <div class="row">
 
-      <div class="col-sm-6" data-sr="enter left">
+      <div class="col-sm-6 col-xs-12" data-sr="enter left">
         <div class="heading"><h4>企業理念</h4></div>
-        <!-- Begin Accordion -->
-        <div class="panel-group" id="accordion">
-          <!-- Item 1 -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  ポイント1
-                </a>
-              </h4>
-            </div><!-- /panel heading -->
-              <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                コンテンツ
-              </div>
-              </div><!-- /panel collapse -->
-          </div><!-- /panel -->
 
-          <!-- Item 2 -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  ポイント2
-                </a>
-              </h4>
-            </div><!-- /panel heading -->
-              <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                コンテンツ
-              </div>
-              </div><!-- /panel collapse -->
-          </div><!-- /panel -->
 
-          <!-- Item 3 -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  ポイント3
-                </a>
-              </h4>
-            </div><!-- /panel heading -->
-              <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                コンテンツ
-              </div>
-              </div><!-- /panel collapse -->
-          </div><!-- /panel -->
-        </div><!-- /panel group -->
+        <h2>ヒト」と「シゴト」の「今」をつなぐ</h2>
+        <p>
+          当社はスタッフとクライアント様の「今」と「今」をつなぎ、クライアント様・従業員双方に価値をもたらすマッチングスペシャリストを目指しています。<br />
+          「今」の価値を最大化するため、単なる仕事の橋渡しだけでなく、人材を扱うプロフェッショナルとしてゼロから経験と技術を兼ね備えたエキスパートを教育し提供できる価値を高めることにも取り組んでいます。
+        </p>
+
+        <br />
+        <br />
+
+        <h2>スイフトの強み</h2>
+        <p>「躍進し続ける東海エリアで求められるニーズに、スピード感ある対応で貢献したい。」スイフトでは独自開発のシステムとフットワークでさまざまな人材のニーズにフレキシブルに対応していきます。</p>
+    
+        
 
         <!-- Button -->
-        <a href="/about" class="btn btn-sm btn-primary">
-          About us
+        <a href="/about" class="btn btn-sm btn-primary pull-right">
+          会社概要
         </a>
 
       </div><!-- /column -->
+
+      <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+        <%= image_tag 'top/meeting.jpg', class: 'img-responsive', style: 'margin-top: 50px;' %> 
+      </div>
     
     </div><!-- /row -->
     <!-- End Accordion Row -->
@@ -104,6 +66,8 @@
   </div><!-- /container -->
 </div><!-- /content -->
 <!-- End Accordion + IMG -->
+
+<hr />
 
 <section class="mt40 mb40">
   <div class="col-xs-12 col-md-8 col-md-offset-2">

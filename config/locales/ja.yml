@@ -3,6 +3,7 @@ ja:
     models:      
       user: ユーザー  
       job: お仕事
+      news_article: ニュース記事
     attributes:
       user:
         first_name: 名
@@ -44,6 +45,9 @@ ja:
       completion_report:
         job_id: お仕事
         comments: 備考
+      news_article:
+        title: 題名
+        content: 内容
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

@@ -788,6 +788,10 @@ ul.list-arrow-2-color li:before {
 	transition:all 0.4s ease-in-out;
 }
 
+.navbar-brand > img {
+	height: 35px;
+}
+
 .navbar-brand-centered {
     position: absolute;
     left: 50%;
