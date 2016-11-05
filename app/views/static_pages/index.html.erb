@@ -10,7 +10,7 @@
 
         <% @news_articles.each do |news_article| %>
           <h4><%= link_to news_article.title, news_article, style: 'text-decoration: underline' %></h4>
-          <p class="lead mb10"><%= truncate(news_article.content, length: 150, escape: false, omission: (link_to '...(もっと見る)', news_article) )%></p>
+          <p class="lead mb10"><%= truncate(news_article.content, length: 150, escape: false, omission: (link_to '...(続きを読む)', news_article) )%></p>
         <% end %>
         <br>
 

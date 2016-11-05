@@ -7,11 +7,15 @@
       <%= f.input :job_name, label: 'お仕事', placeholder: 'お仕事名' %>
 
       <div class="row">
-        <div class="col-xs-6">
-          <%= f.input :overtime, label: '残業(分)', placeholder: '120', input_html: {maxlength: 3, size: 40} %>
+        <div class="col-md-3 col-xs-12">
+          <%= f.input :start_time %>
         </div>
 
-        <div class="col-xs-6">
+        <div class="col-md-3 col-xs-12">
+          <%= f.input :end_time %>
+        </div>
+
+        <div class="col-md-6 col-xs-12">
           <%= f.input :breaktime, label: '休憩(分)', placeholder: '120', input_html: {maxlength: 3} %>
         </div>
       </div>

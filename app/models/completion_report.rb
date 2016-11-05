@@ -4,5 +4,5 @@ class CompletionReport < ApplicationRecord
   belongs_to :user  
   
   validates :user_id, presence: true
-  validates :breaktime, :overtime, length: {maximum: 3}
+  validates :breaktime, length: {maximum: 3}
 end

@@ -7,12 +7,24 @@
 <section class="mt40 mb40">
   <div class="row">
     <div class="col-xs-12 col-md-8">
-      <%= image_tag @news_article.featured_photo, class: 'img-responsive', style: 'height: 250px; margin-bottom: 50px;' %>
+
+      <%= image_tag @news_article.featured_photo, class: 'img-responsive', style: 'height: 250px; margin-bottom: 50px;' if @news_article.featured_photo.present? %>
 
       <h2><%= @news_article.title %></h2>
 
-
       <%= sanitize @news_article.content %>
+    </div>
+
+    <div class="col-xs-12 col-md-3 col-md-offset-1">
+      <h3>最近のニュース</h3>
+      <Hr>
+      <% @recent.each_with_index do |news_article, i| %>
+        <div class="recent-news-container">
+          <h4><%= i + 1 %>. <%= link_to news_article.title, news_article %></h4>
+
+          <p class="lead mb10"><%= truncate(news_article.content, length: 150, escape: false, omission: (link_to '...(続きを読む)', news_article) )%> <small><%= news_article.created_at.strftime("%m/%d/%Y") %></small></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

@@ -1,0 +1,22 @@
+<% set_meta_tags title: "ニュース",
+                 description: "スイフトニュース"
+                  %>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <h1>ニュース一覧</h1>
+
+    <br>
+
+    <%= paginate @news_articles, theme: 'twitter-bootstrap-3', pagination_class: "pagination-sm pagination-centered" %>
+
+    <% @news_articles.each do |news_article| %>
+      <h4><%= link_to news_article.title, news_article, style: 'text-decoration: underline' %></h4>
+      <p class="lead mb10"><%= truncate(news_article.content, length: 200, escape: false, omission: (link_to '...(続きを読む)', news_article) )%></p>
+
+      <hr>
+    <% end %>
+
+    <%= paginate @news_articles, theme: 'twitter-bootstrap-3', pagination_class: "pagination-sm pagination-centered" %>
+  </div>
+</div>

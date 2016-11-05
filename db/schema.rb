@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105075855) do
+ActiveRecord::Schema.define(version: 20161105103332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,8 +84,9 @@ ActiveRecord::Schema.define(version: 20161105075855) do
     t.text    "comments"
     t.string  "job_name"
     t.integer "breaktime"
-    t.integer "overtime"
     t.boolean "tardy_or_leave", default: false, null: false
+    t.time    "start_time"
+    t.time    "end_time"
     t.index ["job_id"], name: "index_completion_reports_on_job_id", using: :btree
     t.index ["user_id"], name: "index_completion_reports_on_user_id", using: :btree
   end
