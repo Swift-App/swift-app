@@ -13,7 +13,6 @@ class Job < ApplicationRecord
   scope :shift_category, -> (shift_category) { where shift_category: shift_category }
   scope :categories, -> (categories) { where categories: categories }
   scope :pay_range, -> (pay_range) { where pay_range: pay_range }
-  # scope :tag, -> (tag_id) {  }
 
   has_many :job_tags, dependent: :destroy
   has_many :tags, through: :job_tags, source: :tag
