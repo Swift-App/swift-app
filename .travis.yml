@@ -7,5 +7,6 @@ env:
 before_script:
 - psql -c 'create database swift_app_test;' -U postgres
 script:
-- bundle exec rake db:schema:load
+- RAILS_ENV=test bundle exec rake db:reset db:migrate --trace
+- bundle exec rake db:test:prepare
 - bundle exec rspec
