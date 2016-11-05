@@ -4,6 +4,7 @@ ja:
       user: ユーザー  
       job: お仕事
       news_article: ニュース記事
+      job_tag: タグ      
     attributes:
       user:
         first_name: 名
@@ -21,6 +22,8 @@ ja:
       attendence_report:
         job_id: お仕事
         report_type: 出退勤
+      job_tag:
+        tag_id: タグ名
       job:
         title: 題名
         description: 説明

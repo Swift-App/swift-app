@@ -14,6 +14,11 @@ class Job < ApplicationRecord
   scope :categories, -> (categories) { where categories: categories }
   scope :pay_range, -> (pay_range) { where pay_range: pay_range }
 
+  has_many :job_tags
+  has_many :tags, through: :job_tags, source: :tag
+
+  accepts_nested_attributes_for :job_tags
+
   AREAS = %w(名古屋市 愛知県北部 愛知県西部 愛知県東部 岐阜県 三重県)
 
   SHIFT_CATEGORIES = %w(平日勤務 週末勤務 シフト勤務 自由勤務)

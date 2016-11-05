@@ -39,6 +39,11 @@ CCNA（Cisco Certified Network Associate）の取得をしてもらっていま�
       f.input :duration, as: :select, collection: Job::DURATIONS
       f.input :category, as: :select, collection: Job::CATEGORIES
       f.input :job_type, as: :select, collection: Job::JOB_TYPE
+
+      f.has_many :job_tags do |ff|
+        ff.input :tag_id, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
+      end
+
       f.input :content, placeholder: '※HPやサイトにキレイな物件の写真が載っていることも、お客様が「部屋を見てみたい」と思える重要なポイント。「ここのお部屋イイ！」と思ったら、写真の撮り方を工夫してみたり、興味を惹くようなアピールポイントを書いてみたり…。クリエイティブな楽しさも味わえます！'
       f.input :location, placeholder: '渋谷'
       f.input :nearest_station, placeholder: 'JR渋谷駅'
