@@ -1,4 +1,18 @@
-<h2><%= @news_article.title %></h2>
+<% set_meta_tags title: "#{@news_article.title}",
+                 description: "#{@news_article.meta_description || @news_article.content.truncate(140)}"
+                  %>
+
+<%= link_to '<i class="fa fa-list" aria-hidden="true"></i> ニュース一覧'.html_safe, news_articles_path, class: 'btn btn-primary btn-round' %>
+
+<section class="mt40 mb40">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <%= image_tag @news_article.featured_photo, class: 'img-responsive', style: 'height: 250px; margin-bottom: 50px;' %>
+
+      <h2><%= @news_article.title %></h2>
 
 
-<%= sanitize @news_article.content %>
+      <%= sanitize @news_article.content %>
+    </div>
+  </div>
+</section>

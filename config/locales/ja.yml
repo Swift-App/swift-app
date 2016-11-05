@@ -48,6 +48,8 @@ ja:
       news_article:
         title: 題名
         content: 内容
+        meta_description: メタデスクリプション
+        featured_photo: 記事トップ画像
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

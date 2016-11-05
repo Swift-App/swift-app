@@ -17,17 +17,7 @@
     </ul>
   </div><!-- sidebar-contents -->
 
-  <h3>勤務日<span class="gray-alt">で探す</span></h3>
-
-   <div class="sidebar-contents">
-    <ul>
-      <% Job::SHIFT_CATEGORIES.each do |category| %>
-        <li><i class="fa fa-caret-right" aria-hidden="true"></i> <%= link_to category, jobs_path(shift_category: category) %></li>
-      <% end %>
-    </ul>
-  </div><!-- sidebar-contents -->
-
-  <h3>期間<span class="gray-alt">で探す</span></h3>
+  <h3>勤務期間<span class="gray-alt">で探す</span></h3>
 
   <div class="sidebar-contents">
     <ul>
@@ -36,7 +26,6 @@
     <% end %>
     </ul>
   </div><!-- sidebar-contents -->
-
 
   <h3>給与<span class="gray-alt">で探す</span></h3>
 

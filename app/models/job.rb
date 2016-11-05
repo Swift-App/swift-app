@@ -14,13 +14,15 @@ class Job < ApplicationRecord
   scope :categories, -> (categories) { where categories: categories }
   scope :pay_range, -> (pay_range) { where pay_range: pay_range }
 
-  AREAS = %w(関西エリア 中部エリア 関東エリア)
+  AREAS = %w(名古屋市 愛知県北部 愛知県西部 愛知県東部 岐阜県 三重県)
 
   SHIFT_CATEGORIES = %w(平日勤務 週末勤務 シフト勤務 自由勤務)
 
   DURATIONS = %w(短期（1日~2か月） 中期（2~6か月） 長期（6か月~）)
 
-  CATEGORIES = %w(イベント・キャンペーン系 物流・軽作業系 製造系 引越・梱包系 販売・接客系 オフィス系)
+  MERITS = %w(駅チカ 未経験歓迎 シフト自由 土日・週末のみOK 夜勤 交通費支給)
+
+  CATEGORIES = %w(イベント系 物流・軽作業系 製造・ライン作業 引越・梱包系 販売・接客系 オフィスワーク その他)
 
   JOB_TYPE = %w(正社員募集 転職支援 紹介予定派遣)
 
