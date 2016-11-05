@@ -5,6 +5,19 @@
 
     <%= simple_form_for @completion_report do |f| %>
       <%= f.input :job_name, label: 'お仕事', placeholder: 'お仕事名' %>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <%= f.input :overtime, label: '残業(分)', placeholder: '120', input_html: {maxlength: 3, size: 40} %>
+        </div>
+
+        <div class="col-xs-6">
+          <%= f.input :breaktime, label: '休憩(分)', placeholder: '120', input_html: {maxlength: 3} %>
+        </div>
+      </div>
+
+      <%= f.input :tardy_or_leave, as: :radio_buttons, label: '遅刻・早退', collection: [[true, '有'] ,[false, '無']], label_method: :last, value_method: :first, item_wrapper_class: 'inline' %>
+
       <%= f.input :photo, label: '画像添付' %>
       <%= f.input :comments, label: '備考' %>
       <%= f.submit '完了', class: 'btn btn-success pull-right' %>

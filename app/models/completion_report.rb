@@ -3,5 +3,6 @@ class CompletionReport < ApplicationRecord
 
   belongs_to :user  
   
-  validates :photo, :user_id, presence: true
+  validates :user_id, presence: true
+  validates :breaktime, :overtime, length: {maximum: 3}
 end

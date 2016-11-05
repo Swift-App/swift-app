@@ -2,6 +2,12 @@
 
 <p><strong>お仕事</strong> <%= @completion_report.job_name %></p>
 <p><strong>送信された時間</strong> <%= @completion_report.created_at.strftime("%m/%d/%Y %l:%M %p") %></p>
+
+<p><strong>残業</strong> <%= @completion_report.overtime %>分</p>
+<p><strong>休憩</strong> <%= @completion_report.breaktime %>分</p>
+
+<p><strong>遅刻・早退</strong> <%= @completion_report.tardy_or_leave ? "有" : "無" %></p>  
+
 <p><strong>備考</strong> <%= @completion_report.comments %></p>
 
 <%= image_tag attachments['attachment.png'].url -%>

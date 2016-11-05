@@ -4,4 +4,9 @@
 送信された時間 <%= @completion_report.created_at.strftime("%m/%d/%Y %l:%M %p") %>
 備考 <%= @completion_report.comments %>
 
+残業 <%= @completion_report.overtime %>分
+休憩 <%= @completion_report.breaktime %>分
+
+遅刻・早退 <%= @completion_report.tardy_or_leave ? "有" : "無" %>
+
 <%= image_tag attachments['attachment.png'].url -%>
