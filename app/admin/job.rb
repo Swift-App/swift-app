@@ -6,7 +6,7 @@ ActiveAdmin.register Job do
                 :number_of_positions, :work_date, :hours, :holidays, 
                 :certifications_and_experience, 
                 :benefits, :employment_type, :person_in_charge, :remarks, :branch_in_charge, 
-                :pay_range, :area, :shift_category, :duration, :category, :photo
+                :pay_range, :area, :shift_category, :duration, :category, :photo, job_tags_attributes: [:tag_id, :id]
 
   index do 
     column :id
@@ -40,9 +40,17 @@ CCNA（Cisco Certified Network Associate）の取得をしてもらっていま�
       f.input :category, as: :select, collection: Job::CATEGORIES
       f.input :job_type, as: :select, collection: Job::JOB_TYPE
 
-      f.has_many :job_tags do |ff|
+      # f.input :job_tags, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
+
+      f.has_many :job_tags do |ff|       
         ff.input :tag_id, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
       end
+
+      # f.has_many :job_tags do |job_tag|
+      #   job_tag.inputs "Job Tag" do
+      #    job_tag.input :tag, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
+      #   end  
+      # end
 
       f.input :content, placeholder: '※HPやサイトにキレイな物件の写真が載っていることも、お客様が「部屋を見てみたい」と思える重要なポイント。「ここのお部屋イイ！」と思ったら、写真の撮り方を工夫してみたり、興味を惹くようなアピールポイントを書いてみたり…。クリエイティブな楽しさも味わえます！'
       f.input :location, placeholder: '渋谷'

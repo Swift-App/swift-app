@@ -13,8 +13,9 @@ class Job < ApplicationRecord
   scope :shift_category, -> (shift_category) { where shift_category: shift_category }
   scope :categories, -> (categories) { where categories: categories }
   scope :pay_range, -> (pay_range) { where pay_range: pay_range }
+  # scope :tag, -> (tag_id) {  }
 
-  has_many :job_tags
+  has_many :job_tags, dependent: :destroy
   has_many :tags, through: :job_tags, source: :tag
 
   accepts_nested_attributes_for :job_tags
@@ -32,4 +33,8 @@ class Job < ApplicationRecord
   JOB_TYPE = %w(正社員募集 転職支援 紹介予定派遣)
 
   PAY_RANGE = %w(時給800円以上 時給900円以上 時給1000円以上 日給7000円以上 日給8000円以上 日給9000円以上 月給10万円以上 月給15万円以上 月給20万円以上 月給25万円以上 日給10000円以上)
+
+  def self.tag(name)
+    Tag.find_by_name(name).jobs
+  end
 end

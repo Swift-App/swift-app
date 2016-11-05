@@ -11,6 +11,12 @@
           <%= simple_format job.description %>
         </div>
 
+        <div class="job_box_tags">
+          <% job.tags.each do |tag| %>
+            <label class="label label-success"><%= tag.name %></label>
+          <% end %>
+        </div>
+
         <table class="table table-responsive">
           <tr>
             <td class="col-xs-4"><strong>給与</strong></td>

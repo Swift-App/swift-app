@@ -3,7 +3,7 @@
   <div class="sidebar-contents">
 
     <%= link_to 'スイフトの特徴', staff_recruit_path, class: 'btn btn-sm btn-primary btn-block' %>
-    <%= link_to '新規会員登録', new_staff_contact_path, class: 'btn btn-sm btn-warning btn-block' %>
+    <%= link_to '新規会員登録', new_staff_contact_path, class: 'btn btn-sm btn-primary btn-block' %>
 
   </div><!-- sidebar-contents -->
 
@@ -47,12 +47,12 @@
     </ul>
   </div><!-- sidebar-contents -->
 
-  <h3>雇用形態<span class="gray-alt">で探す</span></h3>
+  <h3>メリット<span class="gray-alt">から探す</span></h3>
 
   <div class="sidebar-contents">
     <ul>
-      <% Job::JOB_TYPE.each do |type| %>
-        <li><i class="fa fa-caret-right" aria-hidden="true"></i> <%= link_to type, jobs_path(job_type: type) %></li>
+      <% Tag.all.each do |tag| %>
+        <li><i class="fa fa-caret-right" aria-hidden="true"></i> <%= link_to tag.name, jobs_path(tag: tag.name) %></li>
       <% end %>
     </ul>
   </div><!-- sidebar-contents -->

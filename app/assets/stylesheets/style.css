@@ -1718,7 +1718,7 @@ blockquote {
 	padding:0;
 	margin-bottom:0;
 	list-style:none;
-	float:right;
+	float:left;
 	background-color:transparent;
 	border-radius:0;
 	font-size:12px;
