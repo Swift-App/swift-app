@@ -23,8 +23,7 @@
 
     <tr>
       <td><strong>所在地</strong></td>
-      <td>愛知県名古屋市中村区１２ （地図はこちら）</td>
-      
+      <td>愛知県名古屋市中区錦３丁目１４−１４夢現錦ビル５B（<a data-toggle="modal" data-target="#map">地図はこちら</a>）</td>      
     </tr>
 
     <tr>
@@ -34,7 +33,7 @@
 
     <tr>
       <td><strong>資本金</strong></td>
-      <td>1500万円</td>
+      <td>2000万円</td>
     </tr>
 
     <tr>
@@ -59,3 +58,21 @@
 
   <br>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="mapLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="mapLabel">地図</h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag 'top/map.jpg', class: 'img-responsive' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
