@@ -15,6 +15,7 @@ ActiveAdmin.register Job do
     end
     column :description
     column :job_type
+    actions
   end
 
   form(html: { multipart: true }) do |f|

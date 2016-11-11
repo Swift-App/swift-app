@@ -8,7 +8,7 @@
                               end_year: Date.today.year - 16, default: Date.today - 35.years %>
       <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
       <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
-      <%= f.input :interview_date, as: :text, required: true, label: '面接希望日', placeholder: '', input_html: {rows: 5} %>
+      <%= f.input :interview_date, as: :text, required: true, label: '面接希望日時（※第3希望までご入力下さい。）', placeholder: '', input_html: {rows: 5} %>
       <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
 
       
