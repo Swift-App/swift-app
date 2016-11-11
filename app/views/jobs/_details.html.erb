@@ -13,7 +13,7 @@
           <% end %>
         </div>
 
-        <% if current_user.registered?(job: job) %>
+        <% if user_signed_in? && current_user.registered?(job: job) %>
           <a class="btn btn-sm btn-warning pull-right" style="margin-top: 20px;"><i class="fa fa-check-square-o" aria-hidden="true"></i> もうすでにお申し込みされています</a>
         <% else %>
           <%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> お申し込み'.html_safe, new_job_confirmation_path(job), class: 'btn btn-lg btn-success pull-left', style: 'margin-top: 20px;' %>
