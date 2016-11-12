@@ -9,20 +9,27 @@
       <% if @payment_reservation.confirming.blank? %>
         <label>支払い希望日 *</label> 
         <%= f.date_field :request_date, required: true, class: 'form-control' %>
+        <br />
+
         <label>勤務日1</label><br>
         <%= f.date_field :date_1, required: false, class: 'form-control' %>
         <br />
+
         <label>勤務日2</label><br>
         <%= f.date_field :date_2, required: false, class: 'form-control' %>
+        <br />
 
         <label>勤務日3</label><br>
         <%= f.date_field :date_3, required: false, class: 'form-control' %>
+        <br />
 
         <label>勤務日4</label><br>
         <%= f.date_field :date_4, required: false, class: 'form-control' %>
+        <br />
 
         <label>勤務日5</label><br>
         <%= f.date_field :date_5, required: false, class: 'form-control' %>
+        <br />
 
         <%= f.input :comments, as: :text, required: false, label: '備考' %>
         <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
