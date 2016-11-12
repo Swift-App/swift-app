@@ -7,22 +7,22 @@
     <%= simple_form_for @reservation do |f| %>
       <% if @reservation.confirming.blank? %>
         <label>予約日1 *</label><br>
-        <%= f.text_field :date_1,　as: :date, label: '予約日1', class: 'form-control' %>
+        <%= f.date_field :date_1, label: '予約日1', class: 'form-control' %>
         <br />
         <label>予約日2</label><br>
-        <%= f.text_field :date_2,　as: :date, required: false, class: 'form-control' %>
+        <%= f.date_field :date_2, required: false, class: 'form-control' %>
 
         <label>予約日3</label><br>
-        <%= f.text_field :date_3,　as: :date, required: false, class: 'form-control' %>
+        <%= f.date_field :date_3, required: false, class: 'form-control' %>
 
         <label>予約日4</label><br>
-        <%= f.text_field :date_4,　as: :date, required: false, class: 'form-control' %>
+        <%= f.date_field :date_4, required: false, class: 'form-control' %>
 
         <label>予約日5</label><br>
-        <%= f.text_field :date_5,　as: :date, required: false, class: 'form-control' %>
+        <%= f.date_field :date_5, required: false, class: 'form-control' %>
 
         <label>予約日6</label><br>
-        <%= f.text_field :date_6,　as: :date, required: false, class: 'form-control' %>
+        <%= f.date_field :date_6, required: false, class: 'form-control' %>
 
         <label>予約日7</label><br>
         <%= f.text_field :date_7,　as: :date, required: false, class: 'form-control' %>
@@ -87,6 +87,6 @@
 <script type="text/javascript">
 $(function() {
   let today = new Date().toJSON().slice(0,10);
-  $("input[type=text]").datepicker({defaultDate: today, dateFormat: 'yy-mm-dd', orientation: "bottom"});
+  $("input[type=date]").datepicker({defaultDate: today, dateFormat: 'yy-mm-dd', orientation: "bottom"});
 });
 </script>
