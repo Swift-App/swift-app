@@ -7,25 +7,25 @@
     <%= simple_form_for @reservation do |f| %>
       <% if @reservation.confirming.blank? %>
         <label>予約日1 *</label><br>
-        <%= f.text_field :date_1,　as: :string, label: '予約日1', class: 'form-control' %>
+        <%= f.text_field :date_1,　as: :date, label: '予約日1', class: 'form-control' %>
         <br />
         <label>予約日2</label><br>
-        <%= f.text_field :date_2,　as: :string, required: false, class: 'form-control' %>
+        <%= f.text_field :date_2,　as: :date, required: false, class: 'form-control' %>
 
         <label>予約日3</label><br>
-        <%= f.text_field :date_3,　as: :string, required: false, class: 'form-control' %>
+        <%= f.text_field :date_3,　as: :date, required: false, class: 'form-control' %>
 
         <label>予約日4</label><br>
-        <%= f.text_field :date_4,　as: :string, required: false, class: 'form-control' %>
+        <%= f.text_field :date_4,　as: :date, required: false, class: 'form-control' %>
 
         <label>予約日5</label><br>
-        <%= f.text_field :date_5,　as: :string, required: false, class: 'form-control' %>
+        <%= f.text_field :date_5,　as: :date, required: false, class: 'form-control' %>
 
         <label>予約日6</label><br>
-        <%= f.text_field :date_6,　as: :string, required: false, class: 'form-control' %>
+        <%= f.text_field :date_6,　as: :date, required: false, class: 'form-control' %>
 
         <label>予約日7</label><br>
-        <%= f.text_field :date_7,　as: :string, required: false, class: 'form-control' %>
+        <%= f.text_field :date_7,　as: :date, required: false, class: 'form-control' %>
         <%= f.input :additional_notes, as: :text, required: false, label: '備考／相談内容等' %>
         <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
 
