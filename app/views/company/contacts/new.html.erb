@@ -1,117 +1,114 @@
 
+<div class="col-xs-12 col-md-6 col-md-offset-3">
+  <h3 class="text-center">企業様お問い合わせ</h3>
+  <%= simple_form_for @contact, url: '/companies/contacts', method: :post, html: {class: 'form-horizontal' } do |f| %>
 
-<div class="row">
-  <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <h3 class="text-center">企業様お問い合わせ</h3>
-    <%= simple_form_for @contact, url: '/companies/contacts', method: :post, html: {class: 'form-horizontal' } do |f| %>
-
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :company_name, required: true, label: '企業名', placeholder: '株式会社スイフト' %>
-        </div>
-
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :department, required: false, label: '部署名' %>
-        </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :company_name, required: true, label: '企業名', placeholder: '株式会社スイフト' %>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :person_in_charge, required: true, label: 'ご担当者名', placeholder: '田中太郎' %>
-        </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :department, required: false, label: '部署名' %>
+      </div>
+    </div>
 
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :furigana, required: false, label: 'ふりがな', placeholder: 'たなかたろう' %>
-        </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :person_in_charge, required: true, label: 'ご担当者名', placeholder: '田中太郎' %>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :postal_code, required: true, label: '郵便番号', placeholder: '111-1111' %>
-        </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :furigana, required: false, label: 'ふりがな', placeholder: 'たなかたろう' %>
+      </div>
+    </div>
 
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :prefecture, required: true, label: '都道府県' %>
-        </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :postal_code, required: true, label: '郵便番号', placeholder: '111-1111' %>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :city, required: true, label: '市町村' %>
-        </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :prefecture, required: true, label: '都道府県' %>
+      </div>
+    </div>
 
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :address_details, required: true, label: '番地・アパート名' %>
-        </div>
-
-        
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :city, required: true, label: '市町村' %>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
-        </div>
-
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
-        </div>        
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :address_details, required: true, label: '番地・アパート名' %>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :website, required: false, label: 'HP' %>
-        </div>
+      
+    </div>
 
-        <div class="col-xs-12 col-md-6">
-          <%= f.input :inquiry, collection: %w(人材派遣 請負作業 人材紹介 その他) , required: true, label: 'ご依頼内容' %>
-        </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12">
-          <%= f.input :remarks, as: :text, required: true, label: '備考・相談内容', input_html: {rows: 5}%>
-        </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
+      </div>        
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :website, required: false, label: 'HP' %>
       </div>
 
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :inquiry, collection: %w(人材派遣 請負作業 人材紹介 その他) , required: true, label: 'ご依頼内容' %>
+      </div>
+    </div>
 
+    <div class="row">
       <div class="col-xs-12">
-        <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
+        <%= f.input :remarks, as: :text, required: true, label: '備考・相談内容', input_html: {rows: 5}%>
       </div>
+    </div>
 
-      <div class="terms">
-        <p>
-         【お問い合わせに伴う個人情報の取り扱いについて】<br>
 
-          １．事業者は、株式会社スイフトです。<br>
+    <div class="col-xs-12">
+      <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
+    </div>
 
-          １．当社に登録いただいた情報は、派遣・請負・職業紹介等人材サービスに関するお問い合わせへの、ご提案・ご案内に使用いたします。　なお、登録いただいた情報は当サイトへの登録情報として、以降当社からの重要なお知らせをご案内する場合があります。<br>
+    <div class="terms">
+      <p>
+       【お問い合わせに伴う個人情報の取り扱いについて】<br>
 
-          １．お問い合わせに際して、情報の全部または一部をご提供いただけない場合は、派遣・請負・職業紹介等当社が提供する人材サービスに関してのご提案・ご案内に差し支えることがあります。<br>
+        １．事業者は、株式会社スイフトです。<br>
 
-          １．当社に登録いただいた個人情報の処理を産廃業者、警備会社、サーバメンテナンス会社へ委託する場合があります。委託する場合は、当社が個人情報保護体制について一定の水準に達していると認める委託先といたします。<br>
+        １．当社に登録いただいた情報は、派遣・請負・職業紹介等人材サービスに関するお問い合わせへの、ご提案・ご案内に使用いたします。　なお、登録いただいた情報は当サイトへの登録情報として、以降当社からの重要なお知らせをご案内する場合があります。<br>
 
-          １．当社に登録いただいた個人情報の利用目的の通知、開示、内容の訂正、追加または削除、利用の停止、消去および第三者への提供の停止の申し出は、ご本人であることの確認後、遅滞なくおこないます。<br>
+        １．お問い合わせに際して、情報の全部または一部をご提供いただけない場合は、派遣・請負・職業紹介等当社が提供する人材サービスに関してのご提案・ご案内に差し支えることがあります。<br>
 
-          １．個人情報に関する相談、苦情、開示等のお申し出は、下記の個人情報保護管理者宛に文書でお申し出ください。<br>
+        １．当社に登録いただいた個人情報の処理を産廃業者、警備会社、サーバメンテナンス会社へ委託する場合があります。委託する場合は、当社が個人情報保護体制について一定の水準に達していると認める委託先といたします。<br>
 
-          　　〔個人情報保護管理者〕<br>
-          　　　所属：代表取締役　松本　慶一<br>
-          　　　住所：〒500-0022　愛知県名古屋市中区<br>
-          　　　FAX：06-0000-0000<br>
+        １．当社に登録いただいた個人情報の利用目的の通知、開示、内容の訂正、追加または削除、利用の停止、消去および第三者への提供の停止の申し出は、ご本人であることの確認後、遅滞なくおこないます。<br>
 
-          １．当社に登録いただいた個人情報は、本人からの取り消しの申し出があった場合、情報を取り消しします。<br>
+        １．個人情報に関する相談、苦情、開示等のお申し出は、下記の個人情報保護管理者宛に文書でお申し出ください。<br>
 
-          １．当社に提供・登録いただいた個人情報は、登録取り消し（本人の申し出、当社による取り消しかは問わない）に際しては、本人および第三者にいかなる媒体によっても返却する義務を負わないこととします。<br>
+        　　〔個人情報保護管理者〕<br>
+        　　　所属：代表取締役　松本　慶一<br>
+        　　　住所：〒500-0022　愛知県名古屋市中区<br>
+        　　　FAX：06-0000-0000<br>
 
-          １．当社は、登録者が容易に認識できない方法によって個人情報を取得することはありません。<br>
+        １．当社に登録いただいた個人情報は、本人からの取り消しの申し出があった場合、情報を取り消しします。<br>
 
-          上記、記載事項に対し同意いたします。<br>
-        </p>
-      </div>
+        １．当社に提供・登録いただいた個人情報は、登録取り消し（本人の申し出、当社による取り消しかは問わない）に際しては、本人および第三者にいかなる媒体によっても返却する義務を負わないこととします。<br>
 
-      </br>
+        １．当社は、登録者が容易に認識できない方法によって個人情報を取得することはありません。<br>
 
-      <%= f.button :submit, '送信', class: "btn btn-primary pull-right"%>
-    <% end %>
-  </div><!-- col-xs-12 col-md-6 col-md-offset-3 -->
-</div><!-- row -->
+        上記、記載事項に対し同意いたします。<br>
+      </p>
+    </div>
+
+    </br>
+
+    <%= f.button :submit, '送信', class: "btn btn-primary pull-right"%>
+  <% end %>
+</div><!-- col-xs-12 col-md-6 col-md-offset-3 -->
