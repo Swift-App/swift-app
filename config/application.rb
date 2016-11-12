@@ -24,6 +24,8 @@ module SwiftApp
       g.javascripts = false
       g.helper = false
     end
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
   end
   
 end
