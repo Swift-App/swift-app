@@ -7,18 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
-    <%= display_meta_tags site: 'Swift',
-                          reverse: true,
-                          title: '人材派遣・業務請負はスイフトへ',
-                          description: '「今」の価値を最大化するため、単なる仕事の橋渡しだけでなく、人材を扱うプロフェッショナルとしてゼロから経験と技術を兼ね備えたエキスパートを教育し提供できる価値を高めることにも取り組んでいます。',
-                          keywords: '人材派遣　業務請負'
-                          %>
+    <%= render 'layouts/meta' %>
   </head>
 
   <body class="scrollreveal">
