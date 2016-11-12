@@ -7,7 +7,7 @@
     
     <%= simple_form_for @payment_reservation do |f| %>
       <% if @payment_reservation.confirming.blank? %>
-        <label>支払い希望日 *</label> 
+        <label>支払い希望日 *</label><br />
         <%= f.date_field :request_date, required: true, class: 'form-control' %>
         <br />
 
