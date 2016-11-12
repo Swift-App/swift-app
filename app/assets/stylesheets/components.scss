@@ -108,6 +108,29 @@
   img {
     width: 50% !important;
     height: auto !important;
+    margin: 0 auto 50px;
+    display: block;
   }
 }
 
+
+
+.cta-company {
+  margin: 100px 0px; 
+  background: whitesmoke;
+  padding: 50px;
+}
+
+@media (max-width:480px) {
+  .cta-company {
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    .btn-lg {
+      font-size: 16px;
+    }
+  }
+}

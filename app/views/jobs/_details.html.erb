@@ -28,7 +28,7 @@
     </div><!-- col-xs-12 col-md-4 -->
 
     <div class="col-xs-12 col-md-6">
-      <%= image_tag job.photo, class: 'img-responsive center-block' %>
+      <%= image_tag job.photo, class: 'img-responsive center-block', style: 'margin-top: 50px;' %>
     </div><!-- col-xs-12 col-md-4 -->
 
   </div><!-- row -->
@@ -37,62 +37,62 @@
 
   <table class="table">
     <tr>
-      <td class="col-xs-3"><strong>仕事内容</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>仕事内容</strong></td>
       <td><%= simple_format job.content %></td>
     </tr>
 
     <tr>
-      <td class="col-xs-3"><strong>勤務地</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>勤務地</strong></td>
       <td><%= job.location %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>給与</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>給与</strong></td>
       <td><%= job.pay_amount %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>勤務地</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>勤務地</strong></td>
       <td><%= job.location %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>募集</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>募集</strong></td>
       <td><%= job.number_of_positions %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>勤務日</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>勤務日</strong></td>
       <td><%= job.work_date %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>勤務時間</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>勤務時間</strong></td>
       <td><%= job.hours %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>休日</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>休日</strong></td>
       <td><%= job.holidays %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>資格・経験</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>資格・経験</strong></td>
       <td><%= simple_format job.certifications_and_experience %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>待遇</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>待遇</strong></td>
       <td><%= simple_format job.benefits %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>担当者</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>担当者</strong></td>
       <td><%= job.person_in_charge %></td>
     </tr> 
 
     <tr>
-      <td class="col-xs-3"><strong>備考</strong></td>
+      <td class="col-xs-4 col-md-3"><strong>備考</strong></td>
       <td><%= simple_format job.remarks %></td>
     </tr> 
 
