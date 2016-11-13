@@ -83,6 +83,8 @@ Rails.application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
 
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.default_url_options = { host: 'https://swift-haken.herokuapp.com/' }  
 
   # Use a different logger for distributed setups.
