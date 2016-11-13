@@ -1,5 +1,5 @@
 ===================================
-<p><strong><%= @user.name %></strong>様がお仕事予約しました。</p>
+<p><strong><%= @user.name %></strong>様から追加の予約がありました。</p>
 
 <p>予約日 1: <%= @reservation.date_1.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
 <p>予約日 2: <%= @reservation.date_2.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
@@ -9,5 +9,5 @@
 <p>予約日 6: <%= @reservation.date_6.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
 <p>予約日 7: <%= @reservation.date_7.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
 
-
+<p>システムへの反映よろしくお願いします。</p>
 ===================================

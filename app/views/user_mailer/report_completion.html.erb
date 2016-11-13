@@ -3,12 +3,12 @@
 <p><strong>お仕事</strong> <%= @completion_report.job_name %></p>
 <p><strong>送信された時間</strong> <%= @completion_report.created_at.strftime("%m/%d/%Y %l:%M %p") %></p>
 
-<p><strong>開始時間</strong> <%= @completion_report.start_time %></p>
-<p><strong>終了時間</strong> <%= @completion_report.end_time %></p>
+<p><strong>開始時間</strong> <%= @completion_report.start_time.strftime("%m/%d/%Y %l:%M %p") %></p>
+<p><strong>終了時間</strong> <%= @completion_report.end_time.strftime("%m/%d/%Y %l:%M %p") %></p>
 <p><strong>休憩</strong> <%= @completion_report.breaktime %>分</p>
 
 <p><strong>遅刻・早退</strong> <%= @completion_report.tardy_or_leave ? "有" : "無" %></p>  
 
 <p><strong>備考</strong> <%= @completion_report.comments %></p>
 
-<%= image_tag attachments['attachment.png'].url -%>
+<%= image_tag attachments['attachment.png'].url if attachments.present? -%>

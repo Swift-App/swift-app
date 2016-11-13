@@ -1,8 +1,7 @@
 class UserMailer < ApplicationMailer
-  include SendGrid
   
   default from: 'info@swift-staff.jp'
-  default to: "takehiromouri@gmail.com"
+  default to: "info@swift-staff.jp"
 
   def welcome_email(user)
     # @user = user
@@ -23,7 +22,7 @@ class UserMailer < ApplicationMailer
 
   def job_confirmation(args)
     @user = args.fetch(:user)
-    @job = args.fetch(:job)
+    @confirmation = args.fetch(:confirmation) 
     mail(subject: 'お仕事申し込み受付')
   end
 
@@ -31,9 +30,11 @@ class UserMailer < ApplicationMailer
     @user = args.fetch(:user)
     @completion_report = args.fetch(:completion_report)
     @job_name = @completion_report.job_name
-    attachments.inline['attachment.png'] = File.read(image_path(@completion_report.photo))
 
-    mail(subject: "<%= @user.name %>「終了報告」")
+    
+    attachments.inline['attachment.png'] = open(@completion_report.photo_url).read if @completion_report.photo.present?
+
+    mail(subject: "#{@user.name} %>「終了報告」")
   end
 
   def reservation_made(args)
