@@ -28,6 +28,17 @@ GIT
       responders
 
 GIT
+  remote: git://github.com/drapergem/draper.git
+  revision: 45e18569d9631710f889d75d49f971fb60d5cbcd
+  specs:
+    draper (3.0.0.pre1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
+
+GIT
   remote: https://github.com/rails/activemodel-serializers-xml
   revision: 570ee7ed33d60e44ca1f3ccbec3d1fbf61d52cbf
   specs:
@@ -141,11 +152,6 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    draper (2.1.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
     erubis (2.7.0)
     excon (0.54.0)
     execjs (2.7.0)
@@ -264,8 +270,6 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
-    font-awesome-rails (4.7.0.0)
-      railties (>= 3.2, < 5.1)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -463,11 +467,10 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   delayed_job_active_record
   devise
-  draper
+  draper!
   factory_girl_rails (~> 4.0)
   figaro
   fog (= 1.36.0)
-  font-awesome-rails
   font-awesome-sass (~> 4.7.0)
   gretel
   inherited_resources!

@@ -69,7 +69,7 @@ gem 'bootstrap-kaminari-views'
 gem "gretel"
 
 # decorators
-gem 'draper'
+gem 'draper', github: 'drapergem/draper'
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 
 # mobile for Japanese phones
@@ -103,7 +103,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails-controller-testing'
-
-gem "font-awesome-rails"
-
-gem 'jquery-ui-rails'
