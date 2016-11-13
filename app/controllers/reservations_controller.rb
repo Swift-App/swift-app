@@ -11,7 +11,7 @@
     if @reservation.save
       send_new_reservation_email
       
-      flash[:success] = "給与受取り予約が完了いたしました。"
+      flash[:success] = "お仕事予約が完了いたしました。"
       redirect_to staff_index_path
     else
       render :new

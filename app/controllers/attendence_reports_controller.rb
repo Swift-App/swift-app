@@ -10,7 +10,7 @@ class AttendenceReportsController < ApplicationController
     if @attendence_report.save
       send_attendance_report_email
 
-      flash[:success] = "終了報告が完了いたしました。"
+      flash[:success] = "出発・到着報告が完了いたしました。"
       redirect_to staff_index_path
     else
       flash[:alert] = "エラーが起きました。大変申し訳ございませんが、もう一度内容をご確認の上送信してください。"
