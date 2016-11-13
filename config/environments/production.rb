@@ -78,6 +78,16 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'https://swift-haken.herokuapp.com/' }  
 
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'swift-haken.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
