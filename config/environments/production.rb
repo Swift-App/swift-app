@@ -72,16 +72,6 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.active_job.queue_adapter = :delayed_job
 
-  
-  ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'swift-haken.herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
 
   ActionMailer::Base.delivery_method = :smtp
 
