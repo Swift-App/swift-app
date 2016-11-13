@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
   default from: 'info@swift-staff.jp'
-  default to: "info@swift-staff.jp"
+  default to: "takehiromouri@gmail.com"
 
   def welcome_email(user)
     # @user = user
