@@ -1,0 +1,8 @@
+<%= link_to '戻る', staff_index_path %>
+<h3>出発報告</h3>
+
+<%= simple_form_for @attendence_report do |f| %>
+  <%= f.input :job_name, label: 'お仕事', placeholder: 'お仕事名' %>
+  <%= f.input :report_type, label: '出退勤', collection: AttendenceReport::REPORT_TYPES %>      
+  <%= f.submit '完了' %>
+<% end %>
