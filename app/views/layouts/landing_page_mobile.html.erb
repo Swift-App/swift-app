@@ -23,7 +23,7 @@
         <%= f.input :password, required: false, placeholder: 'パスワード', label: false %>
         <%= f.input :remember_me, as: :boolean, label: 'ブラウザを閉じるときオートログインを有効にする' if devise_mapping.rememberable? %>
 
-        <%= f.button :submit, "ログイン", class: 'btn btn-primary btn-block' %>
+        <%= f.button :submit, "ログイン" %>
 
     <% end %>
     <br>
