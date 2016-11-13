@@ -26,6 +26,9 @@ module SwiftApp
     end
 
     config.active_record.time_zone_aware_types = [:datetime, :time]
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
   
 end
