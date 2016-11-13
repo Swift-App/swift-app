@@ -1,4 +1,6 @@
 class UserMailer < ApplicationMailer
+  include SendGrid
+  
   default from: 'info@swift-staff.jp'
   default to: "takehiromouri@gmail.com"
 

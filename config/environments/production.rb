@@ -72,7 +72,6 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.active_job.queue_adapter = :delayed_job
 
-
   ActionMailer::Base.delivery_method = :smtp
 
   config.action_mailer.raise_delivery_errors = true
