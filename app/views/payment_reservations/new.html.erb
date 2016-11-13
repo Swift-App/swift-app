@@ -31,7 +31,8 @@
         <%= f.date_field :date_5, required: false, class: 'form-control' %>
         <br />
 
-        <%= f.input :comments, as: :text, required: false, label: '備考' %>
+        <label>備考</label><br>
+        <%= f.input :comments, as: :text, required: false, label: false %>
         <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
       <% else %>
         <table class="table table-responsive">
