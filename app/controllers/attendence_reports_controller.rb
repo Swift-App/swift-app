@@ -21,7 +21,7 @@ class AttendenceReportsController < ApplicationController
   private
 
   def send_attendance_report_email
-    UserMailer.attendance_report(user: current_user, attendance_report: @attendence_report).deliver_later
+    UserMailer.attendance_report(user: current_user, attendance_report: @attendence_report).deliver_now
   end
 
   def attendence_report_params

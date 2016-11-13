@@ -33,7 +33,7 @@ RSpec.describe AttendenceReportsController, type: :controller do
           job = FactoryGirl.create(:job)
           attendence_report_email = double("attendence_report_email")
           allow(UserMailer).to receive(:attendance_report).and_return(attendence_report_email)
-          allow(attendence_report_email).to receive(:deliver_later)
+          allow(attendence_report_email).to receive(:deliver_now)
 
           sign_in user
 
@@ -42,7 +42,7 @@ RSpec.describe AttendenceReportsController, type: :controller do
           }.to change(AttendenceReport, :count).by(1)
           expect(response).to redirect_to staff_index_path
           expect(UserMailer).to have_received(:attendance_report)
-          expect(attendence_report_email).to have_received(:deliver_later)
+          expect(attendence_report_email).to have_received(:deliver_now)
         end
       end
 

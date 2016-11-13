@@ -19,7 +19,7 @@ RSpec.describe CompletionReportsController, type: :controller do
         job = FactoryGirl.create(:job)
         mock_report_completion_email = double("mock_report_completion_email")
         allow(UserMailer).to receive(:report_completion).and_return(mock_report_completion_email)
-        allow(mock_report_completion_email).to receive(:deliver_later)
+        allow(mock_report_completion_email).to receive(:deliver_now)
 
         sign_in user
 
@@ -27,7 +27,7 @@ RSpec.describe CompletionReportsController, type: :controller do
           post :create, completion_report: FactoryGirl.attributes_for(:completion_report, job_name: "Job Name")
         }.to change(CompletionReport, :count).by(1)
         expect(UserMailer).to have_received(:report_completion)
-        expect(mock_report_completion_email).to have_received(:deliver_later)
+        expect(mock_report_completion_email).to have_received(:deliver_now)
       end
 
       it "redirects the user to member page" do

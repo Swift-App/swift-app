@@ -30,13 +30,13 @@ RSpec.describe PaymentReservationsController, type: :controller do
           user = FactoryGirl.create(:user)
           mock_payment_reservation_made_email = double("mock_payment_reservation_made_email")
           allow(UserMailer).to receive(:payment_reservation_made).and_return(mock_payment_reservation_made_email)
-          allow(mock_payment_reservation_made_email).to receive(:deliver_later)
+          allow(mock_payment_reservation_made_email).to receive(:deliver_now)
 
           sign_in user
           post :create, payment_reservation: FactoryGirl.attributes_for(:payment_reservation)
 
           expect(UserMailer).to have_received(:payment_reservation_made)
-          expect(mock_payment_reservation_made_email).to have_received(:deliver_later)
+          expect(mock_payment_reservation_made_email).to have_received(:deliver_now)
         end
       end
 

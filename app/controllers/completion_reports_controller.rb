@@ -22,7 +22,7 @@ class CompletionReportsController < ApplicationController
   private 
 
   def send_job_completion_email
-    UserMailer.report_completion(user: current_user, completion_report: @completion_report).deliver_later
+    UserMailer.report_completion(user: current_user, completion_report: @completion_report).deliver_now
   end
 
   def completion_report_params

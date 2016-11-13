@@ -21,7 +21,7 @@
   private
 
   def send_new_reservation_email
-    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_later
+    UserMailer.reservation_made(user: current_user, reservation: @reservation).deliver_now
   end
 
   def reservation_params

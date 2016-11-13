@@ -22,7 +22,7 @@ class ConfirmationsController < ApplicationController
   private
 
   def send_job_confirmation_email
-    UserMailer.job_confirmation(user: current_user, job: @confirmation.job).deliver_later
+    UserMailer.job_confirmation(user: current_user, job: @confirmation.job).deliver_now
   end
 
 end

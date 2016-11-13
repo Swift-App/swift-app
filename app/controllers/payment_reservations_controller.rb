@@ -20,7 +20,7 @@ class PaymentReservationsController < ApplicationController
   private
 
   def send_new_payment_reservation_email
-    UserMailer.payment_reservation_made(user: current_user, payment_reservation: @payment_reservation).deliver_later
+    UserMailer.payment_reservation_made(user: current_user, payment_reservation: @payment_reservation).deliver_now
   end
 
   def payment_reservation_params
