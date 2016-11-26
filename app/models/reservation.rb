@@ -4,4 +4,12 @@ class Reservation < ApplicationRecord
   belongs_to :user
 
   validates :user, :date_1, presence: true
+
+  after_create :send_new_reservation_email
+
+  private
+
+  def send_new_reservation_email
+    UserMailer.reservation_made(user: user, reservation: self).deliver_now
+  end
 end

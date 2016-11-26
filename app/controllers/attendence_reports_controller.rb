@@ -8,8 +8,6 @@ class AttendenceReportsController < ApplicationController
   def create
     @attendence_report = current_user.attendence_reports.new(attendence_report_params)
     if @attendence_report.save
-      send_attendance_report_email
-
       flash[:success] = "出発・到着報告が完了いたしました。"
       redirect_to staff_index_path
     else
@@ -19,10 +17,6 @@ class AttendenceReportsController < ApplicationController
   end
 
   private
-
-  def send_attendance_report_email
-    UserMailer.attendance_report(user: current_user, attendance_report: @attendence_report).deliver_now
-  end
 
   def attendence_report_params
     params.require(:attendence_report).permit(:report_type, :job_name, :user_id)
