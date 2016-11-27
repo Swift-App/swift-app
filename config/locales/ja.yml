@@ -5,6 +5,11 @@ ja:
       job: お仕事
       news_article: ニュース記事
       job_tag: タグ      
+      attendence_report: 出発報告
+      completion_report: 終了報告
+      payment_reservation: 給与受取報告
+      reservation: お仕事予約
+      admin_user: 管理者
     attributes:
       user:
         unique_id: ID
@@ -21,7 +26,8 @@ ja:
         address_details: 番地・アパート名
         photo: 写真
       attendence_report:
-        job_id: お仕事
+        job_name: お仕事名
+        user: ユーザー
         report_type: 出退勤
       job_tag:
         tag_id: タグ名
@@ -46,18 +52,35 @@ ja:
         shift_category: シフト
         duration: 期間
         category: カテゴリー
-      completion_report:
-        job_id: お仕事
+      completion_report:        
         comments: 備考
         start_time: 開始時間
         end_time: 終了時間
-        breaktime: 休憩時間
+        break_time: 休憩時間
         tardy_or_leave: 遅刻・早退
+        user: ユーザー
+        job_name: 仕事名
       news_article:
         title: 題名
         content: 内容
         meta_description: メタデスクリプション
         featured_photo: 記事トップ画像
+      reservation:
+        user: ユーザー
+        date_1: 予約日1
+        date_2: 予約日2
+        date_3: 予約日3
+        date_4: 予約日4
+        date_5: 予約日5
+        date_6: 予約日6
+        date_7: 予約日7
+      payment_reservation:
+        user: ユーザー
+        date_1: 予約日1
+        date_2: 予約日2
+        date_3: 予約日3
+        date_4: 予約日4
+        date_5: 予約日5
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

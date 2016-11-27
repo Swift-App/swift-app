@@ -7,6 +7,8 @@ class PaymentReservation < ApplicationRecord
 
   after_create :send_new_payment_reservation_email
 
+  delegate :unique_id, to: :user, prefix: true
+
   private
 
   def send_new_payment_reservation_email

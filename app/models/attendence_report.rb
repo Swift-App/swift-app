@@ -7,6 +7,8 @@ class AttendenceReport < ApplicationRecord
 
   after_create :send_attendance_report_email
 
+  delegate :unique_id, to: :user, prefix: true
+
   private
 
   def send_attendance_report_email

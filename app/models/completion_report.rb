@@ -8,6 +8,8 @@ class CompletionReport < ApplicationRecord
 
   after_create :send_job_completion_email
 
+  delegate :unique_id, to: :user, prefix: true
+
   private 
 
   def send_job_completion_email
