@@ -15,7 +15,7 @@ FactoryGirl.define do
     last_name "last_name"
     first_name_katakana "タロウ"
     last_name_katakana "ヤマモト"
-    phone "0806747394"
+    phone "08067397394"
     birthday Date.today-22.years
     postal_code "181-0015"    
     prefecture "prefecture"

@@ -34,10 +34,10 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :first_name_katakana
       f.input :email
-      f.input :phone
+      f.input :phone, placeholder: 'ハイフンなしで入力して下さい（例：0908005400）'
       f.input :birthday, start_year: Date.today.year - 65,
                               end_year: Date.today.year - 16, default: Date.today - 35.years
-      f.input :postal_code     
+      f.input :postal_code, placeholder: '（例：000-0000）'    
       f.input :prefecture
       f.input :city
       f.input :address_details
