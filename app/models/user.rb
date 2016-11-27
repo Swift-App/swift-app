@@ -3,7 +3,6 @@ class User < ApplicationRecord
   POSTAL_CODE_REGEX = /\d{3}-\d{4}/
   PHONE_REGEX = /\d{11}/
 
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
