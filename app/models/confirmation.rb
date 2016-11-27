@@ -7,9 +7,9 @@ class Confirmation < ApplicationRecord
   
   delegate :title, to: :job, prefix: true  
 
- 	after_create :send_job_confirmation_email
+	after_create :send_job_confirmation_email
 
- 	private
+	private
 
   def send_job_confirmation_email
     UserMailer.job_confirmation(user: user, confirmation: self).deliver_now

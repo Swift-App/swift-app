@@ -58,7 +58,8 @@ Author:Denis Samardjiev
 -------------------------------------------------------------- */
 body {
 	background:#fff;
-	font:normal 14px 'Open Sans', sans-serif;
+    font-family: "Mplus 1p";  
+	font:normal 14px;
 	font-weight:300;
 	color: #333;
 	height:100%;
@@ -67,6 +68,7 @@ body {
 }
 
 html {
+	font-family: "Mplus 1p";  
 	min-height:100% !important;
 }
 
