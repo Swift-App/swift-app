@@ -77,6 +77,8 @@ gem 'jpmobile'
 
 gem 'sendgrid'
 
+gem 'rails_12factor', group: [:production]
+
 # gem 'sidekiq'
 
 # gem 'redis'
