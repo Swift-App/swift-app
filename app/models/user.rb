@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  KATAKANA_REGEX= /\p{Katakana}/
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -13,8 +13,18 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  validates :unique_id, :first_name, :last_name, :first_name_katakana, :last_name_katakana, :phone, :birthday, :prefecture, :city, presence: true
+  validates :unique_id, length: {is: 5}
+  validates_uniqueness_of :unique_id
+  validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
+  validates :last_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
+
   def name
     "#{last_name} #{first_name}"
+  end
+
+  def name_katakana
+    "#{last_name_katakana} #{first_name_katakana}"
   end
 
   def registered?(job:)

@@ -1,4 +1,4 @@
-<p><%= @user.name %>から<%= @attendance_report.report_type %>がありました。</p>
+<p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様から<%= @attendance_report.report_type %>がありました。</p>
 
 <p><strong>お仕事</strong> <%= @attendance_report.job_name %></p>
 <p><strong>送信された時間</strong> <%= @attendance_report.created_at.strftime("%m/%d/%Y %l:%M %p") %></p>

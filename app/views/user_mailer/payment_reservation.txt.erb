@@ -1,4 +1,4 @@
-<%= @user.name %>様がお給与受取予約をしました。
+ID <%= @user.unique_id %> <%= @user.name_katakana %>様がお給与受取予約をしました。
 
 
 支払い希望日: <%= @payment_reservation.request_date.try(:strftime, ("%m/%d/%Y")) || "無し" %>
