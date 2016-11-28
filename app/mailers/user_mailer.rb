@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
   
   default from: 'info@swift-staff.jp'
-  default to: "info@swift-staff.jp"  
+  default to: "info@info-swift.sakura.ne.jp"  
 
   def attendance_report(args)
     @user = args.fetch(:user)
