@@ -11,4 +11,7 @@
 
 <p><strong>備考</strong> <%= @completion_report.comments %></p>
 
+<p>※返信はこちらから <%= @user.email %></p>
+
 <%= image_tag attachments['attachment.png'].url if attachments.present? -%>
+

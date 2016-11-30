@@ -3,3 +3,5 @@
 <p><strong>お仕事</strong> <%= @attendance_report.job_name %></p>
 <p><strong>送信された時間</strong> <%= @attendance_report.created_at.strftime("%m/%d/%Y %l:%M %p") %></p>
 <p><strong><%= @attendance_report.report_type %></strong></p>
+
+<p>※返信はこちらから <%= @user.email %></p>

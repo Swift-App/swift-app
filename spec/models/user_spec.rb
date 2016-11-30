@@ -37,39 +37,39 @@ RSpec.describe User, type: :model do
 		end
 	end
 
-	describe "phone" do
-		it "returns error if it is not in 0908080808 format" do
-			user = FactoryGirl.build(:user, phone: "09080")
+	# describe "phone" do
+	# 	it "returns error if it is not in 0908080808 format" do
+	# 		user = FactoryGirl.build(:user, phone: "09080")
 
-			user.save
+	# 		user.save
 
-			expect(user).to_not be_valid
-		end
+	# 		expect(user).to_not be_valid
+	# 	end
 
-		it "doesnt return error if in correct format" do
-			user = FactoryGirl.build(:user, phone: "08066669999")
+	# 	it "doesnt return error if in correct format" do
+	# 		user = FactoryGirl.build(:user, phone: "08066669999")
 
-			user.save
+	# 		user.save
 
-			expect(user).to be_valid
-		end
-	end
+	# 		expect(user).to be_valid
+	# 	end
+	# end
 
-	describe "postal_code" do
-		it "returns error if it is not in 000-0000 format" do
-			user = FactoryGirl.build(:user, postal_code: "0000000")
+	# describe "postal_code" do
+	# 	it "returns error if it is not in 000-0000 format" do
+	# 		user = FactoryGirl.build(:user, postal_code: "0000000")
 
-			user.save
+	# 		user.save
 
-			expect(user).to_not be_valid
-		end
+	# 		expect(user).to_not be_valid
+	# 	end
 
-		it "doesn't return error if it is in 000-0000 format" do
-			user = FactoryGirl.build(:user, postal_code: "000-0000")
+	# 	it "doesn't return error if it is in 000-0000 format" do
+	# 		user = FactoryGirl.build(:user, postal_code: "000-0000")
 
-			user.save
+	# 		user.save
 
-			expect(user).to be_valid
-		end
-	end
+	# 		expect(user).to be_valid
+	# 	end
+	# end
 end

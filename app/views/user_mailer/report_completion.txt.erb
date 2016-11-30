@@ -11,4 +11,6 @@ ID <%= @user.unique_id %> <%= @user.name_katakana %>様から終了報告があ�
 
 備考 <%= @completion_report.comments %>
 
+※返信はこちらから <%= @user.email %>
+
 <%= image_tag attachments['attachment.png'].url if attachments.present? -%>
