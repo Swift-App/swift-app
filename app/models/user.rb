@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  validates :unique_id, :first_name, :last_name, :first_name_katakana, :last_name_katakana, presence: true
+  validates :unique_id, :first_name_katakana, :last_name_katakana, presence: true
   validates :unique_id, length: {is: 5}
   validates_uniqueness_of :unique_id
   validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}

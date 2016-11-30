@@ -2,14 +2,14 @@
 <div class="col-xs-12 col-md-6 col-md-offset-3">
   <h3 class="text-center">スタッフ様お問い合わせ</h3>
   <%= simple_form_for @contact, url: '/staff/contacts', html: {class: 'form-horizontal' } do |f| %>
-    <%= f.input :name, required: true, label: 'お名前', placeholder: '田中太郎' %>
-    <%= f.input :furigana, required: true, label: 'ふりがな', placeholder: 'たなかたろう' %>
-    <%= f.input :birthday, as: :string, required: true, label: 'お誕生日', start_year: Date.today.year - 65,
+    <%= f.input :name, required: true, label: 'お名前 「必須入力」', placeholder: '田中太郎' %>
+    <%= f.input :furigana, label: 'ふりがな', placeholder: 'たなかたろう' %>
+    <%= f.input :birthday, as: :string, label: 'お誕生日', start_year: Date.today.year - 65,
                             end_year: Date.today.year - 16, default: Date.today - 35.years %>
-    <%= f.input :email, required: true, label: 'メールアドレス', placeholder: 'staff@email.com' %>
-    <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
-    <%= f.input :interview_date, as: :text, required: true, label: '面接希望日時（※第3希望までご入力下さい。）', placeholder: '', input_html: {rows: 5} %>
-    <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
+    <%= f.input :email, required: true, label: 'メールアドレス 「必須入力」', placeholder: 'staff@email.com' %>
+    <%= f.input :phone, label: 'お電話番号', placeholder: '111-111-1111' %>
+    <%= f.input :interview_date, as: :text, label: '面接希望日時（※第3希望までご入力下さい。）', placeholder: '', input_html: {rows: 5} %>
+    <%= f.input :terms_and_conditions, as: :boolean, label: '利用規約に同意する' %>
 
     
     <%= render 'shared/terms' %>

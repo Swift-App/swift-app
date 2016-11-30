@@ -25,21 +25,21 @@
 
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <%= f.input :postal_code, required: true, label: '郵便番号', placeholder: '111-1111' %>
+        <%= f.input :postal_code, required: false, label: '郵便番号', placeholder: '111-1111' %>
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <%= f.input :prefecture, required: true, label: '都道府県' %>
+        <%= f.input :prefecture, required: false, label: '都道府県' %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <%= f.input :city, required: true, label: '市町村' %>
+        <%= f.input :city, required: false, label: '市町村' %>
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <%= f.input :address_details, required: true, label: '番地・アパート名' %>
+        <%= f.input :address_details, required: false, label: '番地・アパート名' %>
       </div>
 
       
@@ -51,7 +51,7 @@
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <%= f.input :phone, required: true, label: 'お電話番号', placeholder: '111-111-1111' %>
+        <%= f.input :phone, required: false, label: 'お電話番号', placeholder: '111-111-1111' %>
       </div>        
     </div>
 
@@ -61,19 +61,19 @@
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <%= f.input :inquiry, collection: %w(人材派遣 請負作業 人材紹介 その他) , required: true, label: 'ご依頼内容' %>
+        <%= f.input :inquiry, collection: %w(人材派遣 請負作業 人材紹介 その他) , required: false, label: 'ご依頼内容' %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12">
-        <%= f.input :remarks, as: :text, required: true, label: '備考・相談内容', input_html: {rows: 5}%>
+        <%= f.input :remarks, as: :text, required: false, label: '備考・相談内容', input_html: {rows: 5}%>
       </div>
     </div>
 
 
     <div class="col-xs-12">
-      <%= f.input :terms_and_conditions, as: :boolean, required: true, label: '利用規約に同意する' %>
+      <%= f.input :terms_and_conditions, as: :boolean, label: '利用規約に同意する' %>
     </div>
 
     <div class="terms">
