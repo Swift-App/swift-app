@@ -37,4 +37,12 @@ Rails.application.routes.draw do
   resources :reservations, only: [:new, :create]
 
   resources :news_articles, only: [:index, :show]
+
+  resources :registrations, only: [:new, :create]
+
+  get 'registrations/step_1', to: 'registrations#step_1', as: 'registrations_step_1'
+
+  post 'next_step', to: 'registrations#next_step', as: 'next_step'
+
+  get 'registration/steps/:id', to: 'registrations/steps#show', as: 'registration_step'
 end

@@ -5,6 +5,11 @@
   padding: 10px;
 }
 
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
 .btn-round {
   border-radius: 20px !important;
   padding: 5px 20px;
