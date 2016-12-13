@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+  include Confirmable
+  
   KATAKANA_REGEX = /\p{Katakana}/
-  # POSTAL_CODE_REGEX = /\d{7}-\d{4}/
-  # PHONE_REGEX = /\d{11}/
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

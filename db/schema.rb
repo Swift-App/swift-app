@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127121216) do
+ActiveRecord::Schema.define(version: 20161212101818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -208,19 +208,19 @@ ActiveRecord::Schema.define(version: 20161127121216) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                          default: "",    null: false
+    t.string   "encrypted_password",             default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                  default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "first_name"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "last_name"
     t.string   "first_name_katakana"
     t.string   "last_name_katakana"
@@ -232,6 +232,47 @@ ActiveRecord::Schema.define(version: 20161127121216) do
     t.string   "address_details"
     t.string   "photo"
     t.string   "unique_id"
+    t.string   "emergency_first_name"
+    t.string   "emergency_last_name"
+    t.string   "emergency_relationship"
+    t.string   "emergency_address"
+    t.string   "emergency_phone"
+    t.string   "application_medium"
+    t.boolean  "request_picking",                default: false, null: false
+    t.boolean  "request_inspection",             default: false, null: false
+    t.boolean  "request_devanning",              default: false, null: false
+    t.boolean  "request_testing",                default: false, null: false
+    t.boolean  "request_food",                   default: false, null: false
+    t.boolean  "request_packing",                default: false, null: false
+    t.boolean  "request_printing",               default: false, null: false
+    t.boolean  "request_line",                   default: false, null: false
+    t.boolean  "request_moving_assistant",       default: false, null: false
+    t.boolean  "request_office_relocation",      default: false, null: false
+    t.boolean  "request_assistant_distribution", default: false, null: false
+    t.boolean  "request_carry",                  default: false, null: false
+    t.boolean  "request_filing",                 default: false, null: false
+    t.boolean  "request_phone",                  default: false, null: false
+    t.boolean  "request_voucher_organization",   default: false, null: false
+    t.boolean  "request_reception",              default: false, null: false
+    t.boolean  "request_debug",                  default: false, null: false
+    t.boolean  "request_pc_setup",               default: false, null: false
+    t.boolean  "request_data_entry",             default: false, null: false
+    t.boolean  "request_other",                  default: false, null: false
+    t.boolean  "request_director",               default: false, null: false
+    t.boolean  "request_event_organizer",        default: false, null: false
+    t.boolean  "request_event_setup",            default: false, null: false
+    t.boolean  "request_campaign",               default: false, null: false
+    t.boolean  "request_sampling",               default: false, null: false
+    t.boolean  "request_research",               default: false, null: false
+    t.boolean  "request_sales",                  default: false, null: false
+    t.boolean  "request_register",               default: false, null: false
+    t.boolean  "request_hall",                   default: false, null: false
+    t.boolean  "request_kitchen",                default: false, null: false
+    t.boolean  "request_dish_washing",           default: false, null: false
+    t.boolean  "daytime_student",                default: false, null: false
+    t.boolean  "elder",                          default: false, null: false
+    t.boolean  "earnings_over_500",              default: false, null: false
+    t.boolean  "householder_present",            default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["unique_id"], name: "index_users_on_unique_id", using: :btree

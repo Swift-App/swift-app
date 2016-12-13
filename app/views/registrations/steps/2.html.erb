@@ -1,0 +1,228 @@
+<div class="row">
+	<div class="col-xs-12 col-md-6 col-md-offset-3">
+		<h3>登録情報入力</h3>
+
+		<%= simple_form_for @user, url: registrations_path, method: :post do |f| %>
+			<% if @user.confirming.blank? %>
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :first_name, required:true, autofocus:true %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+			  		<%= f.input :last_name, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :first_name_katakana, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :last_name_katakana, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :email, required: true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :phone, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :birthday, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :postal_code, required:true %>
+			  	</div>
+			 	
+			 		<div class="col-xs-12 col-md-6">
+			  		<%= f.input :prefecture, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :city, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :address_details, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12">
+			  		<h3>緊急連絡先</h3>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :emergency_first_name %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_last_name %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_relationship %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_address %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_phone %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :application_medium %>
+					</div>
+
+					<div class="col-xs-12">
+						<h3>経験 ※チェック式　複数回答可能</h3>
+					</div>
+
+					<table class="table table-responsive">
+						<tr>
+							<td class="col-xs-3">倉庫</td>
+							<td>
+								<%= f.input :request_picking %>
+								<%= f.input :request_inspection %>
+								<%= f.input :request_devanning %>
+								<%= f.input :request_testing %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>工場・ライン</td>
+							<td>
+								<%= f.input :request_food %>
+								<%= f.input :request_packing %>
+								<%= f.input :request_printing %>
+								<%= f.input :request_line %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>引っ越し</td>
+							<td>
+								<%= f.input :request_moving_assistant %>
+								<%= f.input :request_office_relocation %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>配送助手</td>
+							<td>
+								<%= f.input :request_assistant_distribution %>
+								<%= f.input :request_carry %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>事務</td>
+							<td>
+								<%= f.input :request_filing %>
+								<%= f.input :request_phone %>
+								<%= f.input :request_voucher_organization %>
+								<%= f.input :request_reception %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>PC</td>
+							<td>
+								<%= f.input :request_debug %>
+								<%= f.input :request_pc_setup %>
+								<%= f.input :request_data_entry %>
+								<%= f.input :request_other %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>イベント</td>
+							<td>
+								<%= f.input :request_director %>
+								<%= f.input :request_event_organizer %>
+								<%= f.input :request_event_setup %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>サンプリング</td>
+							<td>
+								<%= f.input :request_campaign %>
+								<%= f.input :request_sampling %>
+								<%= f.input :request_research %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>販売・レジ</td>
+							<td>
+								<%= f.input :request_sales %>
+								<%= f.input :request_register %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>ホール・店員</td>
+							<td>
+								<%= f.input :request_hall %>
+								<%= f.input :request_kitchen %>
+								<%= f.input :request_dish_washing %>
+							</td>
+						</tr>
+					</table>
+
+				<%= f.submit "次", class: 'btn btn-success pull-right' %>
+			<% end %>
+		</div>
+
+		<% else %>
+			<table class="table table-responsive">
+        <tr>
+          <th>予約日1<th>
+          <td><%= @reservation.date_1 %><td>
+        </tr>
+        <tr>
+          <th>予約日2<th>
+          <td><%= @reservation.date_2 %><td>
+        </tr>
+        <tr>
+          <th>予約日3<th>
+          <td><%= @reservation.date_3 %><td>
+        </tr>
+        <tr>
+          <th>予約日4<th>
+          <td><%= @reservation.date_4 %><td>
+        </tr>
+        <tr>
+          <th>予約日5<th>
+          <td><%= @reservation.date_5 %><td>
+        </tr>
+        <tr>
+          <th>予約日6<th>
+          <td><%= @reservation.date_6 %><td>
+        </tr>
+        <tr>
+          <th>予約日7<th>
+          <td><%= @reservation.date_7 %><td>
+        </tr>
+        <tr>
+          <th>備考<th>
+          <td><%= @reservation.additional_notes %><td>
+        </tr>
+      </table>
+      <%= f.hidden_field :date_1 %>
+      <%= f.hidden_field :date_2 %>
+      <%= f.hidden_field :date_3 %>
+      <%= f.hidden_field :date_4 %>
+      <%= f.hidden_field :date_5 %>
+      <%= f.hidden_field :date_6 %>
+      <%= f.hidden_field :date_7 %>
+      <%= f.hidden_field :additional_notes %>
+
+      <p>この内容でよろしいでしょうか？</p>
+      <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
+		<% end %>
+</div>

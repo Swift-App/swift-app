@@ -25,6 +25,47 @@ ja:
         city: 市町村
         address_details: 番地・アパート名
         photo: 写真
+        emergency_first_name: 名
+        emergency_last_name: 姓
+        emergency_relationship: 姓
+        emergency_address: 住所
+        emergency_phone: 電話番号
+        application_medium: 応募媒体
+        request_picking: ピッキング
+        request_inspection: 検品
+        request_devanning: デバン
+        request_testing: 検査
+        request_food: 食品
+        request_packing: 梱包
+        request_printing: 印刷
+        request_line: ライン作業
+        request_moving_assistant: 引っ越しアシスタント
+        request_office_relocation: 事務所移転
+        request_assistant_distribution: 配送助手
+        request_carry: 搬入搬出
+        request_filing: ファイリング
+        request_phone: 電話対応
+        request_voucher_organization: 伝票整理
+        request_reception: 受付
+        request_debug: デバッグ
+        request_pc_setup: PCセットアップ
+        request_data_entry: データ入力
+        request_other: その他
+        request_director: ディレクター
+        request_event_organizer: イベント運営
+        request_event_setup: イベント設営
+        request_campaign: キャンペーン
+        request_sampling: 街頭サンプリング
+        request_research: 調査
+        request_sales: 販売
+        request_register: レジ接客
+        request_hall: ホール
+        request_kitchen: キッチンハンド
+        request_dish_washing: 皿洗い等
+        daytime_student: 昼間学生
+        elder: 60歳以上
+        earnings_over_500: 年収500万以上
+        householder_present: 生計者
       attendence_report:
         job_name: お仕事名
         user: ユーザー
