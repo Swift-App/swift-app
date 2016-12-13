@@ -13,6 +13,7 @@ ja:
     attributes:
       user:
         unique_id: ID
+        password: パスワード
         first_name: 名
         last_name: 姓
         first_name_katakana: 名（カタカナ）
@@ -27,7 +28,7 @@ ja:
         photo: 写真
         emergency_first_name: 名
         emergency_last_name: 姓
-        emergency_relationship: 姓
+        emergency_relationship: 続柄
         emergency_address: 住所
         emergency_phone: 電話番号
         application_medium: 応募媒体

@@ -118,12 +118,20 @@
   }
 }
 
-
-
 .cta-company {
   margin: 100px 0px; 
   background: whitesmoke;
   padding: 50px;
+}
+
+.table {
+  label {
+    font-weight: 400;
+  }
+
+  input[type=checkbox] {
+    margin-right: 20px;
+  }
 }
 
 @media (max-width:480px) {

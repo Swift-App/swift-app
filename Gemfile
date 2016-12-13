@@ -79,6 +79,8 @@ gem 'sendgrid'
 
 gem 'rails_12factor', group: [:production]
 
+gem 'activerecord-session_store'
+
 # gem 'sidekiq'
 
 # gem 'redis'

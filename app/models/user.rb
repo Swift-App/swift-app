@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  include Confirmable
-  
+  include Confirmable  
+
   KATAKANA_REGEX = /\p{Katakana}/
 
   devise :database_authenticatable, :registerable,
@@ -23,6 +23,8 @@ class User < ApplicationRecord
   # validates :postal_code, format: {with: POSTAL_CODE_REGEX, message: 'は「000-0000」のフォーマットで入力して下さい。'}
   # validates :phone, format: {with: PHONE_REGEX, message: 'は「00000000000」のフォーマットで入力して下さい。'}
 
+  before_validation :generate_password!
+  before_validation :generate_unique_id!
 
   def name
     "#{last_name} #{first_name}"
@@ -34,5 +36,15 @@ class User < ApplicationRecord
 
   def registered?(job:)
     jobs.include?(job)
+  end
+
+  private
+
+  def generate_password!
+    self.password = birthday.to_s.split("-").join("")
+  end
+
+  def generate_unique_id!    
+    self.unique_id = UniqueIdGenerator.new.generate!
   end
 end

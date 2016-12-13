@@ -6,16 +6,13 @@ class RegistrationsController < ApplicationController
 	end
 
 	def create
-		@user ||= User.new(user_params)
+		@user ||= User.new(user_params)		
 
-		session[:user] = @user
+		@user.valid?
 
-		if @user.valid?
-			increment_step!
-			redirect_to registration_step_path(session[:step])
-		else
-			redirect_to registration_step_path(USER_REGISTRATION_STEP)
-		end
+		set_user_session
+
+		redirect_to registration_step_path(USER_REGISTRATION_STEP)
 	end
 
 	def next_step
@@ -24,6 +21,10 @@ class RegistrationsController < ApplicationController
 	end
 
 	private
+
+	def set_user_session
+		session[:user] = @user
+	end
 
 	def increment_step!
 		session[:step] += 1
@@ -35,6 +36,6 @@ class RegistrationsController < ApplicationController
 																 :request_inspection, :request_devanning, :request_testing, :request_food, :request_packing, :request_printing, :request_line, :request_moving_assistant, 
 																 :request_office_relocation, :request_assistant_distribution, :request_carry, :request_filing, :request_phone, :request_voucher_organization, :request_reception, 
 																 :request_debug, :request_pc_setup, :request_data_entry, :request_other, :request_director, :request_event_organizer, :request_event_setup, :request_campaign, 
-																 :request_sampling, :request_research, :request_sales, :request_register, :request_hall, :request_kitchen, :request_dish_washing)
+																 :request_sampling, :request_research, :request_sales, :request_register, :request_hall, :request_kitchen, :request_dish_washing, :confirming)
 	end
 end
