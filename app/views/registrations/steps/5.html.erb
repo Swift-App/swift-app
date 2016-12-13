@@ -1,16 +1,100 @@
-<h3>◆例外規定の確認</h3>
-<p>2012年10月の派遣法改正で、派遣会社と派遣労働者が交わす雇用契約に制限が設けられ、1日単位のお仕事案内が原則としてできなくなり、31日以上の雇用契約が必要になりました。ただし、以下に該当される方は例外規定にあたり、1日単位のお仕事ができます。</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <%= link_to '戻る', :back, class: 'btn btn-warning btn-round' %>
+    <h3 class="text-center" style="margin-bottom: 0px;">お仕事予約</h3>
+    <p class="text-center" style="margin-bottom: 20px;"><small>クリックして日程を選択してください。</small></p>
 
-<p>該当項目がある場合は必ずチェックを入れて先に進んでください。</br>
-また就業開始までに括弧内の書類をスイフトまでメールあるいはFAXで提出お願いします。</p>
+    <%= simple_form_for @reservation, url: registrations_reservations_path(current_step: params[:id]), method: :post do |f| %>
+      <% if @reservation.confirming.blank? %>
+        <label>予約日1 *</label><br>
+        <%= f.date_field :date_1, label: '予約日1', class: 'form-control' %>
+        <br />
 
-□昼間の学校に通われている学生の方。(学生証をご提示ください。)
-□ 60歳以上の方。(年齢が確認できる身分証明書をご提示ください。)
-□ご自身の年収が500万以上あり、副業として就業される方(収入がわかる源泉徴収票などの書類)
-□ご家族全体の年収が500万以上あり、ご自身が主たる生計者ではない方(収入がわかる源泉徴収票などの書類)
+        <label>予約日2</label><br>
+        <%= f.date_field :date_2, required: false, class: 'form-control' %>
+        <br />
 
-<p>また、上記の例外規定に該当されない方は、31日以上でひと月概ね87時間(11回)</br>以上の雇用契約を締結し、お仕事を紹介していきます。</p>
+        <label>予約日3</label><br>
+        <%= f.date_field :date_3, required: false, class: 'form-control' %>
+        <br />
 
-<%= link_to '次へ', next_step_path(current_step: 5) %>
-<%= link_to '戻る', :back %>
+        <label>予約日4</label><br>
+        <%= f.date_field :date_4, required: false, class: 'form-control' %>
+        <br />
 
+        <label>予約日5</label><br>
+        <%= f.date_field :date_5, required: false, class: 'form-control' %>
+        <br />
+
+        <label>予約日6</label><br>
+        <%= f.date_field :date_6, required: false, class: 'form-control' %>
+        <br/>
+
+        <label>予約日7</label><br>
+        <%= f.date_field :date_7, required: false, class: 'form-control' %>
+        <br />
+
+        <%= f.input :additional_notes, as: :text, required: false, label: '備考／相談内容等' %>
+        <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
+
+      <% else %>
+
+        <table class="table table-responsive">
+          <tr>
+            <th>予約日1<th>
+            <td><%= @reservation.date_1 %><td>
+          </tr>
+          <tr>
+            <th>予約日2<th>
+            <td><%= @reservation.date_2 %><td>
+          </tr>
+          <tr>
+            <th>予約日3<th>
+            <td><%= @reservation.date_3 %><td>
+          </tr>
+          <tr>
+            <th>予約日4<th>
+            <td><%= @reservation.date_4 %><td>
+          </tr>
+          <tr>
+            <th>予約日5<th>
+            <td><%= @reservation.date_5 %><td>
+          </tr>
+          <tr>
+            <th>予約日6<th>
+            <td><%= @reservation.date_6 %><td>
+          </tr>
+          <tr>
+            <th>予約日7<th>
+            <td><%= @reservation.date_7 %><td>
+          </tr>
+          <tr>
+            <th>備考<th>
+            <td><%= @reservation.additional_notes %><td>
+          </tr>
+        </table>
+        <%= f.hidden_field :date_1 %>
+        <%= f.hidden_field :date_2 %>
+        <%= f.hidden_field :date_3 %>
+        <%= f.hidden_field :date_4 %>
+        <%= f.hidden_field :date_5 %>
+        <%= f.hidden_field :date_6 %>
+        <%= f.hidden_field :date_7 %>
+        <%= f.hidden_field :additional_notes %>
+
+        <p>この内容でよろしいでしょうか？</p>
+        <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
+      <% end %>
+
+      <%= f.hidden_field :confirming %>
+
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+  let today = new Date().toJSON().slice(0,10);
+  $("input[type=date]").datepicker({defaultDate: today, dateFormat: 'yy-mm-dd', orientation: "bottom"});
+});
+</script>

@@ -25,6 +25,8 @@ class User < ApplicationRecord
 
   before_validation :generate_password!
   before_validation :generate_unique_id!
+  after_create :send_complete_signup_email
+
 
   def name
     "#{last_name} #{first_name}"
@@ -39,6 +41,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def send_complete_signup_email
+    
+  end
 
   def generate_password!
     self.password = birthday.to_s.split("-").join("")

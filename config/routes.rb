@@ -40,9 +40,14 @@ Rails.application.routes.draw do
 
   resources :registrations, only: [:new, :create]
 
+  namespace :registrations do
+    resources :reservations, only: :create
+  end
+
   get 'registrations/step_1', to: 'registrations#step_1', as: 'registrations_step_1'
 
   post 'next_step', to: 'registrations#next_step', as: 'next_step'
+  post 'final_step', to: 'registrations#final_step', as: 'final_step'
 
   get 'registration/steps/:id', to: 'registrations/steps#show', as: 'registration_step'
 end
