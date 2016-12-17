@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   post 'next_step', to: 'registrations#next_step', as: 'next_step'
   post 'final_step', to: 'registrations#final_step', as: 'final_step'
   post 'set_confirming_false', to: 'registrations#set_confirming_false', as: 'set_confirming_false'
+  post 'set_reservation_confirming_false', to: 'registrations/reservations#set_confirming_false', as: 'set_reservation_confirming_false'
 
   get 'registration/steps/:id', to: 'registrations/steps#show', as: 'registration_step'
 end

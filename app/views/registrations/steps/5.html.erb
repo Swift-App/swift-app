@@ -47,6 +47,7 @@
         <br />
 
         <%= f.input :additional_notes, as: :text, required: false, label: '備考／相談内容等' %>
+
         <%= f.submit '確認画面', class: 'btn btn-success pull-right' %>
 
       <% else %>
@@ -95,6 +96,7 @@
         <%= f.hidden_field :additional_notes %>
 
         <p>この内容でよろしいでしょうか？</p>
+        <%= link_to '戻る', set_reservation_confirming_false_path, method: :post, class: 'btn btn-warning btn-round' %>
         <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
       <% end %>
 

@@ -1,20 +1,29 @@
 class Registrations::ReservationsController < ApplicationController
+	RESERVATION_STEP = 5
+
 	def create
 		@user = session[:user]
 		
 		@reservation = Reservation.new(reservation_params)
 		@reservation.before_user_creation = true
 
-		@reservation.valid?		
-
-		set_reservation_session		
-
-		if @reservation.confirming.blank?
-			redirect_to registration_step_path(params[:current_step])
-		else
+		
+		if @reservation.valid?
+			set_reservation_session		
 			increment_step!
-			redirect_to registration_step_path(session[:step])
+			redirect_to registration_step_path(RESERVATION_STEP + 1)
+		else
+			set_reservation_session		
+			render "/registrations/steps/#{RESERVATION_STEP}"			
 		end
+	end
+
+	def set_confirming_false
+		@reservation = session[:reservation]
+		@reservation.attributes = {confirming: nil}
+		set_reservation_session
+
+		redirect_to registration_step_path(RESERVATION_STEP)
 	end
 
 	private
