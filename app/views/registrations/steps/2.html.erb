@@ -1,9 +1,21 @@
+<div class="progressbar-container">
+	<ul class="progressbar">
+    <li></li>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+	</ul>
+</div>
+
 <div class="row">
 	<div class="col-xs-12 col-md-8 col-md-offset-2">
+		
+
 		<h3>登録情報入力</h3>
 
-		<%= simple_form_for @user, url: registrations_path(current_step: params[:id]), method: :post do |f| %>
-
+		<%= simple_form_for @user, url: registrations_path(current_step: params[:id]), method: :post do |f| %>			
 			<% if @user.confirming.blank? %>
 				<%= render 'shared/error_messages', object: f.object %>
 
@@ -177,10 +189,11 @@
 						</tr>
 					</table>
 
-				<%= f.submit "次", class: 'btn btn-success pull-right' %>
+				<%= f.submit "次へ", class: 'btn btn-success pull-right btn-round' %>
 		</div>
 
 		<% else %>
+
 			<table class="table table-responsive">
         <tr>
           <th>名</th>
@@ -417,7 +430,7 @@
 			<%= f.hidden_field :last_name_katakana %>
 			<%= f.hidden_field :email %>
 			<%= f.hidden_field :phone %>
-			<%= f.hidden_field :birthday %>
+			<%= f.hidden_field :birthday, value: @user.birthday %>
 			<%= f.hidden_field :postal_code %>
 			<%= f.hidden_field :prefecture %>
 			<%= f.hidden_field :city %>
@@ -461,9 +474,14 @@
 			<%= f.hidden_field :request_dish_washing %>
 
       <p>この内容でよろしいでしょうか？</p>
+
+      <hr/>
+      <%= link_to '戻る', set_confirming_false_path, method: :post, class: 'btn btn-warning btn-round' %>
       <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
 		<% end %>
 
 		<%= f.hidden_field :confirming %>
+		<%= f.hidden_field :password %>
+		<%= f.hidden_field :password_confirmation %>
 	<% end %>
 </div>

@@ -1,6 +1,6 @@
 class UniqueIdGenerator
 	UNIQUE_ID_SIZE = 5
-  CHARSET = %w{ 2 3 4 6 7 9 A C D E F G H J K M N P Q R T V W X Y Z}
+  CHARSET = [*('a'..'z'), *('0'..'9'), *('A'..'Z')]
 
 	def generate!
 		begin

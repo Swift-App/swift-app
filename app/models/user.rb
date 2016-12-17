@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  validates :unique_id, :first_name_katakana, :last_name_katakana, presence: true
+  validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, presence: true
   validates :unique_id, length: {is: 5}
   validates_uniqueness_of :unique_id
   validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
@@ -40,14 +40,15 @@ class User < ApplicationRecord
     jobs.include?(job)
   end
 
+  def generate_password!
+    self.password = birthday.to_s.split("-").join("")
+    self.password_confirmation = birthday.to_s.split("-").join("")
+  end
+
   private
 
   def send_complete_signup_email
     
-  end
-
-  def generate_password!
-    self.password = birthday.to_s.split("-").join("")
   end
 
   def generate_unique_id!    

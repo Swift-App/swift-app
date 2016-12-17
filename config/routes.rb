@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   resources :attendence_reports, only: [:new, :create]
   
   resources :payment_reservations, only: [:new, :create]
+
+  patch 'registrations', to: 'registrations#update', as: "registration"
   
   resources :reservations, only: [:new, :create]
 
@@ -48,6 +50,7 @@ Rails.application.routes.draw do
 
   post 'next_step', to: 'registrations#next_step', as: 'next_step'
   post 'final_step', to: 'registrations#final_step', as: 'final_step'
+  post 'set_confirming_false', to: 'registrations#set_confirming_false', as: 'set_confirming_false'
 
   get 'registration/steps/:id', to: 'registrations/steps#show', as: 'registration_step'
 end
