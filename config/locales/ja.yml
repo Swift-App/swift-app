@@ -8,6 +8,7 @@ ja:
       attendence_report: 出発報告
       completion_report: 終了報告
       payment_reservation: 給与受取報告
+      weekly_payment_application: 週払振込申請
       reservation: お仕事予約
       admin_user: 管理者
     attributes:
@@ -123,6 +124,14 @@ ja:
         date_3: 予約日3
         date_4: 予約日4
         date_5: 予約日5
+      weekly_payment_application:
+        image_1: 添付画像1
+        image_2: 添付画像2
+        image_3: 添付画像3
+        image_4: 添付画像4
+        image_5: 添付画像5
+        comment: 備考
+        user: ユーザー
     messages:
       blank: を入力してください。
       invalid: は不正な値です。

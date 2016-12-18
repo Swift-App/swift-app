@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :attendence_reports, dependent: :destroy
   has_many :completion_reports, dependent: :destroy
   has_many :payment_reservations, dependent: :destroy
+  has_many :weekly_payment_applications, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
