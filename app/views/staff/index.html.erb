@@ -1,16 +1,27 @@
 <% set_meta_tags title: "会員用ページ" %>
 
+<h3 style="border-bottom: 1px solid #eee; padding-bottom: 20px;">会員用ページ</h3>
+
 <div class="row">
   <div class="col-xs-12 col-md-4">
-    <h3 style="border-bottom: 1px solid #eee; padding-bottom: 20px;">会員用ページ</h3>
-    
+  
     <ul class="member-action-ul">
       <li><i class="fa fa-search" aria-hidden="true"></i> <%= link_to 'お仕事情報一覧'.html_safe, jobs_path %></li>
       <li><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <%= link_to 'お仕事予約', new_reservation_path %></li> 
       <li><i class="fa fa-flag-o" aria-hidden="true"></i> <%= link_to '出発到着報告', new_attendence_report_path %></li>
       <li><i class="fa fa-pencil" aria-hidden="true"></i> <%= link_to '終了報告', new_completion_report_path %></li>
       <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <%= link_to '給与受取り予約', new_payment_reservation_path %></li>
+      
     </ul>
   </div>
 
+  <div class="col-xs-12 col-md-4">
+    <ul class="member-action-ul">
+      <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= link_to '週払振込申請', '' %></li>
+      <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= link_to '振込口座申請', '' %></li>
+      <li><i class="fa fa-cloud-download" aria-hidden="true"></i> <%= link_to '就業ルールダウンロード', "/assets/files/スイフト就業規則.pdf" %></li>
+      <li><i class="fa fa-cloud-download" aria-hidden="true"></i> <%= link_to '作業確認票ダウンロード', "/assets/files/作業確認書.pdf" %></li>
+      <li><i class="fa fa-video-camera" aria-hidden="true"></i> <%= link_to '説明会動画視聴', '' %></li>
+    </ul>
+  </div>
 </div>
