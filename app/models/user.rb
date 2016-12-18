@@ -48,7 +48,7 @@ class User < ApplicationRecord
   private
 
   def send_complete_signup_email
-    
+    UserMailer.confirmation_email(user: self).deliver_now
   end
 
   def generate_unique_id!    

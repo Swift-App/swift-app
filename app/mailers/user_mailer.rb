@@ -3,6 +3,12 @@ class UserMailer < ApplicationMailer
   default from: 'info@swift-staff.jp'
   default to: "info@info-swift.sakura.ne.jp"  
 
+  def confirmation_email(args)
+    @user = args.fetch(:user)
+
+    mail(to: @user.email, subject: "スイフト登録完了")
+  end
+
   def attendance_report(args)
     @user = args.fetch(:user)
     @attendance_report = args.fetch(:attendance_report)
