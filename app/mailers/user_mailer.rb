@@ -3,6 +3,7 @@ class UserMailer < ApplicationMailer
   default from: 'info@swift-staff.jp'
   default to: "info@info-swift.sakura.ne.jp"  
 
+
   def confirmation_email(args)
     @user = args.fetch(:user)
 
@@ -48,5 +49,12 @@ class UserMailer < ApplicationMailer
     @payment_reservation = args.fetch(:payment_reservation)
     @user = args.fetch(:user)
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 給与予約")
+  end
+
+  def new_weekly_payment_application(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} 週払振込申請")
   end
 end

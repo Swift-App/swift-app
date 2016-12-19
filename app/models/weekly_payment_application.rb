@@ -14,6 +14,6 @@ class WeeklyPaymentApplication < ApplicationRecord
 	private
 
 	def send_notification_email!
-		
+		UserMailer.new_weekly_payment_application(user: user, application: self).deliver_now
 	end
 end
