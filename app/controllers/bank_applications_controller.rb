@@ -1,4 +1,6 @@
 class BankApplicationsController < ApplicationController
+	before_action :authenticate_user!
+
 	def new
 		@bank_application = BankApplication.new
 	end
@@ -13,5 +15,11 @@ class BankApplicationsController < ApplicationController
 			flash[:alert] = @bank_application.errors.full_messages[0]
 			render :new
 		end
+	end
+
+	private
+
+	def bank_application_params
+		params.require(:bank_application).permit(:photo)
 	end
 end
