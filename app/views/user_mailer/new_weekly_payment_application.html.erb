@@ -1,0 +1,9 @@
+<p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様から週払振込申請がありました。</p>
+
+<p><%= @application.comment %></p>
+
+<%= image_tag attachments['attachment_1.png'].url if attachments['attachment_1.png'].present? -%>
+<%= image_tag attachments['attachment_2.png'].url if attachments['attachment_2.png'].present? -%>
+<%= image_tag attachments['attachment_3.png'].url if attachments['attachment_3.png'].present? -%>
+<%= image_tag attachments['attachment_4.png'].url if attachments['attachment_4.png'].present? -%>
+<%= image_tag attachments['attachment_5.png'].url if attachments['attachment_5.png'].present? -%>

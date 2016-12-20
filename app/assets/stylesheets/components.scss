@@ -5,6 +5,11 @@
   padding: 10px;
 }
 
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
 .btn-round {
   border-radius: 20px !important;
   padding: 5px 20px;
@@ -113,12 +118,20 @@
   }
 }
 
-
-
 .cta-company {
   margin: 100px 0px; 
   background: whitesmoke;
   padding: 50px;
+}
+
+.table {
+  label {
+    font-weight: 400;
+  }
+
+  input[type=checkbox] {
+    margin-right: 20px;
+  }
 }
 
 @media (max-width:480px) {

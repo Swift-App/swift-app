@@ -1,0 +1,3 @@
+<p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様から振込口座申請がありました。</p>
+
+<%= image_tag attachments['attachment.png'].url if attachments.present? -%>

@@ -1,0 +1,487 @@
+<div class="progressbar-container">
+	<ul class="progressbar">
+    <li></li>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+	</ul>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-8 col-md-offset-2">
+		
+
+		<h3>登録情報入力</h3>
+
+		<%= simple_form_for @user, url: registrations_path(current_step: params[:id]), method: :post do |f| %>			
+			<% if @user.confirming.blank? %>
+				<%= render 'shared/error_messages', object: f.object %>
+
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :first_name, required:true, autofocus:true %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+			  		<%= f.input :last_name, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :first_name_katakana, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :last_name_katakana, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :email, required: true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :phone, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :birthday, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :postal_code, required:true %>
+			  	</div>
+			 	
+			 		<div class="col-xs-12 col-md-6">
+			  		<%= f.input :prefecture, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :city, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :address_details, required:true %>
+			  	</div>
+
+			  	<div class="col-xs-12">
+			  		<h3>緊急連絡先</h3>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :emergency_first_name %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_last_name %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_relationship %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_address %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :emergency_phone %>
+					</div>
+
+					<div class="col-xs-12 col-md-6">
+						<%= f.input :application_medium %>
+					</div>
+
+					<div class="col-xs-12">
+						<h3>経験 ※チェック式　複数回答可能</h3>
+					</div>
+
+					<table class="table table-responsive">
+						<tr>
+							<td class="col-xs-2">倉庫</td>
+							<td>
+								<%= f.input :request_picking %>
+								<%= f.input :request_inspection %>
+								<%= f.input :request_devanning %>
+								<%= f.input :request_testing %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>工場・ライン</td>
+							<td>
+								<%= f.input :request_food %>
+								<%= f.input :request_packing %>
+								<%= f.input :request_printing %>
+								<%= f.input :request_line %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>引っ越し</td>
+							<td>
+								<%= f.input :request_moving_assistant %>
+								<%= f.input :request_office_relocation %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>配送助手</td>
+							<td>
+								<%= f.input :request_assistant_distribution %>
+								<%= f.input :request_carry %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>事務</td>
+							<td>
+								<%= f.input :request_filing %>
+								<%= f.input :request_phone %>
+								<%= f.input :request_voucher_organization %>
+								<%= f.input :request_reception %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>PC</td>
+							<td>
+								<%= f.input :request_debug %>
+								<%= f.input :request_pc_setup %>
+								<%= f.input :request_data_entry %>
+								<%= f.input :request_other %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>イベント</td>
+							<td>
+								<%= f.input :request_director %>
+								<%= f.input :request_event_organizer %>
+								<%= f.input :request_event_setup %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>サンプリング</td>
+							<td>
+								<%= f.input :request_campaign %>
+								<%= f.input :request_sampling %>
+								<%= f.input :request_research %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>販売・レジ</td>
+							<td>
+								<%= f.input :request_sales %>
+								<%= f.input :request_register %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>ホール・店員</td>
+							<td>
+								<%= f.input :request_hall %>
+								<%= f.input :request_kitchen %>
+								<%= f.input :request_dish_washing %>
+							</td>
+						</tr>
+					</table>
+
+				<%= f.submit "次へ", class: 'btn btn-success pull-right btn-round' %>
+		</div>
+
+		<% else %>
+
+			<table class="table table-responsive">
+        <tr>
+          <th>名</th>
+          <td><%= @user.last_name %><td>
+        </tr>
+        <tr>
+          <th>名（カタカナ）</th>
+          <td><%= @user.last_name_katakana %><td>
+        </tr>
+        <tr>
+          <th>姓</th>
+          <td><%= @user.first_name %><td>
+        </tr>
+        <tr>
+          <th>姓（カタカナ）</th>
+          <td><%= @user.first_name_katakana %><td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %><td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= @user.phone %><td>
+        </tr>
+        <tr>
+          <th>お誕生日</th>
+          <td><%= @user.birthday %><td>
+        </tr>
+        <tr>
+          <th>郵便番号</th>
+          <td><%= @user.postal_code %><td>
+        </tr>
+        <tr>
+          <th>都道府県</th>
+          <td><%= @user.prefecture %><td>
+        </tr>
+        <tr>
+          <th>市町村</th>
+          <td><%= @user.city %><td>
+        </tr>
+        <tr>
+          <th>番地・アパート名</th>
+          <td><%= @user.address_details %><td>
+        </tr>        
+        <tr>
+          <th>名（緊急連絡先）</th>
+          <td><%= @user.emergency_first_name %><td>
+        </tr>
+        <tr>
+          <th>姓（緊急連絡先）</th>
+          <td><%= @user.emergency_last_name %><td>
+        </tr>
+        <tr>
+          <th>続柄（緊急連絡先）</th>
+          <td><%= @user.emergency_relationship %><td>
+        </tr>
+        <tr>
+          <th>住所（緊急連絡先）</th>
+          <td><%= @user.emergency_address %><td>
+        </tr>
+        <tr>
+          <th>電話番号（緊急連絡先）</th>
+          <td><%= @user.emergency_phone %><td>
+        </tr>
+
+        <tr>
+					<th>倉庫</th>
+					<td>
+						<label><%= User.human_attribute_name("request_picking") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_picking ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_inspection") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_inspection ? 'checked' : '' %> />
+
+						<br />
+
+						<label><%= User.human_attribute_name("request_devanning") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_devanning ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_testing") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_testing ? 'checked' : '' %> />
+					</td>
+				</tr>
+
+				<tr>
+					<th>工場・ライン</th>
+					<td>
+						<label><%= User.human_attribute_name("request_food") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_food ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_packing") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_packing ? 'checked' : '' %> />
+
+						<br />
+
+						<label><%= User.human_attribute_name("request_printing") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_printing ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_line") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_line ? 'checked' : '' %> />
+					</td>
+				</tr>
+
+				<tr>
+					<th>引っ越し</th>
+					<td>
+						<label><%= User.human_attribute_name("request_moving_assistant") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_moving_assistant ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_office_relocation") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_office_relocation ? 'checked' : '' %> />
+					</td>
+				</tr>
+
+				<tr>
+					<th>配送助手</th>
+					<td>
+						<label><%= User.human_attribute_name("request_assistant_distribution") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_assistant_distribution ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_carry") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_carry ? 'checked' : '' %> />						
+					</td>
+				</tr>
+
+				<tr>
+					<th>事務</th>
+					<td>
+						<label><%= User.human_attribute_name("request_filing") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_filing ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_phone") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_phone ? 'checked' : '' %> />
+
+						<br />
+
+						<label><%= User.human_attribute_name("request_voucher_organization") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_voucher_organization ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_reception") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_reception ? 'checked' : '' %> />						
+					</td>
+				</tr>
+
+				<tr>
+					<th>PC</th>
+					<td>
+						<label><%= User.human_attribute_name("request_debug") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_debug ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_pc_setup") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_pc_setup ? 'checked' : '' %> />
+
+						<br />
+
+						<label><%= User.human_attribute_name("request_data_entry") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_data_entry ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_other") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_other ? 'checked' : '' %> />
+					</td>
+				</tr>
+
+				<tr>
+					<th>イベント</th>
+					<td>
+						<label><%= User.human_attribute_name("request_director") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_director ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_event_organizer") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_event_organizer ? 'checked' : '' %> />
+
+						<br />
+
+						<label><%= User.human_attribute_name("request_event_setup") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_event_setup ? 'checked' : '' %> />
+
+					</td>
+				</tr>
+
+				<tr>
+					<th>サンプリング</th>
+					<td>
+						<label><%= User.human_attribute_name("request_campaign") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_campaign ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_sampling") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_sampling ? 'checked' : '' %> />
+
+						<br />
+
+						<label><%= User.human_attribute_name("request_research") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_research ? 'checked' : '' %> />
+
+					</td>
+				</tr>
+
+				<tr>
+					<th>販売・レジ</th>
+					<td>
+						<label><%= User.human_attribute_name("request_sales") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_sales ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_register") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_register ? 'checked' : '' %> />
+
+					</td>
+				</tr>
+
+				<tr>
+					<th>ホール・店員</th>
+					<td>
+						<label><%= User.human_attribute_name("request_hall") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_hall ? 'checked' : '' %> />
+
+						<label><%= User.human_attribute_name("request_kitchen") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_kitchen ? 'checked' : '' %> />
+
+						<br/>
+
+						<label><%= User.human_attribute_name("request_dish_washing") %></label>
+						<input type="checkbox" onclick="return false;" <%= @user.request_dish_washing ? 'checked' : '' %> />					
+
+					</td>
+				</tr>
+
+				
+      </table>
+
+      <%= f.hidden_field :first_name %>
+			<%= f.hidden_field :last_name %>
+			<%= f.hidden_field :first_name_katakana %>
+			<%= f.hidden_field :last_name_katakana %>
+			<%= f.hidden_field :email %>
+			<%= f.hidden_field :phone %>
+			<%= f.hidden_field :birthday, value: @user.birthday %>
+			<%= f.hidden_field :postal_code %>
+			<%= f.hidden_field :prefecture %>
+			<%= f.hidden_field :city %>
+			<%= f.hidden_field :address_details %>
+			<%= f.hidden_field :emergency_first_name %>
+			<%= f.hidden_field :emergency_last_name %>
+			<%= f.hidden_field :emergency_relationship %>
+			<%= f.hidden_field :emergency_address %>
+			<%= f.hidden_field :emergency_phone %>
+			<%= f.hidden_field :application_medium %>
+			<%= f.hidden_field :request_picking %>
+			<%= f.hidden_field :request_inspection %>
+			<%= f.hidden_field :request_devanning %>
+			<%= f.hidden_field :request_testing %>
+			<%= f.hidden_field :request_food %>
+			<%= f.hidden_field :request_packing %>
+			<%= f.hidden_field :request_printing %>
+			<%= f.hidden_field :request_line %>
+			<%= f.hidden_field :request_moving_assistant %>
+			<%= f.hidden_field :request_office_relocation %>
+			<%= f.hidden_field :request_assistant_distribution %>
+			<%= f.hidden_field :request_carry %>
+			<%= f.hidden_field :request_filing %>
+			<%= f.hidden_field :request_phone %>
+			<%= f.hidden_field :request_voucher_organization %>
+			<%= f.hidden_field :request_reception %>
+			<%= f.hidden_field :request_debug %>
+			<%= f.hidden_field :request_pc_setup %>
+			<%= f.hidden_field :request_data_entry %>
+			<%= f.hidden_field :request_other %>
+			<%= f.hidden_field :request_director %>
+			<%= f.hidden_field :request_event_organizer %>
+			<%= f.hidden_field :request_event_setup %>
+			<%= f.hidden_field :request_campaign %>
+			<%= f.hidden_field :request_sampling %>
+			<%= f.hidden_field :request_research %>
+			<%= f.hidden_field :request_sales %>
+			<%= f.hidden_field :request_register %>
+			<%= f.hidden_field :request_hall %>
+			<%= f.hidden_field :request_kitchen %>
+			<%= f.hidden_field :request_dish_washing %>
+
+      <p>この内容でよろしいでしょうか？</p>
+
+      <hr/>
+      <%= link_to '戻る', set_confirming_false_path, method: :post, class: 'btn btn-warning btn-round' %>
+      <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
+		<% end %>
+
+		<%= f.hidden_field :confirming %>
+		<%= f.hidden_field :password %>
+		<%= f.hidden_field :password_confirmation %>
+	<% end %>
+</div>

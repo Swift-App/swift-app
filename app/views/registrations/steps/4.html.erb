@@ -1,0 +1,37 @@
+<div class="progressbar-container">
+	<ul class="progressbar">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+	</ul>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+		<h3>◆例外規定の確認</h3>
+		<p>2012年10月の派遣法改正で、派遣会社と派遣労働者が交わす雇用契約に制限が設けられ、1日単位のお仕事案内が原則としてできなくなり、31日以上の雇用契約が必要になりました。ただし、以下に該当される方は例外規定にあたり、1日単位のお仕事ができます。</p>
+
+		<p>該当項目がある場合は必ずチェックを入れて先に進んでください。</br>
+		また就業開始までに括弧内の書類をスイフトまでメールあるいはFAXで提出お願いします。</p>
+
+		<%= simple_form_for @user, url: registration_path(current_step: params[:id]), method: :patch do |f| %>
+			<%= f.input :daytime_student, label: '昼間の学校に通われている学生の方。(学生証をご提示ください。)' %>
+			<%= f.input :elder, label: '60歳以上の方。(年齢が確認できる身分証明書をご提示ください。)' %>
+			<%= f.input :earnings_over_500, label: 'ご自身の年収が500万以上あり、副業として就業される方(収入がわかる源泉徴収票などの書類)' %>
+			<%= f.input :householder_present, label: 'ご家族全体の年収が500万以上あり、ご自身が主たる生計者ではない方(収入がわかる源泉徴収票などの書類)' %>
+
+			<p>また、上記の例外規定に該当されない方は、31日以上でひと月概ね87時間(11回)</br>以上の雇用契約を締結し、お仕事を紹介していきます。</p>
+
+
+			<%= link_to '戻る', registration_step_path(3), class: 'btn btn-warning btn-round' %>
+			<%= f.submit '次へ', class: 'btn btn-success btn-round' %>
+		<% end %>
+
+	</div>
+</div>
+
+
+

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+  include Confirmable  
+
   KATAKANA_REGEX = /\p{Katakana}/
-  # POSTAL_CODE_REGEX = /\d{7}-\d{4}/
-  # PHONE_REGEX = /\d{11}/
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -12,16 +12,22 @@ class User < ApplicationRecord
   has_many :attendence_reports, dependent: :destroy
   has_many :completion_reports, dependent: :destroy
   has_many :payment_reservations, dependent: :destroy
+  has_many :weekly_payment_applications, dependent: :destroy
+  has_many :bank_applications, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
-  validates :unique_id, :first_name_katakana, :last_name_katakana, presence: true
+  validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, presence: true
   validates :unique_id, length: {is: 5}
   validates_uniqueness_of :unique_id
   validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
   validates :last_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
   # validates :postal_code, format: {with: POSTAL_CODE_REGEX, message: 'は「000-0000」のフォーマットで入力して下さい。'}
   # validates :phone, format: {with: PHONE_REGEX, message: 'は「00000000000」のフォーマットで入力して下さい。'}
+
+  before_validation :generate_password!
+  before_validation :generate_unique_id!
+  after_create :send_complete_signup_email
 
 
   def name
@@ -34,5 +40,20 @@ class User < ApplicationRecord
 
   def registered?(job:)
     jobs.include?(job)
+  end
+
+  def generate_password!
+    self.password = birthday.to_s.split("-").join("")
+    self.password_confirmation = birthday.to_s.split("-").join("")
+  end
+
+  private
+
+  def send_complete_signup_email
+    UserMailer.confirmation_email(user: self).deliver_now
+  end
+
+  def generate_unique_id!    
+    self.unique_id = UniqueIdGenerator.new.generate!
   end
 end

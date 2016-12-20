@@ -33,8 +33,28 @@ Rails.application.routes.draw do
   resources :attendence_reports, only: [:new, :create]
   
   resources :payment_reservations, only: [:new, :create]
+
+  resources :weekly_payment_applications, only: [:new, :create]
+  resources :bank_applications, only: [:new, :create]
+
+  patch 'registrations', to: 'registrations#update', as: "registration"
   
   resources :reservations, only: [:new, :create]
 
   resources :news_articles, only: [:index, :show]
+
+  resources :registrations, only: [:new, :create]
+
+  namespace :registrations do
+    resources :reservations, only: :create
+  end
+
+  get 'registrations/step_1', to: 'registrations#step_1', as: 'registrations_step_1'
+
+  post 'next_step', to: 'registrations#next_step', as: 'next_step'
+  post 'final_step', to: 'registrations#final_step', as: 'final_step'
+  post 'set_confirming_false', to: 'registrations#set_confirming_false', as: 'set_confirming_false'
+  post 'set_reservation_confirming_false', to: 'registrations/reservations#set_confirming_false', as: 'set_reservation_confirming_false'
+
+  get 'registration/steps/:id', to: 'registrations/steps#show', as: 'registration_step'
 end

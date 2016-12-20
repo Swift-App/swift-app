@@ -1,0 +1,38 @@
+<div class="progressbar-container">
+	<ul class="progressbar">
+    <li></li>
+    <li></li>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+	</ul>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h2>３各種書類同意</h2>
+
+    <p>下記の書類をお読みいただき同意の上でお進みください。</br>
+    同意されない場合は登録できませんので「辞退します」より終了してください。</p>
+
+    <ol>
+    	<li><%= link_to '就業にあたっての同意書', "/assets/files/スイフト就業規則.pdf" %></li>
+    	<li><%= link_to '個人情報の取り扱いについて', "/assets/files/作業確認書.pdf" %></li>
+    </ol>
+
+    <hr/>
+
+
+    <%= link_to '同意します', next_step_path(current_step: 3), method: :post, class: 'btn btn-success btn-round' %>
+    <%= link_to '辞退します', root_path, class: 'btn btn-danger btn-round' %>
+
+
+    <hr/>
+
+    <%= link_to '戻る', registration_step_path(2), class: 'btn btn-warning btn-round' %>
+  </div>
+</div>
+
+    													
+

@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-xs-12 col-md-6 col-md-offset-3">
+		<%= link_to '戻る', staff_index_path, class: 'btn btn-warning btn-round' %>
+		<h3 style="margin-top: 30px">振込口座申請</h3>
+
+		<p>毎週金曜日締めの翌週金曜日払いとなります。</p>
+		<p>振込はご本人名義の銀行に限ります。</p>
+		<p>作業確認書は事務所に持参か写真をメール添付でご提出ください。スタッフページから写真付きで終了報告しても可能です。</p>
+		<p>受付は火曜日１３：００までとなりそれ以降は翌週締めとなります。</p>
+		<p>振込手数料は自己負担となります。</p>
+
+		<hr />
+
+		<%= simple_form_for @bank_application do |f| %>
+			<%= f.input :terms_and_conditions, as: :boolean, label: "上記に同意し支払方法を金融機関振込にする。" %>
+			<%= f.input :photo, label: "振込希望通帳の写真" %>
+
+			<p>※通帳の「名義」「金融機関名」「口座番号」がわかるページを提出してください。通帳は本人名義に限ります。</p>
+			<%= f.submit class: 'btn btn-primary' %>
+		<% end %>
+
+	</div>
+</div>
