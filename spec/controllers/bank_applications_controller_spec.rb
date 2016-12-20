@@ -43,7 +43,7 @@ RSpec.describe BankApplicationsController, type: :controller do
 					post :create, bank_application: FactoryGirl.attributes_for(:bank_application, photo: nil)
 				}.to change(BankApplication, :count).by(0)	
 				
-				expect(response).to render :new
+				expect(response).to render_template :new
 			end
 		end
 	end
