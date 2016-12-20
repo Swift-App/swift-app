@@ -55,6 +55,21 @@ class UserMailer < ApplicationMailer
     @user = args.fetch(:user)
     @application = args.fetch(:application)
 
+    attachments.inline['attachment_1.png'] = open(@application.image_1_url).read
+    attachments.inline['attachment_2.png'] = open(@application.image_2_url).read if @application.image_2.present?
+    attachments.inline['attachment_3.png'] = open(@application.image_3_url).read if @application.image_3.present?
+    attachments.inline['attachment_4.png'] = open(@application.image_4_url).read if @application.image_4.present?
+    attachments.inline['attachment_5.png'] = open(@application.image_5_url).read if @application.image_5.present?
+
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 週払振込申請")
+  end
+
+  def new_bank_application(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    attachments.inline['attachment.png'] = open(@application.photo_url).read
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} 振込口座申請")
   end
 end

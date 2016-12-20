@@ -13,6 +13,6 @@ class BankApplication < ApplicationRecord
 	private
 
 	def send_notification_email!
-		
+		UserMailer.new_bank_application(user: user, application: self).deliver_now
 	end
 end

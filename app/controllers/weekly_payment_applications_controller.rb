@@ -7,7 +7,7 @@ class WeeklyPaymentApplicationsController < ApplicationController
 
 	def create
 		@application = current_user.weekly_payment_applications.new(weekly_payment_application_params)
-
+		
 		if @application.save
 			flash[:success] = "申請完了いたしました。"
 			redirect_to staff_index_path
