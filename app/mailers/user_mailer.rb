@@ -33,7 +33,6 @@ class UserMailer < ApplicationMailer
     @completion_report = args.fetch(:completion_report)
     @job_name = @completion_report.job_name
 
-    
     attachments.inline['attachment.png'] = open(@completion_report.photo_url).read if @completion_report.photo.present?
 
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 終了報告")
@@ -60,7 +59,7 @@ class UserMailer < ApplicationMailer
     attachments.inline['attachment_3.png'] = open(@application.image_3_url).read if @application.image_3.present?
     attachments.inline['attachment_4.png'] = open(@application.image_4_url).read if @application.image_4.present?
     attachments.inline['attachment_5.png'] = open(@application.image_5_url).read if @application.image_5.present?
-
+    
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 週払振込申請")
   end
 

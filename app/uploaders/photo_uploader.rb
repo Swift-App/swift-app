@@ -12,7 +12,6 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   if Rails.env.test?
     storage :file
-    config.enable_processing = false 
 
     def cache_dir
       "#{Rails.root}/spec/support/uploads/tmp"
