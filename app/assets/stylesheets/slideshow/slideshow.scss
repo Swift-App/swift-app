@@ -1,0 +1,28 @@
+.tech-slideshow {
+  height: 540px;
+  width: 4464px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.tech-slideshow > div {
+  height: 540px;
+  width: 4464px;
+  background: url(/../assets/top/top_stretched.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+// .tech-slideshow .mover-1 {
+//   animation: moveSlideshow 30s linear infinite;
+// }
+
+// @keyframes moveSlideshow {
+//   100% { 
+//     transform: translateX(-66.6666%);  
+//   }
+// }

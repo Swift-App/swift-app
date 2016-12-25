@@ -1,80 +1,22 @@
-<!-- Begin Carousel -->
-<div id="carouselSubnav" class="carousel slide" data-ride="carousel">
-
-  <!-- Begin Wrapper for slides -->
-  <div class="carousel-inner">
-
-    <!-- Begin Item 1 -->
-    <div class="item active">
-      <!-- Item BG -->
-      <div style="background:url('assets/top/haken3_1.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;" class="carousel-bg" data-0="background-position:0px 0px;" data-500="background-position:0px -250px;">
-        <div class="container">
-          <div class="container carousel-content center-vertically-right">
-            <!-- Content -->
-            <div class="fadeInRight-animated" data-animation="fadeInRight">
-              <div class="carousel-description col-sm-6 col-sm-offset-3 text-center">
-                
-              </div>
-            </div>
-            
-          </div><!-- /content container -->
-        </div><!-- /container -->
-      </div><!-- /bg div -->
-    </div><!-- /item -->
-    <!-- End Item 1 -->
-
-    <!-- Begin Item 2 -->
-    <div class="item">
-      <!-- Item BG -->
-      <div style="background:url('assets/top/h-2.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;" class="carousel-bg" data-0="background-position:0px 0px;" data-500="background-position:0px -250px;">
-        <div class="container">
-          <div class="container carousel-content center-vertically-right">
-            <!-- Content -->
-            <div class="fadeInRight-animated" data-animation="fadeInRight">
-              <div class="carousel-description col-sm-6 col-sm-offset-3 text-center">
-                <h3 class="heavy text-white"><span class="carousel-title-bgclear">サンプルテキスト</span></h3>
-                <p>テキストをここに</p>
-              </div>
-            </div>
-            
-          </div><!-- /content container -->
-        </div><!-- /container -->
-      </div><!-- /bg div -->
-    </div><!-- /item -->
-    <!-- End Item 2 -->
-
-    <!-- Begin Item 3 -->
-    <div class="item">
-      <!-- Item BG -->
-      <div style="background:url('assets/top/h-3.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;" class="carousel-bg" data-0="background-position:0px 0px;" data-500="background-position:0px -250px;">
-        <div class="container">
-          <div class="container carousel-content center-vertically-right">
-            <!-- Content -->
-            <div class="fadeInRight-animated" data-animation="fadeInRight">
-              <div class="carousel-description col-sm-6 col-sm-offset-3 text-center">
-                <h3 class="heavy text-white"><span class="carousel-title-bgclear">サンプルテキスト</span></h3>
-                <p>テキストをここに</p>
-              </div>
-            </div>            
-          </div><!-- /content container -->
-        </div><!-- /container -->
-      </div><!-- /bg div -->
-    </div><!-- /item -->
-    <!-- End Item 3 -->
-
-
-    
-
-  </div><!-- /carousel inner -->
-  <!-- End Wrapper for slides -->
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carouselSubnav" role="button" data-slide="prev">
-    <i class="fa fa-arrow-circle-left carousel-arrow-right" aria-hidden="true"></i>
-  </a>
-  <a class="right carousel-control" href="#carouselSubnav" role="button" data-slide="next">
-    <i class="fa fa-arrow-circle-right carousel-arrow-right" aria-hidden="true"></i>
-  </a>
+<div class="tech-slideshow">
+  <div class="mover-1"></div>
 
 </div>
-<!-- End Carousel -->
+
+<script type="text/javascript">
+$(function(){
+  let pixels = 0
+
+  setInterval(function(){
+    if(pixels >= 5000) {
+      pixels = 0;
+    } else {
+      pixels += 1;
+    }
+      
+    $(".mover-1").css("backgroundPosition", -pixels +"px 0%");
+  }, 10)
+})
+  
+  
+</script>
