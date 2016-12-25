@@ -37,6 +37,6 @@ class Registrations::ReservationsController < ApplicationController
 	end
 
 	def reservation_params
-		params.require(:reservation).permit(:user_id, :date_1, :date_2, :date_3, :date_4, :date_5, :date_6, :date_7, :confirming)
+		params.require(:reservation).permit(:user_id, :date_1, :date_2, :date_3, :date_4, :date_5, :date_6, :date_7, :date_8, :date_9, :date_10, :date_11, :confirming)
 	end
 end

@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  include Confirmable  
-  attr_accessor :email_confirmation
+  include Confirmable
 
   KATAKANA_REGEX = /\p{Katakana}/
 

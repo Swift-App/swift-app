@@ -9,6 +9,19 @@
 <p>予約日 6: <%= @reservation.date_6.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
 <p>予約日 7: <%= @reservation.date_7.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
 
+<% if @reservation.date_9 %>
+	<p>予約日 8: <%= @reservation.date_8.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
+<% end %>
+
+<% if @reservation.date_10 %>
+	<p>予約日 10: <%= @reservation.date_10.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
+<% end %>
+
+<% if @reservation.date_11 %>
+	<p>予約日 11: <%= @reservation.date_11.try(:strftime, ("%m/%d/%Y")) || "無し" %></p>
+<% end %>
+
+
 <p>システムへの反映よろしくお願いします。</p>
 
 <p>※返信はこちらから <%= @user.email %></p>
