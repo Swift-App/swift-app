@@ -20,6 +20,7 @@ ja:
         first_name_katakana: 名（カタカナ）
         last_name_katakana: 姓（カタカナ）
         email: メールアドレス
+        email_confirmation: メールアドレス（確認用）
         phone: 電話番号
         birthday: お誕生日
         postal_code: 郵便番号        

@@ -9,6 +9,7 @@ FactoryGirl.define do
     sequence :email do |n|
        "random#{n}@email.com" 
     end
+    email_confirmation { email }
     password "codingiscool"
     password_confirmation "codingiscool"
     first_name "first_name"

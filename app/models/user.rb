@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  include Confirmable  
+  include Confirmable
 
   KATAKANA_REGEX = /\p{Katakana}/
 
@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  validates :email, confirmation: true
+  validates :email_confirmation, presence: true
   validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, presence: true
   validates :unique_id, length: {is: 5}
   validates_uniqueness_of :unique_id

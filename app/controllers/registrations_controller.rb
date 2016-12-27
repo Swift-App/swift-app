@@ -66,7 +66,7 @@ class RegistrationsController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :first_name_katakana, :last_name_katakana, :email, :phone, :birthday, :postal_code, :prefecture, :city, :address_details, 
+		params.require(:user).permit(:first_name, :last_name, :first_name_katakana, :last_name_katakana, :email, :email_confirmation, :phone, :birthday, :postal_code, :prefecture, :city, :address_details, 
 																 :emergency_first_name, :emergency_last_name, :emergency_relationship, :emergency_address, :emergency_phone, :application_medium, :request_picking, 
 																 :request_inspection, :request_devanning, :request_testing, :request_food, :request_packing, :request_printing, :request_line, :request_moving_assistant, 
 																 :request_office_relocation, :request_assistant_distribution, :request_carry, :request_filing, :request_phone, :request_voucher_organization, :request_reception, 
