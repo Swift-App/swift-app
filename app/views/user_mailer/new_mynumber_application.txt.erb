@@ -1,0 +1,3 @@
+ID <%= @user.unique_id %> <%= @user.name_katakana %>様から書類提出しました。
+
+<%= image_tag attachments['attachment_1.png'].url if attachments['attachment_1.png'].present? -%>

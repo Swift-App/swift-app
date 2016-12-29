@@ -78,4 +78,24 @@ class UserMailer < ApplicationMailer
 
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} マイナンバー提出拒否理由書提出")
   end
+
+  def new_mynumber_application(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    attachments.inline['attachment_1.png'] = open(@application.photo_url).read
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} マイナンバー提出")
+  end
+
+  def new_car_permit_application(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    attachments.inline['attachment_1.png'] = open(@application.license_url).read
+    attachments.inline['attachment_2.png'] = open(@application.insurance_papers_url).read if @application.insurance_papers_url.present?
+    attachments.inline['attachment_3.png'] = open(@application.inspection_certificate_url).read if @application.inspection_certificate_url.present?
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} 車両通勤許可申請")
+  end
 end

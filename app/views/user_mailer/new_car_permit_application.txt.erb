@@ -1,0 +1,5 @@
+ID <%= @user.unique_id %> <%= @user.name_katakana %>様が車両通勤許可申請をしました。
+
+<%= image_tag attachments['attachment_1.png'].url if attachments['attachment_1.png'].present? -%>
+<%= image_tag attachments['attachment_2.png'].url if attachments['attachment_2.png'].present? -%>
+<%= image_tag attachments['attachment_3.png'].url if attachments['attachment_3.png'].present? -%>

@@ -9,6 +9,7 @@ class MynumberApplicationsController < ApplicationController
 		@application = current_user.mynumber_applications.new(mynumber_application_params)
 
 		if @application.save
+			send_email!
 			flash[:success] = "マイナンバー申請完了しました。"
 			redirect_to staff_index_path
 		else
@@ -18,6 +19,10 @@ class MynumberApplicationsController < ApplicationController
 	end
 
 	private
+
+	def send_email!
+		UserMailer.new_mynumber_application(application: @application, user: current_user).deliver_now
+	end	
 
 	def mynumber_application_params
 		params.require(:mynumber_application).permit(:user_id, :photo)

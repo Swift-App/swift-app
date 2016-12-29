@@ -9,6 +9,7 @@ class CarPermitApplicationsController < ApplicationController
 		@application = current_user.car_permit_applications.new(car_permit_application_params)
 
 		if @application.save
+			send_email!
 			flash[:success] = "車両通勤申請が完了いたしました。"
 			redirect_to staff_index_path
 		else
@@ -18,6 +19,10 @@ class CarPermitApplicationsController < ApplicationController
 	end
 
 	private
+
+	def send_email!
+		UserMailer.new_car_permit_application(application: @application, user: current_user).deliver_now
+	end
 
 	def car_permit_application_params
 		params.require(:car_permit_application).permit(:license, :insurance_papers, :inspection_certificate)
