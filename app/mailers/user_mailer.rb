@@ -71,4 +71,11 @@ class UserMailer < ApplicationMailer
 
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 振込口座申請")
   end
+
+  def new_mynumber_declinal(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} マイナンバー提出拒否理由書提出")
+  end
 end

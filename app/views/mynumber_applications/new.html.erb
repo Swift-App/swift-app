@@ -1,0 +1,34 @@
+<div class="row">
+	<div class="col-xs-12 col-md-6 col-md-offset-3">
+		<%= link_to '戻る', staff_index_path, class: 'btn btn-warning btn-round' %>
+		<h3 style="margin-top: 30px">マイナンバー申告</h3>
+
+		<%= image_tag 'applications/mynumber.png', class: 'img-responsive', style: 'width: 80%' %>	
+
+		<%= simple_form_for @application do |f| %>
+			<%= f.input :photo, label: "マイナンバー通知カードをアップロード" %>
+
+			<%= f.submit "申請する", class: 'btn btn-primary' %>
+		<% end %>
+
+		<br />
+
+		<%= link_to '提出できない場合はこちら', new_mynumber_declinal_path, class: 'btn btn-danger btn-sm' %>
+
+		<hr/>
+
+		<p>
+			　当社は、貴殿及び貴殿の扶養家族のマイナンバー（行政手続における特定の個人を識別するための番号の利用等に関する法律に定める個人番号をいいます。）を以下の目的で利用いたします。
+		</p>
+
+		<p>
+			　①給与所得・退職所得の源泉徴収票作成事務<br />
+			　②雇用保険届出事務<br />
+			　③健康保険・厚生年金保険届出事務<br />
+			　④労働者災害補償保険法に基づく請求に関する事務<br />
+			　⑤国民年金の第３号被保険者の届出に関する事務<br />
+			以上
+		</p>
+
+	</div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229023440) do
+ActiveRecord::Schema.define(version: 20161229031358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,6 +178,23 @@ ActiveRecord::Schema.define(version: 20161229023440) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "mynumber_applications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_mynumber_applications_on_user_id", using: :btree
+  end
+
+  create_table "mynumber_declinals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "reason"
+    t.text     "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_mynumber_declinals_on_user_id", using: :btree
   end
 
   create_table "news_articles", force: :cascade do |t|
