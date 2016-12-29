@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   resources :completion_reports, only: [:new, :create]
   resources :attendence_reports, only: [:new, :create]
+  resources :car_permit_applications, only: [:new, :create]
   
   resources :payment_reservations, only: [:new, :create]
 

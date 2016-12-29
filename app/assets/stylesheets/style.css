@@ -842,7 +842,7 @@ ul.list-arrow-2-color li:before {
 }
 
 .navbar.navbar-main ul.nav a { 
-	color: #00329a;
+	color: #333;
 	border-bottom: 2px solid transparent;
 	background: transparent;
 	text-decoration: none;
