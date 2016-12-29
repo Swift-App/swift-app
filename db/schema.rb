@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225145815) do
+ActiveRecord::Schema.define(version: 20161229023440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 20161225145815) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "car_permit_applications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "license"
+    t.string   "insurance_papers"
+    t.string   "inspection_certificate"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_car_permit_applications_on_user_id", using: :btree
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class CarPermitApplication < ApplicationRecord
+end
