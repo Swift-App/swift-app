@@ -6,5 +6,6 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.includes(:tags).find(params[:id]).decorate
+    @quick_jobs = QuickJob.where(date: Date.today..(Date.today + 2.weeks))
   end
 end
