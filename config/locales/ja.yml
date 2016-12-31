@@ -121,6 +121,10 @@ ja:
         date_5: 予約日5
         date_6: 予約日6
         date_7: 予約日7
+        date_8: 予約日8
+        date_9: 予約日9
+        date_10: 予約日10
+        date_11: 予約日11
       payment_reservation:
         user: ユーザー
         date_1: 予約日1

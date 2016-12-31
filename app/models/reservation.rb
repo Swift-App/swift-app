@@ -2,11 +2,16 @@ class Reservation < ApplicationRecord
   include Confirmable
 
   attr_accessor :before_user_creation
+  attr_accessor :not_exception
 
   belongs_to :user
 
   validates :date_1, presence: true  
   validates :user, presence: true, if: :after_user_creation?
+
+  with_options if: :not_exception do
+    validates :date_2, :date_4, :date_5, :date_6, :date_7, :date_8, :date_9, :date_10, :date_11, presence: true 
+  end
 
   after_create :send_new_reservation_email
 

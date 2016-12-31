@@ -16,8 +16,12 @@
     <h3 class="text-center" style="margin-bottom: 0px;">お仕事予約</h3>
     <p class="text-center" style="margin-bottom: 20px;"><small>クリックして日程を選択してください。</small></p>
 
+    <p>ここではお仕事を希望する日を申告していただきます。例外規定の方は自由に希望日を申告してください。例外規定にあたらない方は1か月で11日を目安に申告してください。</p>
+
     <%= simple_form_for @reservation, url: registrations_reservations_path(current_step: params[:id]), method: :post do |f| %>
       <% if @reservation.confirming.blank? %>
+        <%= render 'shared/error_messages', object: f.object %>
+        
         <label>予約日1 *</label><br>
         <%= f.date_field :date_1, label: '予約日1', class: 'form-control' %>
         <br />
@@ -109,6 +113,10 @@
         <%= f.hidden_field :date_5 %>
         <%= f.hidden_field :date_6 %>
         <%= f.hidden_field :date_7 %>
+        <%= f.hidden_field :date_8 %>
+        <%= f.hidden_field :date_9 %>
+        <%= f.hidden_field :date_10 %>
+        <%= f.hidden_field :date_11 %>
         <%= f.hidden_field :additional_notes %>
 
         <p>この内容でよろしいでしょうか？</p>

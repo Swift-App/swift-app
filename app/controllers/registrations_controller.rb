@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
 	def create				
 		@user = User.new(user_params)
 
-		set_password				
+		set_password					
 
 		if @user.valid?
 			set_user_session

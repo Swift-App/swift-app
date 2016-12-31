@@ -7,6 +7,8 @@ class Registrations::ReservationsController < ApplicationController
 		@reservation = Reservation.new(reservation_params)
 		@reservation.before_user_creation = true
 
+		@reservation.not_exception = true unless @user.exception?
+
 		
 		if @reservation.valid?
 			set_reservation_session		

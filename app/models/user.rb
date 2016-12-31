@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  include Confirmable
+  include Confirmable  
 
   KATAKANA_REGEX = /\p{Katakana}/
 
@@ -21,7 +21,8 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  validates :email, confirmation: true
+  # validates :email, confirmation: true
+  validate :email_is_confirmed
   validates :email_confirmation, presence: true
   validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, presence: true
   validates :unique_id, length: {is: 5}
@@ -53,7 +54,17 @@ class User < ApplicationRecord
     self.password_confirmation = birthday.to_s.split("-").join("")
   end
 
+  def exception?
+    elder || daytime_student || earnings_over_500 || householder_present
+  end
+
   private
+
+  def email_is_confirmed
+    if email != email_confirmation
+      errors.add(:email, "は確認用メールアドレスと異なります。")
+    end
+  end
 
   def send_complete_signup_email
     UserMailer.confirmation_email(user: self).deliver_now
