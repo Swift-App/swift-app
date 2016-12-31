@@ -9,6 +9,7 @@ ActiveAdmin.register CompletionReport do
     column :user do |report|
       report.user_unique_id
     end        
+    column :date
     column :job_name
     column :start_time do |report|
       report.start_time.strftime("%m/%d/%Y %l:%M %p")
@@ -28,6 +29,7 @@ ActiveAdmin.register CompletionReport do
   filter :created_at
   filter :user
   filter :job_name
+  filter :date
   filter :start_time
   filter :end_time
   filter :break_time

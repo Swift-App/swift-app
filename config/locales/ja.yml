@@ -106,6 +106,7 @@ ja:
         tardy_or_leave: 遅刻・早退
         user: ユーザー
         job_name: 仕事名
+        date: 日付
       news_article:
         title: 題名
         content: 内容

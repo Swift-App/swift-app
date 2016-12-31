@@ -24,6 +24,6 @@ class CompletionReportsController < ApplicationController
   end
 
   def completion_report_params
-    params.require(:completion_report).permit(:photo, :comments, :job_name, :tardy_or_leave, :breaktime, :start_time, :end_time)
+    params.require(:completion_report).permit(:photo, :comments, :job_name, :tardy_or_leave, :breaktime, :start_time, :end_time, :date)
   end
 end
