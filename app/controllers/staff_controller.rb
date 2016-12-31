@@ -4,4 +4,8 @@ class StaffController < ApplicationController
   def index
 
   end
+
+  def video
+
+  end
 end

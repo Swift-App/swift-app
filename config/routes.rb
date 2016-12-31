@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'staff/recruit', to: 'static_pages#staff'
   get 'new_staff', to: 'static_pages#new_staff'
   get 'company_contact', to: 'static_pages#company_contact'
+  get 'video', to: 'staff#video'
 
   resources :staff, only: :index
 
