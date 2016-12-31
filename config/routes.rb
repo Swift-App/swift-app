@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :car_permit_applications, only: [:new, :create]
   resources :mynumber_applications, only: [:new, :create]
   resources :mynumber_declinals, only: [:new, :create]
+  resources :quick_job_applications, only: [:new, :create]
   
   resources :payment_reservations, only: [:new, :create]
 

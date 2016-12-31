@@ -49,7 +49,7 @@
 			  	</div>
 
 			  	<div class="col-xs-12 col-md-6">
-			  		<%= f.input :birthday, required:true %>
+			  		<%= f.input :birthday, required:true, start_year: Date.today.year - 90, end_year: Date.today.year - 16,value: Date.today.year - 30 %>
 			  	</div>
 
 			  	<div class="col-xs-12 col-md-6">

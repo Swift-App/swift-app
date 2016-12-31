@@ -1,0 +1,33 @@
+<div class="modal fade" id="job-modal-<%= date %>" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= date.strftime("%m/%d") %>のお仕事</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_format job.try(:content) || "この日はお仕事がありません。" %>
+
+        <% if job && user_signed_in? %>
+
+          <hr />
+
+          <%= simple_form_for QuickJobApplication.new do |f| %>
+            <%= f.input :code, placeholder: "お仕事コード", label: false %>
+            <%= f.submit "登録する", class: 'btn btn-primary' %>
+          <% end %>
+
+        <% elsif !user_signed_in? %>
+          <hr />
+
+          <h3>登録して簡単お仕事登録！</h3>
+          <%= link_to 'スタッフ登録希望の方', staff_recruit_path, class: 'btn btn-large btn-danger', style: 'color: white;' %>
+          <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-large btn-primary', style: 'color: white;' %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

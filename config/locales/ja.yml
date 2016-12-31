@@ -11,6 +11,8 @@ ja:
       weekly_payment_application: 週払振込申請
       reservation: お仕事予約
       admin_user: 管理者
+      quick_job: 日ごとの仕事
+      quick_job_application: 日ごとの仕事お申込み
     attributes:
       user:
         unique_id: ID
@@ -132,6 +134,12 @@ ja:
         image_4: 添付画像4
         image_5: 添付画像5
         comment: 備考
+        user: ユーザー
+      quick_job:
+        content: 内容
+        date: 日程
+      quick_job_application:
+        code: コード
         user: ユーザー
     messages:
       blank: を入力してください。

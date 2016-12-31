@@ -98,4 +98,11 @@ class UserMailer < ApplicationMailer
 
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 車両通勤許可申請")
   end
+
+  def new_quick_job_application(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} コード#{@application.code}の日ごとお仕事申込み")
+  end
 end

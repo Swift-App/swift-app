@@ -7,6 +7,19 @@
 
   </div><!-- sidebar-contents -->
 
+  <h3>日付<span class="gray-alt">から探す</span></h3>
+
+  <div class="sidebar-contents">
+    <ul class="sidebar-jobs-by-day">
+      <% Date.today.upto(Date.today + 2.weeks).each do |date| %>
+        <li data-toggle="modal" data-target="#job-modal-<%= date %>"><%= date.strftime("%m/%d") %></li>
+
+        <%= render partial: 'jobs/modal', locals: {date: date, job: @quick_jobs.find_by_date(date)} %>
+
+      <% end %>
+    </ul>
+  </div>
+
   <h3>エリア<span class="gray-alt">で探す</span></h3>
 
   <div class="sidebar-contents">

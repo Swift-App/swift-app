@@ -1,0 +1,14 @@
+.sidebar-jobs-by-day {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	li {
+		background: whitesmoke;
+		border: 1px solid white;
+		cursor: pointer;
+		flex: 1;
+		padding: 10px;
+		text-align: center;		
+	}
+}

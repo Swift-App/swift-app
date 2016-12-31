@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :car_permit_applications, dependent: :destroy
   has_many :mynumber_applications, dependent: :destroy
   has_many :mynumber_declinals, dependent: :destroy
+  has_many :quick_job_applications, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 

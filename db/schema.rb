@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229031358) do
+ActiveRecord::Schema.define(version: 20161231041723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -218,6 +218,23 @@ ActiveRecord::Schema.define(version: 20161229031358) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_payment_reservations_on_user_id", using: :btree
+  end
+
+  create_table "quick_job_applications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_quick_job_applications_on_code", using: :btree
+    t.index ["user_id"], name: "index_quick_job_applications_on_user_id", using: :btree
+  end
+
+  create_table "quick_jobs", force: :cascade do |t|
+    t.text     "content"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_quick_jobs_on_date", using: :btree
   end
 
   create_table "reservations", force: :cascade do |t|
