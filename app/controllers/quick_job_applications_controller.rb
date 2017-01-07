@@ -6,7 +6,7 @@ class QuickJobApplicationsController < ApplicationController
 
 		if @application.save
 			send_email!
-			flash[:success] = "お仕事登録が完了いたしました。"			
+			flash[:success] = "この日のお仕事に申し込みしました。"			
 		else
 			flash[:alert] = @application.errors.full_messages[0]
 		end

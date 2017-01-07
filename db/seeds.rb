@@ -70,4 +70,7 @@ AdminUser.create!([{email: 'admin@example.com', password: 'password', password_c
 
 Tag.create([
   {name: "駅チカ"}, {name: "未経験歓迎"}, {name: "シフト自由"}, {name: "土日・週末のみOK"}, {name: "夜勤"}, {name: "交通費支給"}
-])
+]) if Tag.count == 0
+
+
+UniqueIdStore.create(male: 0, female: 0) if UniqueIdStore.count == 0

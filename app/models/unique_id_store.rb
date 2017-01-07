@@ -1,0 +1,2 @@
+class UniqueIdStore < ApplicationRecord
+end

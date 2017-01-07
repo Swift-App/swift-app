@@ -71,6 +71,16 @@ ja:
         elder: 60歳以上
         earnings_over_500: 年収500万以上
         householder_present: 生計者
+        from_a: From-A
+        baitoru: バイトル
+        townwork: タウンワーク
+        enjapan: enjapan
+        mynavi: マイナビ
+        shotworks: ショットワークス
+        an: AN
+        friend: 友人紹介
+        other_application_reason: その他（応募媒体）
+        gender: 性別
       attendence_report:
         job_name: お仕事名
         user: ユーザー

@@ -6,15 +6,15 @@
         <h4 class="modal-title"><%= date.strftime("%m/%d") %>のお仕事</h4>
       </div>
       <div class="modal-body">
-        <%= simple_format job.try(:content) || "この日はお仕事がありません。" %>
+        <%= simple_format job.try(:content) || "この日は現在調整中です。" %>
 
         <% if job && user_signed_in? %>
 
           <hr />
 
           <%= simple_form_for QuickJobApplication.new do |f| %>
-            <%= f.input :code, placeholder: "お仕事コード", label: false %>
-            <%= f.submit "登録する", class: 'btn btn-primary' %>
+            <%= f.input :code, placeholder: "希望するお仕事のコード番号入力", label: false %>
+            <%= f.submit "申し込む", class: 'btn btn-primary' %>
           <% end %>
 
         <% elsif !user_signed_in? %>

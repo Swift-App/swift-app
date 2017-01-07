@@ -72,6 +72,6 @@ class RegistrationsController < ApplicationController
 																 :request_office_relocation, :request_assistant_distribution, :request_carry, :request_filing, :request_phone, :request_voucher_organization, :request_reception, 
 																 :request_debug, :request_pc_setup, :request_data_entry, :request_other, :request_director, :request_event_organizer, :request_event_setup, :request_campaign, 
 																 :request_sampling, :request_research, :request_sales, :request_register, :request_hall, :request_kitchen, :request_dish_washing, :confirming, :password, :password_confirmation,
-																 :daytime_student, :elder, :earnings_over_500, :householder_present)
+																 :daytime_student, :elder, :earnings_over_500, :householder_present, :from_a, :baitoru, :townwork, :enjapan, :mynavi, :shotworks, :an, :friend, :other_application_reason)
 	end
 end

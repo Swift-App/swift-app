@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   KATAKANA_REGEX = /\p{Katakana}/
 
+  enum gender: [:男性, :女性]
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -24,7 +26,7 @@ class User < ApplicationRecord
   # validates :email, confirmation: true
   validate :email_is_confirmed
   validates :email_confirmation, presence: true
-  validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, presence: true
+  validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, :gender, presence: true
   validates :unique_id, length: {is: 5}
   validates_uniqueness_of :unique_id
   validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
@@ -71,6 +73,6 @@ class User < ApplicationRecord
   end
 
   def generate_unique_id!    
-    self.unique_id = UniqueIdGenerator.new.generate!
+    self.unique_id = UniqueIdGenerator.new(user: self).generate!
   end
 end

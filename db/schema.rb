@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231045313) do
+ActiveRecord::Schema.define(version: 20170107051938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -272,6 +272,13 @@ ActiveRecord::Schema.define(version: 20161231045313) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "unique_id_stores", force: :cascade do |t|
+    t.integer  "male",       default: 0
+    t.integer  "female",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                          default: "",    null: false
     t.string   "encrypted_password",             default: "",    null: false
@@ -339,6 +346,16 @@ ActiveRecord::Schema.define(version: 20161231045313) do
     t.boolean  "earnings_over_500",              default: false, null: false
     t.boolean  "householder_present",            default: false, null: false
     t.string   "email_confirmation"
+    t.boolean  "from_a",                         default: false, null: false
+    t.boolean  "baitoru",                        default: false, null: false
+    t.boolean  "townwork",                       default: false, null: false
+    t.boolean  "enjapan",                        default: false, null: false
+    t.boolean  "mynavi",                         default: false, null: false
+    t.boolean  "shotworks",                      default: false, null: false
+    t.boolean  "an",                             default: false, null: false
+    t.boolean  "friend",                         default: false, null: false
+    t.string   "other_application_reason"
+    t.integer  "gender"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["unique_id"], name: "index_users_on_unique_id", using: :btree
