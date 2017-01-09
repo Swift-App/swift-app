@@ -23,7 +23,6 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  # validates :email, confirmation: true
   validate :email_is_confirmed
   validates :email_confirmation, presence: true
   validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, :gender, presence: true
@@ -31,11 +30,11 @@ class User < ApplicationRecord
   validates_uniqueness_of :unique_id
   validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
   validates :last_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
-  # validates :postal_code, format: {with: POSTAL_CODE_REGEX, message: 'は「000-0000」のフォーマットで入力して下さい。'}
-  # validates :phone, format: {with: PHONE_REGEX, message: 'は「00000000000」のフォーマットで入力して下さい。'}
 
   before_validation :generate_password!
+  # Generate once before validation and once after create
   before_validation :generate_unique_id!
+  before_create :generate_unique_id!
   after_create :send_complete_signup_email
 
 
@@ -73,6 +72,10 @@ class User < ApplicationRecord
   end
 
   def generate_unique_id!    
-    self.unique_id = UniqueIdGenerator.new(user: self).generate!
+    self.unique_id = gender == "男性" ? unique_id_store.male + 1 : unique_id_store.female + 1
+  end
+
+  def unique_id_store
+    UniqueIdStore.first
   end
 end
