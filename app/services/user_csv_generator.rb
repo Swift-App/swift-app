@@ -47,25 +47,36 @@ class UserCsvGenerator
       content << "" # 自動車免許
       content << "" # フォーク免許
 
-      request_moving_assistant = @user.request_moving_assistant == true ? "TRUE" : "FALSE"
-      content <<  request_moving_assistant# 引っ越し      
-      content << "" # 工場希望
-      content << "" # PC希望
+      request_moving_assistant = @user.request_moving_assistant || @user.request_office_relocation ? "TRUE" : "FALSE"
+      content <<  request_moving_assistant # 引っ越し      
 
-      request_sales = @user.request_sales == true ? "TRUE" : "FALSE"
+      request_factory = @user.request_food || @user.request_packing || @user.request_printing || @user.request_line ? "TRUE" : "FALSE"
+      content << request_factory # 工場希望
+
+      request_pc = @user.request_debug || @user.request_pc_setup || @user.request_data_entry || @user.request_other ? "TRUE" : "FALSE"
+      content << request_pc # PC希望
+
+      request_sales = @user.request_sales ? "TRUE" : "FALSE"
       content << request_sales
-      content << "" # 倉庫希望
-      content << "" # 事務希望
 
-      request_assistant_distribution = @user.request_assistant_distribution == true ? "TRUE" : "FALSE"
+      request_warehouse = @user.request_picking || @user.request_inspection || @user.request_devanning || @user.request_testing ? "TRUE" : "FALSE"
+      content << request_warehouse # 倉庫希望
+
+      request_office = @user.request_filing || @user.request_phone || @user.request_voucher_organization || @user.request_reception ? "TRUE" : "FALSE"
+      content << request_office # 事務希望
+
+      request_assistant_distribution = @user.request_assistant_distribution ? "TRUE" : "FALSE"
       content << request_assistant_distribution
-      content << "" # イベント希望
 
-      request_sampling = @user.request_sampling == true ? "TRUE" : "FALSE"
+      request_event = @user.request_director || @user.request_event_organizer || @user.request_event_setup ? "TRUE" : "FALSE"
+      content << request_event # イベント希望
+
+      request_sampling = @user.request_sampling ? "TRUE" : "FALSE"
       content << request_sampling
 
-      request_hall = @user.request_hall == true ? "TRUE" : "FALSE"
-      content << request_hall
+      request_hall = @user.request_hall ? "TRUE" : "FALSE"
+      content << request_hal
+      
       content << "" # 引越し経験
       content << "" # 工場経験
       content << "" # PC経験
@@ -98,16 +109,16 @@ class UserCsvGenerator
       content << "" # 雇用契約日
       content << "" # 雇用失効日
 
-      daytime_student = @user.daytime_student == true ? "TRUE" : "FALSE" # 昼間学生
+      daytime_student = @user.daytime_student ? "TRUE" : "FALSE" # 昼間学生
       content << daytime_student
 
-      elder = @user.elder == true ? "TRUE" : "FALSE" # 高齢者
+      elder = @user.elder ? "TRUE" : "FALSE" # 高齢者
       content << elder
 
-      earnings_over_500 = @user.earnings_over_500 == true ? "TRUE" : "FALSE" # 収入500
+      earnings_over_500 = @user.earnings_over_500 ? "TRUE" : "FALSE" # 収入500
       content << earnings_over_500
 
-      householder_present = !@user.householder_present == true ? "TRUE" : "FALSE" # NO生計者
+      householder_present = !@user.householder_present ? "TRUE" : "FALSE" # NO生計者
       content << householder_present
 
       csv << content
