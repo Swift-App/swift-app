@@ -26,7 +26,7 @@ class User < ApplicationRecord
   validate :email_is_confirmed
   validates :email_confirmation, presence: true
   validates :unique_id, :first_name_katakana, :last_name_katakana, :birthday, :gender, presence: true
-  validates :unique_id, length: {is: 6}
+  validates :unique_id, length: {is: 5}
   validates_uniqueness_of :unique_id
   validates :first_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
   validates :last_name_katakana, format: {with: KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}

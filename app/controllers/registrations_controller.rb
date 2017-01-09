@@ -39,6 +39,10 @@ class RegistrationsController < ApplicationController
 		@reservation.user = @user
 		@reservation.save!
 
+		update_unique_id_store!
+
+		binding.pry
+
 		flash[:success] = "ユーザー登録完了いたしました。メールアドレスに確認メールを送信いたしましたので、ご確認ください。"
 		redirect_to root_path
 	end
@@ -52,6 +56,18 @@ class RegistrationsController < ApplicationController
 	end
 
 	private
+
+	def update_unique_id_store!
+		if @user.gender == "男性"
+			unique_id_store.update(male: @user.unique_id)
+		else
+			unique_id_store.update(female: @user.unique_id)
+		end
+	end
+
+	def unique_id_store
+    UniqueIdStore.first
+  end
 
 	def set_password
 		@user.generate_password!
