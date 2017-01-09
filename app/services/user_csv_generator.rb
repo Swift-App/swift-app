@@ -75,8 +75,8 @@ class UserCsvGenerator
       content << request_sampling
 
       request_hall = @user.request_hall ? "TRUE" : "FALSE"
-      content << request_hal
-      
+      content << request_hall
+
       content << "" # 引越し経験
       content << "" # 工場経験
       content << "" # PC経験
