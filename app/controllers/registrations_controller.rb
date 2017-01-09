@@ -39,9 +39,7 @@ class RegistrationsController < ApplicationController
 		@reservation.user = @user
 		@reservation.save!
 
-		update_unique_id_store!
-
-		binding.pry
+		update_unique_id_store!		
 
 		flash[:success] = "ユーザー登録完了いたしました。メールアドレスに確認メールを送信いたしましたので、ご確認ください。"
 		redirect_to root_path
