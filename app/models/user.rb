@@ -36,6 +36,7 @@ class User < ApplicationRecord
   before_validation :generate_unique_id!
   before_create :generate_unique_id!
   after_create :send_complete_signup_email
+  after_create :send_new_user_registration_email
 
 
   def name
@@ -59,6 +60,17 @@ class User < ApplicationRecord
     elder || daytime_student || earnings_over_500 || householder_present
   end
 
+  def address
+    address = ""
+    address << prefecture if prefecture
+    address << city if city
+    address << address_details if address_details    
+  end
+
+  def to_csv
+    csv = UserCsvGenerator.new(self).generate!    
+  end
+
   private
 
   def email_is_confirmed
@@ -71,11 +83,15 @@ class User < ApplicationRecord
     UserMailer.confirmation_email(user: self).deliver_now
   end
 
+  def send_new_user_registration_email
+    UserMailer.new_user_registration(user: self).deliver_now
+  end
+
   def generate_unique_id!    
     self.unique_id = gender == "男性" ? unique_id_store.male + 1 : unique_id_store.female + 1
   end
 
   def unique_id_store
     UniqueIdStore.first
-  end
+  end  
 end

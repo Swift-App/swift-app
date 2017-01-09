@@ -10,6 +10,16 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: "スイフト登録完了")
   end
 
+  def new_user_registration(args)
+    @user = args.fetch(:user)
+
+    csv = @user.to_csv
+
+    attachments["#{@user.unique_id}_#{@user.name_katakana}.csv"] = csv
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana}が登録完了しました。")
+  end
+
   def attendance_report(args)
     @user = args.fetch(:user)
     @attendance_report = args.fetch(:attendance_report)
