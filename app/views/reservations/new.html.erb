@@ -84,6 +84,27 @@
             <th>予約日7<th>
             <td><%= @reservation.date_7 %><td>
           </tr>
+
+          <tr>
+            <th>予約日8<th>
+            <td><%= @reservation.date_8 %><td>
+          </tr>
+
+          <tr>
+            <th>予約日9<th>
+            <td><%= @reservation.date_9 %><td>
+          </tr>
+
+          <tr>
+            <th>予約日10<th>
+            <td><%= @reservation.date_10 %><td>
+          </tr>
+
+          <tr>
+            <th>予約日11<th>
+            <td><%= @reservation.date_11 %><td>
+          </tr>
+          
           <tr>
             <th>備考<th>
             <td><%= @reservation.additional_notes %><td>
@@ -96,7 +117,12 @@
         <%= f.hidden_field :date_5 %>
         <%= f.hidden_field :date_6 %>
         <%= f.hidden_field :date_7 %>
+        <%= f.hidden_field :date_8 %>
+        <%= f.hidden_field :date_9 %>
+        <%= f.hidden_field :date_10 %>
+        <%= f.hidden_field :date_11 %>
         <%= f.hidden_field :additional_notes %>
+
 
         <p>この内容でよろしいでしょうか？</p>
         <%= f.submit '送信する', class: 'btn btn-success pull-right' %>
