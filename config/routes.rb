@@ -55,6 +55,8 @@ Rails.application.routes.draw do
   end
 
   get 'registrations/step_1', to: 'registrations#step_1', as: 'registrations_step_1'
+  get 'registrations/steps/agreement', to: 'registrations/steps#agreement', as: 'agreement'
+  get 'registrations/steps/personal_information', to: 'registrations/steps#personal_information', as: 'personal_information'
 
   post 'next_step', to: 'registrations#next_step', as: 'next_step'
   post 'final_step', to: 'registrations#final_step', as: 'final_step'
