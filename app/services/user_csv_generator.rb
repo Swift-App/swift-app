@@ -1,3 +1,5 @@
+require 'nkf'
+
 class UserCsvGenerator
   HEADERS = %w(登録番号 氏名 フリガナ 沿線コード 駅コード 最寄到着時間 ランク ＴＥＬ ＴＥＬ２  FAX Email 性別  郵便番号  住所  扶養家族  車両  支払方法  銀行口座データ 銀行口座表記  備考欄 備考２ 貸出し注意 広告  マナー 言葉使い  定番希望  ピアス ひげ  頭髪ランク 同居人 Tシャツ  トレーナー 作業ズボン 自動車免許 フォーク免許  引越希望  工場希望  PC希望  販売希望  倉庫希望  事務希望  配送希望  イベント希望  サンプリング希望  ホール希望 引越経験  工場経験  PC経験  建築経験  販売経験  倉庫経験  事務経験  配送経験  イベント経験  サンプリング経験  ホール経験 スーツ 作業着 黒ズボン  チノパン  白シャツ  ヘルメット 革靴  安全靴 生年月日  身長  体重  血液型 ウエスト  靴 追っかけ  写真  登録日 登録支店  雇用契約日 雇用失効日 昼間学生  高齢者 収入500 NO生計者)
 
@@ -6,7 +8,7 @@ class UserCsvGenerator
   end
 
   def generate!
-    CSV.generate(headers: true) do |csv|
+    csv_str = CSV.generate(headers: true) do |csv|
       csv << HEADERS
 
       content = []
@@ -123,5 +125,7 @@ class UserCsvGenerator
 
       csv << content
     end
+
+    NKF::nkf('--sjis -Lw', csv_str)
   end
 end
