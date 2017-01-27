@@ -88,6 +88,7 @@ class User < ApplicationRecord
   end
 
   def generate_unique_id!    
+    return if unique_id.present?
     self.unique_id = gender == "男性" ? unique_id_store.male + 1 : unique_id_store.female + 1
   end
 
