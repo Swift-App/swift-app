@@ -22,5 +22,6 @@ FactoryGirl.define do
     prefecture "prefecture"
     city "tokyo"
     address_details "other_address"
+    gender :男性
   end
 end
