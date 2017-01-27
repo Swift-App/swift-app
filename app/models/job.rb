@@ -16,6 +16,7 @@ class Job < ApplicationRecord
 
   has_many :job_tags, dependent: :destroy
   has_many :tags, through: :job_tags, source: :tag
+  has_many :confirmations, dependent: :destroy
 
   accepts_nested_attributes_for :job_tags
 
