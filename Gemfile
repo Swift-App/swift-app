@@ -81,6 +81,8 @@ gem 'rails_12factor', group: [:production]
 
 gem 'activerecord-session_store'
 
+gem 'sitemap_generator'
+
 # gem 'sidekiq'
 
 # gem 'redis'

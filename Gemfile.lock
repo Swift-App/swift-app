@@ -425,6 +425,8 @@ GEM
     simple_form (3.3.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    sitemap_generator (5.2.0)
+      builder (~> 3.0)
     slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
@@ -505,6 +507,7 @@ DEPENDENCIES
   sendgrid
   shoulda-matchers (~> 3.1)
   simple_form
+  sitemap_generator
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
