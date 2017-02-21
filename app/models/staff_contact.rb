@@ -3,7 +3,7 @@ class StaffContact < MailForm::Base
   
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :name, validate: true
-  attribute :furigana, :birthday, :interview_date, :phone, :other
+  attribute :furigana, :birthday, :phone, :other
 
   validates_acceptance_of :terms_and_conditions
   

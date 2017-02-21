@@ -21,6 +21,6 @@ class QuickJobApplicationsController < ApplicationController
 	end
 
 	def quick_job_application_params
-		params.require(:quick_job_application).permit(:code)
+		params.require(:quick_job_application).permit(:code, :date)
 	end
 end

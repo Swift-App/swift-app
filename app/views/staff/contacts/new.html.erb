@@ -1,6 +1,7 @@
 
 <div class="col-xs-12 col-md-6 col-md-offset-3">
   <h3 class="text-center">スタッフ様お問い合わせ</h3>
+  <p class="text-center"><%= link_to 'よくある質問はこちら', faq_path %></p>
   <%= simple_form_for @contact, url: '/staff/contacts', html: {class: 'form-horizontal' } do |f| %>
     <%= f.input :name, required: true, label: 'お名前 「必須入力」', placeholder: '田中太郎' %>
     <%= f.input :furigana, label: 'ふりがな', placeholder: 'たなかたろう' %>
@@ -8,8 +9,7 @@
                             end_year: Date.today.year - 16, default: Date.today - 35.years %>
     <%= f.input :email, required: true, label: 'メールアドレス 「必須入力」', placeholder: 'staff@email.com' %>
     <%= f.input :phone, label: 'お電話番号', placeholder: '111-111-1111' %>
-    <%= f.input :interview_date, as: :text, label: '登録会参加希望日時（※水曜・日曜はお休みです。第3希望までご入力下さい。）', placeholder: '', input_html: {rows: 5} %>
-    <%= f.input :other, as: :text, label: 'その他お問い合わせ', placeholder: '', input_html: {rows: 5} %>
+    <%= f.input :other, as: :text, label: 'お問い合わせ内容', placeholder: '', input_html: {rows: 5} %>
     <%= f.input :terms_and_conditions, as: :boolean, label: '利用規約に同意する' %>
 
     

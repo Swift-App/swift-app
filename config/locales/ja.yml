@@ -173,7 +173,8 @@ ja:
         furigana: ふりがな
         birthday: お誕生日
         interview_date: 面接希望日
-        phone: 電話番号        
+        phone: 電話番号  
+        other: お問い合わせ内容      
       company_contact:
         staff_contact:
         email: メールアドレス

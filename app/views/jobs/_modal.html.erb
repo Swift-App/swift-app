@@ -14,6 +14,7 @@
 
           <%= simple_form_for QuickJobApplication.new do |f| %>
             <%= f.input :code, placeholder: "希望するお仕事のコード番号入力", label: false %>
+            <%= f.input :date, as: :hidden, input_html: {value: date} %>
             <%= f.submit "申し込む", class: 'btn btn-primary' %>
           <% end %>
 
