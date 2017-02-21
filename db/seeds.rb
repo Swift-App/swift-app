@@ -17,4 +17,3 @@ UniqueIdStore.create(male: 30000, female: 60000) if UniqueIdStore.count == 0
 faq_title = %w(勤務開始までの流れ ＷＥＢ登録について 登録説明会について お仕事内容について 給料について その他)
 
 faq_title.each {|title| FaqCategory.create(name: title)} if FaqCategory.count == 0
-faq_title.each {|title| Faq.create(title: title)} if Faq.count == 0
