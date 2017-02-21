@@ -54,6 +54,12 @@ class UserMailer < ApplicationMailer
     mail(subject: "#{@user.unique_id} #{@user.name_katakana}　追加予約")
   end
 
+  def reservation_made_for_user(args)
+    @reservation = args.fetch(:reservation)
+    @user = args.fetch(:user)
+    mail(to: @user.email, subject: "【追加予約が完了いたしました】株式会社Swift")
+  end
+
   def payment_reservation_made(args)
     @payment_reservation = args.fetch(:payment_reservation)
     @user = args.fetch(:user)

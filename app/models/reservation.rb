@@ -25,5 +25,6 @@ class Reservation < ApplicationRecord
 
   def send_new_reservation_email
     UserMailer.reservation_made(user: user, reservation: self).deliver_now
+    UserMailer.reservation_made_for_user(user: user, reservation: self).deliver_now
   end
 end
