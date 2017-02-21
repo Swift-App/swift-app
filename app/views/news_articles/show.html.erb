@@ -24,7 +24,10 @@
         <div class="recent-news-container">
           <h4><%= i + 1 %>. <%= link_to news_article.title, news_article %></h4>
 
-          <p class="lead mb10"><%= truncate(news_article.content, length: 150, escape: false, omission: (link_to '...(続きを読む)', news_article) )%> <small><%= news_article.created_at.strftime("%m/%d/%Y") %></small></p>
+          <p class="lead mb10"><%= truncate(news_article.content, length: 150, escape: false )%></p>
+          <%= link_to '（続きを読む）', news_article_path(news_article), class: 'pull-right' %>
+          <br class="clearfix">
+          <small><%= news_article.created_at.strftime("%m/%d/%Y") %></small>
         </div>
       <% end %>
     </div>
