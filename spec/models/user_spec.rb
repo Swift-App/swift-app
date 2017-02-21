@@ -1,6 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+	describe "after_create" do
+		it "generates a unique id" do
+			FactoryGirl.create(:unique_id_store, male: 30000, female: 60000)
+			FactoryGirl.create(:user, gender: '男性', unique_id: nil)
+			FactoryGirl.create(:user, gender: '男性', unique_id: nil)
+			FactoryGirl.create(:user, gender: '女性', unique_id: nil)
+			user = FactoryGirl.build(:user, gender: '男性', unique_id: nil)
+			user_2 = FactoryGirl.build(:user, gender: '女性', unique_id: nil)
+			
+			user.save
+			user_2.save
+			user.reload
+			user_2.reload
+
+			expect(user.unique_id).to eq("30003")
+			expect(user_2.unique_id).to eq("60002")
+		end
+	end
 	describe "first_name_katakana" do
 		it "returns error if it is not katakana" do
 			user = FactoryGirl.build(:user, first_name_katakana: "test")
