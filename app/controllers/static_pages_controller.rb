@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
 
   def company
   end
+
+  def faq
+    @faq_categories = FaqCategory.order(id: :asc)
+  end
 end

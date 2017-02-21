@@ -1,0 +1,11 @@
+<% breadcrumb :faq_category, @faq_category %>
+
+<h3><%= @faq_category.name %></h3>
+
+<% @faq_category.faqs.each do |faq| %>
+  <h5 class="faq-title" id="<%= faq.title %>">Q. <%= faq.title %></h5>
+
+  <p>
+    A. <%= faq.content %>
+  </p>  
+<% end %>

@@ -13,6 +13,8 @@ ja:
       admin_user: 管理者
       quick_job: 日ごとの仕事
       quick_job_application: 日ごとの仕事お申込み
+      faq_category: FAQカテゴリー
+      faq: よくある質問
     attributes:
       user:
         unique_id: ID

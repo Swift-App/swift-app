@@ -20,6 +20,16 @@ crumb :job do |job|
   parent :jobs
 end
 
+crumb :faq do |faq|
+  link 'よくある質問', faq_path
+  parent :root
+end
+
+crumb :faq_category do |faq_category|
+  link faq_category.name, faq_category_path(faq_category)
+  parent :faq
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

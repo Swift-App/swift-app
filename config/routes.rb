@@ -9,12 +9,15 @@ Rails.application.routes.draw do
   
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
+  get 'faq', to: 'static_pages#faq'
   get 'steps', to: 'static_pages#steps'
   get 'companies', to: 'static_pages#companies'
   get 'staff/recruit', to: 'static_pages#staff'
   get 'new_staff', to: 'static_pages#new_staff'
   get 'company_contact', to: 'static_pages#company_contact'
   get 'video', to: 'staff#video'
+
+  resources :faq_categories, only: :show
 
   resources :staff, only: :index
 

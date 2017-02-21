@@ -83,6 +83,9 @@ gem 'activerecord-session_store'
 
 gem 'sitemap_generator'
 
+gem 'activeadmin_reorderable'
+gem 'acts_as_list'
+
 # gem 'sidekiq'
 
 # gem 'redis'
