@@ -88,9 +88,13 @@ class User < ApplicationRecord
     UserMailer.new_user_registration(user: self).deliver_now
   end
 
-  def generate_unique_id!    
+  def generate_unique_id!
     return if unique_id.present?
-    self.unique_id = gender == "男性" ? unique_id_store.male + 1 : unique_id_store.female + 1
+    unique_id = gender == "男性" ? unique_id_store.male + 1 : unique_id_store.female + 1
+    while User.exists?(unique_id: unique_id) do
+      unique_id += 1
+    end
+    self.unique_id = unique_id
   end
 
   def unique_id_store
