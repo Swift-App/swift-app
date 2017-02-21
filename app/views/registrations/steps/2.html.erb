@@ -69,6 +69,10 @@
 			  	</div>
 
 			  	<div class="col-xs-12 col-md-6">
+			  		<%= f.input :closest_station %>
+			  	</div>
+
+			  	<div class="col-xs-12 col-md-6">
 			  		<%= f.input :gender, required:true, collection: User.genders.keys %>
 			  	</div>
 
@@ -269,6 +273,15 @@
         <tr>
           <th>番地・アパート名</th>
           <td><%= @user.address_details %><td>
+        </tr> 
+        <tr>
+          <th>性別</th>
+          <td><%= @user.gender %><td>
+        </tr>
+
+        <tr>
+          <th>自宅最寄り駅</th>
+          <td><%= @user.closest_station %><td>
         </tr>        
         <tr>
           <th>名（緊急連絡先）</th>
@@ -514,6 +527,7 @@
 			<%= f.hidden_field :friend %>
 			<%= f.hidden_field :other_application_reason %>
 			<%= f.hidden_field :gender %>
+			<%= f.hidden_field :closest_station %>
 			<%= f.hidden_field :unique_id %>
 
       <p>この内容でよろしいでしょうか？</p>

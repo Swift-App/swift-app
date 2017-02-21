@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
 
 
-  permit_params :unique_id, :last_name, :last_name_katakana, :first_name, :first_name_katakana, :gender, :email, :email_confirmation, :phone, :birthday, :postal_code, :prefecture, :city, :address_details, :photo, :emergency_last_name, :emergency_first_name, :emergency_relationship, :emergency_address, :emergency_phone, :from_a, :baitoru, :townwork, :enjapan, :mynavi, :shotworks, :an, :friend, :other_application_reason, :request_picking, :request_inspection, :request_devanning, :request_testing, :request_food, :request_packing, :request_printing, :request_line, :request_moving_assistant, :request_office_relocation, :request_assistant_distribution, :request_carry, :request_filing, :request_phone, :request_voucher_organization, :request_reception, :request_debug, :request_pc_setup, :request_data_entry, :request_other, :request_director, :request_event_organizer, :request_event_setup, :request_campaign, :request_sampling, :request_research, :request_sales, :request_register, :request_hall, :request_kitchen, :request_dish_washing, :password, :password_confirmation
+  permit_params :unique_id, :last_name, :last_name_katakana, :first_name, :first_name_katakana, :gender, :email, :email_confirmation, :phone, :birthday, :postal_code, :prefecture, :city, :address_details, :photo, :emergency_last_name, :emergency_first_name, :emergency_relationship, :emergency_address, :emergency_phone, :from_a, :baitoru, :townwork, :enjapan, :mynavi, :shotworks, :an, :friend, :other_application_reason, :request_picking, :request_inspection, :request_devanning, :request_testing, :request_food, :request_packing, :request_printing, :request_line, :request_moving_assistant, :request_office_relocation, :request_assistant_distribution, :request_carry, :request_filing, :request_phone, :request_voucher_organization, :request_reception, :request_debug, :request_pc_setup, :request_data_entry, :request_other, :request_director, :request_event_organizer, :request_event_setup, :request_campaign, :request_sampling, :request_research, :request_sales, :request_register, :request_hall, :request_kitchen, :request_dish_washing, :password, :password_confirmation, :closest_station
 
   index do
     selectable_column
@@ -32,7 +32,7 @@ ActiveAdmin.register User do
       f.input :last_name_katakana      
       f.input :first_name
       f.input :first_name_katakana
-      f.input :gender, collection: User.genders.keys
+      f.input :gender, collection: User.genders.keys      
       f.input :email
       f.input :email_confirmation
       f.input :phone, placeholder: 'ハイフンなしで入力して下さい（例：0908005400）'
@@ -42,6 +42,7 @@ ActiveAdmin.register User do
       f.input :prefecture
       f.input :city
       f.input :address_details
+      f.input :closest_station
       f.input :photo
       f.input :emergency_last_name
       f.input :emergency_first_name

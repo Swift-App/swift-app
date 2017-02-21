@@ -32,6 +32,7 @@ ja:
         city: 市町村
         address_details: 番地・アパート名
         photo: 写真
+        closest_station: 自宅最寄り駅
         emergency_first_name: 名
         emergency_last_name: 姓
         emergency_relationship: 続柄

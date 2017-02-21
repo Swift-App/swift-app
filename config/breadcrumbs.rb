@@ -30,6 +30,11 @@ crumb :faq_category do |faq_category|
   parent :faq
 end
 
+crumb :staff_registration do
+  link 'スタッフ登録の仕組み', staff_registration_path
+  parent :root
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
