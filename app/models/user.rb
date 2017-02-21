@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :mynumber_applications, dependent: :destroy
   has_many :mynumber_declinals, dependent: :destroy
   has_many :quick_job_applications, dependent: :destroy
+  has_many :identity_confirmations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 

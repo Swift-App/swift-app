@@ -1,0 +1,4 @@
+<p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様が身分証・写真申請(本登録)をしました。</p>
+
+<%= image_tag attachments['attachment_1.png'].url if attachments['attachment_1.png'].present? -%>
+<%= image_tag attachments['attachment_2.png'].url if attachments['attachment_2.png'].present? -%>

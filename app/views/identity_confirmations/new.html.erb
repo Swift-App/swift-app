@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <%= link_to '戻る', staff_index_path, class: 'btn btn-warning btn-round' %>
+    <h3 style="margin-top: 30px">身分証・写真申請(本登録)</h3>
+
+    <p>身分証・写真をアップロードして本登録します。</p>
+
+    <hr />
+
+    <%= simple_form_for @application do |f| %>
+      <%= f.input :face_photo, label: '１．本人確認用写真※顔がはっきりとわかるもの。' %>
+      <%= f.input :certificate, label: "２．身分証：ご本人確認に必要な氏名・住所・生年月日が記載された証明書。例）運転免許証・住基カード　等" %>
+
+      <p><strong>３．マイナンバーは「マイナンバー申請」からお願いします。</strong></p>
+
+      <p>
+        ご提出後、確認のお電話をスイフトより入れさせていただくことがあります。
+      </p>
+
+      <%= f.submit '申請する', class: 'btn btn-primary' %>
+    <% end %>
+
+  </div>
+</div>

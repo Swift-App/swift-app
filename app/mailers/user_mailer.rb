@@ -121,4 +121,14 @@ class UserMailer < ApplicationMailer
 
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} コード#{@application.code}の日ごとお仕事申込み")
   end
+
+  def new_identity_confirmation(args)
+    @user = args.fetch(:user)
+    @application = args.fetch(:application)
+
+    attachments.inline['attachment_1.png'] = open(@application.face_photo_url).read
+    attachments.inline['attachment_2.png'] = open(@application.certificate_url).read
+
+    mail(subject: "#{@user.unique_id} #{@user.name_katakana} 身分証・写真申請(本登録)")
+  end
 end

@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   resources :weekly_payment_applications, only: [:new, :create]
   resources :bank_applications, only: [:new, :create]
+  resources :identity_confirmations, only: [:new, :create]
 
   patch 'registrations', to: 'registrations#update', as: "registration"
   
