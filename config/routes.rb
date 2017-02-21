@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
+  get 'staff_registration', to: 'static_pages#staff_registration'
   get 'faq', to: 'static_pages#faq'
   get 'steps', to: 'static_pages#steps'
   get 'companies', to: 'static_pages#companies'
