@@ -5,7 +5,7 @@
 <% @faq_category.faqs.each do |faq| %>
   <h5 class="faq-title" id="<%= faq.title %>">Q. <%= faq.title %></h5>
 
-  <hr/>
+  <hr style="margin-top: 10px; margin-bottom: 10px"/>
   <p>        
     <%= faq.content.html_safe %>
   </p>  
