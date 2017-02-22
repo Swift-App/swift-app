@@ -5,7 +5,8 @@
 <% @faq_category.faqs.each do |faq| %>
   <h5 class="faq-title" id="<%= faq.title %>">Q. <%= faq.title %></h5>
 
-  <p>
-    A. <%= faq.content %>
+  <hr/>
+  <p>        
+    <%= faq.content.html_safe %>
   </p>  
 <% end %>
