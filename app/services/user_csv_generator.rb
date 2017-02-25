@@ -32,7 +32,7 @@ class UserCsvGenerator
       content << "" # 支払い方法
       content << "" # 銀行口座データ
       content << "" # 銀行口座表記
-      content << "" # 備考欄
+      content << '"' + @user.closest_station.to_s + '"' # 備考欄
       content << "" # 備考2
       content << "" # 貸し出し注意 
       content << "" # 広告

@@ -57,7 +57,7 @@ class UserMailer < ApplicationMailer
   def reservation_made_for_user(args)
     @reservation = args.fetch(:reservation)
     @user = args.fetch(:user)
-    mail(to: @user.email, subject: "【追加予約が完了いたしました】株式会社Swift")
+    mail(to: @user.email, subject: "【追加予約が完了いたしました】（株）スイフト")
   end
 
   def payment_reservation_made(args)
