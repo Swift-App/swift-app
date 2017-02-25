@@ -17,6 +17,7 @@
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-ja
 //= require bootstrap-sprockets
+//= require jquery.jpostal 
 //= require_tree .
 
 
