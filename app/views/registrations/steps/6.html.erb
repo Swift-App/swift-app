@@ -11,13 +11,23 @@
 
 <div class="row">
 	<div class="col-xs-12 col-md-8 col-md-offset-2">
-	
+
 
 		<p>お疲れ様でした。これでWEB登録会は終了です。</p>
 		<p><strong>最後に【登録する】ボタンを押してください。</strong></p>
 
-		<p>ログイン後、勤務確定までにスタッフページから身分証・顔写真のアップロードをお願いします。<br/>    
-      ※スイフトへ添付メールで提出でもOK。<br/>またスタッフページから、当社ルール理解のために就業ルール確認・説明会動画視聴をお願いします。<br/>ありがとうございました。
+    <p>
+      【登録する】ボタンを押すとすぐに<br/>
+      スタッフページのログインID・パスワードが記載されたメールが登録されたアドレスに届きます。<br/>
+      届かない場合はメールフィルタ等の影響が考えられますので<br/>
+      スイフトまで<strong><a class="font-red underlined" href="tel:052-265-6702">ご連絡ください</a></strong>。
+    </p>
+
+    <p>
+      ログイン後、勤務確定までにスタッフページから身分証・顔写真のアップロードをお願いします。<br/>
+      ※スイフトへ添付メールで提出でも可能です。<br/>
+      またスタッフページから、当社ルール理解のために就業ルール確認・説明会動画視聴をお願いします。<br/>
+      ありがとうございました。
     </p>
 
 		<%= link_to '登録する', final_step_path, method: :post, class: 'btn btn-success btn-lg' %>
@@ -26,7 +36,7 @@
 
 		<%= link_to '戻る', registration_step_path(5), class: 'btn btn-warning btn-round' %>
 
-		<%= link_to '辞退する', root_path, class: 'btn btn-danger btn-round' %>			
+		<%= link_to '辞退する', root_path, class: 'btn btn-danger btn-round' %>
 		<br />
 	</div>
 </div>

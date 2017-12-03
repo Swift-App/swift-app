@@ -1,14 +1,14 @@
 ActiveAdmin.register Job do
 
 
-  permit_params :title, :description, :pay_amount, :job_type, :content, :location, 
-                :nearest_station, 
-                :number_of_positions, :work_date, :hours, :holidays, 
-                :certifications_and_experience, 
-                :benefits, :employment_type, :person_in_charge, :remarks, :branch_in_charge, 
+  permit_params :title, :description, :pay_amount, :job_type, :content, :location,
+                :nearest_station,
+                :number_of_positions, :work_date, :hours, :holidays,
+                :certifications_and_experience,
+                :benefits, :employment_type, :person_in_charge, :remarks, :branch_in_charge,
                 :pay_range, :area, :shift_category, :duration, :category, :photo, job_tags_attributes: [:tag_id, :id]
 
-  index do 
+  index do
     column :id
     column :title do |job|
       link_to job.title, [:admin,job]
@@ -18,8 +18,19 @@ ActiveAdmin.register Job do
     actions
   end
 
+  show do
+    attributes_table do
+      job.attributes.each do |name, value|
+        unless value.blank?
+          row name
+        end
+      end
+    end
+
+  end
+
   form(html: { multipart: true }) do |f|
-    f.inputs "お仕事登録" do    
+    f.inputs "お仕事登録" do
       f.input :title, placeholder: '【有料職業紹介】ネットワークエンジニア■ネットワークの運用・保守業務のお仕事をしていただきます。'
       f.input :description, placeholder: '職歴、経験、資格、新卒・既卒は一切関係ございません。
 将来のために
@@ -43,14 +54,14 @@ CCNA（Cisco Certified Network Associate）の取得をしてもらっていま�
 
       # f.input :job_tags, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
 
-      f.has_many :job_tags do |ff|       
+      f.has_many :job_tags do |ff|
         ff.input :tag_id, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
       end
 
       # f.has_many :job_tags do |job_tag|
       #   job_tag.inputs "Job Tag" do
       #    job_tag.input :tag, as: :select, collection: Tag.all.map{|u| [u.name, u.id]}
-      #   end  
+      #   end
       # end
 
       f.input :content, placeholder: '※HPやサイトにキレイな物件の写真が載っていることも、お客様が「部屋を見てみたい」と思える重要なポイント。「ここのお部屋イイ！」と思ったら、写真の撮り方を工夫してみたり、興味を惹くようなアピールポイントを書いてみたり…。クリエイティブな楽しさも味わえます！'

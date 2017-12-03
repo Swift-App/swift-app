@@ -1,13 +1,13 @@
 class UserMailer < ApplicationMailer
-  
+
   default from: 'info@swift-staff.jp'
-  default to: "info@info-swift.sakura.ne.jp"  
+  default to: "info@info-swift.sakura.ne.jp"
 
 
   def confirmation_email(args)
     @user = args.fetch(:user)
 
-    mail(to: @user.email, subject: "スイフト登録完了")
+    mail(to: @user.email, subject: "株式会社スイフト登録完了")
   end
 
   def new_user_registration(args)
@@ -34,7 +34,7 @@ class UserMailer < ApplicationMailer
 
   def job_confirmation(args)
     @user = args.fetch(:user)
-    @confirmation = args.fetch(:confirmation) 
+    @confirmation = args.fetch(:confirmation)
     mail(subject: 'お仕事申し込み受付')
   end
 
@@ -75,7 +75,7 @@ class UserMailer < ApplicationMailer
     attachments.inline['attachment_3.png'] = open(@application.image_3_url).read if @application.image_3.present?
     attachments.inline['attachment_4.png'] = open(@application.image_4_url).read if @application.image_4.present?
     attachments.inline['attachment_5.png'] = open(@application.image_5_url).read if @application.image_5.present?
-    
+
     mail(subject: "#{@user.unique_id} #{@user.name_katakana} 週払振込申請")
   end
 
