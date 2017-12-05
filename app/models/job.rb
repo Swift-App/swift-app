@@ -2,8 +2,9 @@ class Job < ApplicationRecord
   include Filterable
   mount_uploader :photo, JobPhotoUploader
 
-  validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
-            :number_of_positions, :work_date, :hours, :holidays, :person_in_charge, :pay_range, :area, :shift_category, :duration, :category, presence: true
+  # Remove validation 12/1/2017
+  # validates :title, :description, :pay_amount, :job_type, :content, :location, :nearest_station,
+  #           :number_of_positions, :work_date, :hours, :holidays, :person_in_charge, :pay_range, :area, :shift_category, :duration, :category, presence: true
 
   default_scope { order('created_at DESC') }
 
