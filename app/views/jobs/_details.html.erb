@@ -13,7 +13,7 @@
           <% end %>
         </div>
 
-        <% if user_signed_in? %>     
+        <% if user_signed_in? %>
           <%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> お申し込み'.html_safe, new_job_confirmation_path(job), class: 'btn btn-lg btn-success' %>
         <% else %>
           <%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> お申し込み'.html_safe, new_staff_contact_path, class: 'btn btn-lg btn-success' %>
@@ -32,82 +32,97 @@
   <br />
 
   <table class="table">
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>仕事内容</strong></td>
-      <td><%= simple_format job.content %></td>
-    </tr>
+    <% if job.content.present? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>仕事内容</strong></td>
+        <td><%= simple_format job.content %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>勤務地</strong></td>
-      <td><%= job.location %></td>
-    </tr> 
+    <% unless job.location.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>勤務地</strong></td>
+        <td><%= job.location %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>最寄駅</strong></td>
-      <td><%= job.nearest_station %></td>
-    </tr> 
+    <% unless job.nearest_station.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>最寄駅</strong></td>
+        <td><%= job.nearest_station %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>給与</strong></td>
-      <td><%= job.pay_amount %></td>
-    </tr> 
+    <% unless job.pay_amount.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>給与</strong></td>
+        <td><%= job.pay_amount %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>募集</strong></td>
-      <td><%= job.number_of_positions %></td>
-    </tr> 
+    <% unless job.number_of_positions.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>募集</strong></td>
+        <td><%= job.number_of_positions %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>勤務日</strong></td>
-      <td><%= job.work_date %></td>
-    </tr> 
+    <% unless job.work_date.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>勤務日</strong></td>
+        <td><%= job.work_date %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>勤務時間</strong></td>
-      <td><%= job.hours %></td>
-    </tr> 
+    <% unless job.hours.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>勤務時間</strong></td>
+        <td><%= job.hours %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>休日</strong></td>
-      <td><%= job.holidays %></td>
-    </tr> 
+    <% unless job.holidays.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>休日</strong></td>
+        <td><%= job.holidays %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>資格・経験</strong></td>
-      <td><%= simple_format job.certifications_and_experience %></td>
-    </tr> 
+    <% unless job.certifications_and_experience.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>資格・経験</strong></td>
+        <td><%= simple_format job.certifications_and_experience %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>待遇</strong></td>
-      <td><%= simple_format job.benefits %></td>
-    </tr> 
+    <% unless job.benefits.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>待遇</strong></td>
+        <td><%= simple_format job.benefits %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>担当者</strong></td>
-      <td><%= job.person_in_charge %></td>
-    </tr> 
+    <% unless job.person_in_charge.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>担当者</strong></td>
+        <td><%= job.person_in_charge %></td>
+      </tr>
+    <% end %>
 
-    <tr>
-      <td class="col-xs-4 col-md-3"><strong>備考</strong></td>
-      <td><%= simple_format job.remarks %></td>
-    </tr> 
+    <% unless job.remarks.blank? %>
+      <tr>
+        <td class="col-xs-4 col-md-3"><strong>備考</strong></td>
+        <td><%= simple_format job.remarks %></td>
+      </tr>
+    <% end %>
 
   </table>
 
-  <% if user_signed_in? %> 
-    <% unless current_user.registered?(job: job) %>      
+  <% if user_signed_in? %>
+    <% unless current_user.registered?(job: job) %>
       <%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> お申し込み'.html_safe, new_job_confirmation_path(job), class: 'btn btn-lg btn-success btn-job-action' %>
     <% end %>
   <% else %>
     <%= link_to '<i class="fa fa-caret-right" aria-hidden="true"></i> お申し込み'.html_safe, new_staff_contact_path, class: 'btn btn-lg btn-success btn-job-action' %>
   <% end %>
 </div>
-
-
-
-
-
-
-
-
-
