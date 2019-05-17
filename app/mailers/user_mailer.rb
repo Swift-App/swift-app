@@ -1,7 +1,9 @@
 class UserMailer < ApplicationMailer
 
-  default from: 'info@swift-staff.jp'
-  default to: "info@swift-staff.jp"
+  #default from: 'info@swift-staff.jp'
+  #default to: "info@swift-staff.jp"
+  default from: 'siesta_create@yahoo.co.jp'
+  default to: "siesta_create@yahoo.co.jp"
 
 
   def confirmation_email(args)

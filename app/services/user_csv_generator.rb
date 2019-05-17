@@ -34,7 +34,7 @@ class UserCsvGenerator
       content << "" # 銀行口座表記
       content << '"最寄駅：' + @user.closest_station.to_s + '"' # 備考欄
       content << "" # 備考2
-      content << "" # 貸し出し注意 
+      content << "" # 貸し出し注意
       content << "" # 広告
       content << "" # マナー違反
       content << "" # 言葉遣い
@@ -50,7 +50,7 @@ class UserCsvGenerator
       content << "" # フォーク免許
 
       request_moving_assistant = @user.request_moving_assistant || @user.request_office_relocation ? '"TRUE"' : '"FALSE"'
-      content <<  request_moving_assistant # 引っ越し      
+      content <<  request_moving_assistant # 引っ越し
 
       request_factory = @user.request_food || @user.request_packing || @user.request_printing || @user.request_line ? '"TRUE"' : '"FALSE"'
       content << request_factory # 工場希望
@@ -126,6 +126,7 @@ class UserCsvGenerator
       csv << content
     end
 
-    NKF::nkf('--sjis -Lw', csv_str)
+    #20190517 csv文字化け対応の為、sjisへの変換を停止
+    #NKF::nkf('--sjis -Lw', csv_str)
   end
 end
