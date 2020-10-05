@@ -15,9 +15,9 @@ class Staff::ContactsController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def contact_params
-    params.require(:staff_contact).permit(:name, :furigana, :birthday, :terms_and_conditions, :phone, :email, :interview_date)
+    params.require(:staff_contact).permit(:name, :furigana, :birthday, :terms_and_conditions, :phone, :email, :interview_date, :other)
   end
 end
