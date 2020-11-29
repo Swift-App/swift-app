@@ -1,6 +1,6 @@
 h3 管理者ツール
 
-h1 日毎の仕事の一括作成
+h1 日ごと仕事の一斉登録
 
 = simple_form_for :quick_jobs, url: admin_bulk_actions_quick_jobs_path, method: :post do |f|
   = f.input :text, label: '仕事を貼り付ける', as: :text, input_html: {rows: 20}, placeholder: "■20/11/23 (月)\n[コード] 443\n[定時] 10:00 ～ 19:00\n[集合] 小牧駅4番乗り場→名鉄バス(9：02発→現地の先方事務所2階にて担当者と合流(9：45)\n[時給] 1180円\n[内容] ドラッグストア商品の荷物の仕分け★車通勤OK※駐車場はこちらになります(https://goo.gl/maps/ihMC7nmxfnQXMVXA6)\n\n■20/11/24 (火)\n[コード] 310\n[定時] 07:30 ～ 16:30\n[集合] 新守山駅→徒歩10分→日通事務所集合・点呼(7：20)\n[時給] 1261円\n[内容] 機・ETC搬入出等補助作業"

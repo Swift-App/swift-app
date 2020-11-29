@@ -6,6 +6,13 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "スイフト管理者画面"
 
+  config.default_namespace = :admin
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: '日ごと仕事の一斉登録', url: '/admin/bulk_actions/quick_jobs'
+    end
+  end
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -24,7 +31,6 @@ ActiveAdmin.setup do |config|
   # will be added to.
   #
   # eg:
-  #   config.default_namespace = :hello_world
   #
   # This will create resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
