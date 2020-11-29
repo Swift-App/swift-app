@@ -1,0 +1,11 @@
+h3 管理者ツール
+
+h1 ユーザーの一斉登録
+
+= simple_form_for :users, url: admin_bulk_actions_users_path, method: :post, multipart: true do |f|
+  = f.input :text, label: 'ユーザー情報を貼り付ける', as: :text, input_html: {rows: 20}, placeholder: "10001\n桑野　仁志\nｸﾜﾉ ﾋﾄｼ\nFALSE\nhitoshisoccer0606@softbank.ne.jp\n1998/06/06\r\n\r10007\n田口　凌\nﾀｸﾞﾁ ﾘｮｳ\nFALSE\nrs01310207@icloud.com\n1999/01/31\n\r10008\n川東　順一\nｶﾜﾋｶﾞｼ ｼﾞｭﾝｲﾁ\nFALSE\n \n1970/11/15"
+
+  hr
+
+  = f.input :file, label: 'コピペをご利用になられない場合、ファイルをアップロードしてください', as: :file, required: false
+  = f.submit '送信', class: 'btn btn-primary btn-lg'

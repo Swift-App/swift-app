@@ -33,6 +33,8 @@ module SwiftApp
     config.autoload_paths += %W(#{config.root}/app/services)
 
     # config.active_job.queue_adapter = :sidekiq
+
+    config.encoding = "utf-8"
   end
 
 end

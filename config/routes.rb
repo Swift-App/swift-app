@@ -71,4 +71,7 @@ Rails.application.routes.draw do
 
   get 'admin/bulk_actions/quick_jobs', to: 'admin/bulk_actions/quick_jobs#new'
   post 'admin/bulk_actions/quick_jobs', to: 'admin/bulk_actions/quick_jobs#create'
+
+  get 'admin/bulk_actions/users', to: 'admin/bulk_actions/users#new'
+  post 'admin/bulk_actions/users', to: 'admin/bulk_actions/users#create'
 end
