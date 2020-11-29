@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  
   root "static_pages#index"
   get 'about', to: 'static_pages#about'
   get 'staff_registration', to: 'static_pages#staff_registration'
@@ -40,7 +39,7 @@ Rails.application.routes.draw do
   resources :mynumber_applications, only: [:new, :create]
   resources :mynumber_declinals, only: [:new, :create]
   resources :quick_job_applications, only: [:new, :create]
-  
+
   resources :payment_reservations, only: [:new, :create]
 
   resources :weekly_payment_applications, only: [:new, :create]
@@ -48,7 +47,7 @@ Rails.application.routes.draw do
   resources :identity_confirmations, only: [:new, :create]
 
   patch 'registrations', to: 'registrations#update', as: "registration"
-  
+
   resources :reservations, only: [:new, :create]
 
   resources :news_articles, only: [:index, :show]
@@ -69,4 +68,7 @@ Rails.application.routes.draw do
   post 'set_reservation_confirming_false', to: 'registrations/reservations#set_confirming_false', as: 'set_reservation_confirming_false'
 
   get 'registration/steps/:id', to: 'registrations/steps#show', as: 'registration_step'
+
+  get 'admin/bulk_actions/quick_jobs', to: 'admin/bulk_actions/quick_jobs#new'
+  post 'admin/bulk_actions/quick_jobs', to: 'admin/bulk_actions/quick_jobs#create'
 end

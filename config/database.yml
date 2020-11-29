@@ -82,4 +82,8 @@ test:
 #
 production:
   <<: *default
-  database: swift-app_production  
+  database: swift-app_production
+
+# heroku pg:backups:capture
+# heroku pg:backups:download
+# pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d swift-app_development latest.dump
