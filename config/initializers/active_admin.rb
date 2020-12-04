@@ -10,6 +10,7 @@ ActiveAdmin.setup do |config|
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
       menu.add label: '日ごと仕事の一斉登録', url: '/admin/bulk_actions/quick_jobs'
+      menu.add label: 'ユーザーの一斉登録', url: '/admin/bulk_actions/users'
     end
   end
 
