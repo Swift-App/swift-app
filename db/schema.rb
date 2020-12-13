@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 20170221095327) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
-  create_table "admin_news_articles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -77,21 +72,6 @@ ActiveRecord::Schema.define(version: 20170221095327) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.index ["user_id"], name: "index_car_permit_applications_on_user_id", using: :btree
-  end
-
-  create_table "ckeditor_assets", force: :cascade do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
-    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
   end
 
   create_table "completion_reports", force: :cascade do |t|
@@ -197,12 +177,6 @@ ActiveRecord::Schema.define(version: 20170221095327) do
     t.string   "pay_amount"
     t.string   "photo"
     t.string   "job_type"
-  end
-
-  create_table "morrigan_editor_rails_editor_images", force: :cascade do |t|
-    t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "mynumber_applications", force: :cascade do |t|

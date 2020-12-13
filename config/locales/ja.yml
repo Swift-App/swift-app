@@ -1,17 +1,17 @@
 ja:
   activerecord:
-    models:      
-      user: ユーザー  
+    models:
+      user: ユーザー
       job: お仕事
       news_article: ニュース記事
-      job_tag: タグ      
+      job_tag: タグ
       attendence_report: 出発報告
       completion_report: 終了報告
       payment_reservation: 給与受取報告
       weekly_payment_application: 週払振込申請
       reservation: お仕事予約
       admin_user: 管理者
-      quick_job: 日ごとの仕事
+      quick_job: 日ごと・レギュラーの仕事
       quick_job_application: 日ごとの仕事お申込み
       faq_category: FAQカテゴリー
       faq: よくある質問
@@ -27,7 +27,7 @@ ja:
         email_confirmation: メールアドレス（確認用）
         phone: 電話番号
         birthday: お誕生日
-        postal_code: 郵便番号        
+        postal_code: 郵便番号
         prefecture: 都道府県
         city: 市町村
         address_details: 番地・アパート名
@@ -111,7 +111,7 @@ ja:
         shift_category: シフト
         duration: 期間
         category: カテゴリー
-      completion_report:        
+      completion_report:
         comments: 備考
         start_time: 開始時間
         end_time: 終了時間
@@ -173,8 +173,8 @@ ja:
         furigana: ふりがな
         birthday: お誕生日
         interview_date: 面接希望日
-        phone: 電話番号  
-        other: お問い合わせ内容      
+        phone: 電話番号
+        other: お問い合わせ内容
       company_contact:
         staff_contact:
         email: メールアドレス
@@ -196,3 +196,4 @@ ja:
       last: "最後 &raquo;"
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
+      truncate: "&hellip;"

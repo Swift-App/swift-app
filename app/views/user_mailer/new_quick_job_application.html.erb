@@ -1,3 +1,7 @@
-<p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様から<%= @application.date %>の日ごとお仕事申込みがありました。</p>
+<% if @application.date %>
+  <p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様から<%= @application.date %>の日ごとお仕事申込みがありました。</p>
+<% else %>
+  <p>ID <%= @user.unique_id %> <%= @user.name_katakana %>様からレギュラーのお仕事申込みがありました。</p>
+<% end %>
 
 <p>コード: <%= @application.code %></p>
