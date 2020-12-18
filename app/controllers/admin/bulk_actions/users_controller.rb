@@ -22,6 +22,7 @@ class Admin::BulkActions::UsersController < ApplicationController
         user.first_name_katakana = row[2].force_encoding("UTF-8").split(' ').last
         user.gender = row[3] == 'TRUE' ? :女性 : :男性
         user.email = row[4]
+        user.email_confirmation = row[4]
         user.phone = row[5]
 
         user.birthday = Date.strptime(row[6], "%D")
@@ -39,6 +40,7 @@ class Admin::BulkActions::UsersController < ApplicationController
           user.first_name_katakana = users_string_arr[i+2].split(' ').last
           user.gender = users_string_arr[i+3] == 'TRUE' ? :女性 : :男性
           user.email = users_string_arr[i+4]
+          user.email_confirmation = users_string_arr[i+4]
           birthday_str = users_string_arr[i+5].split('/')
           user.birthday = Date.new(birthday_str[0].to_i, birthday_str[1].to_i, birthday_str[2].to_i)
 
