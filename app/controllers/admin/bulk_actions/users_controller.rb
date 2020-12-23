@@ -32,9 +32,7 @@ class Admin::BulkActions::UsersController < ApplicationController
           user.birthday = nil
         end
 
-        binding.pry
-
-        new_users << user if user.save!
+        new_users << user if user.save
       end
     else
       users_string_arr = users.split(/\r\n/)
