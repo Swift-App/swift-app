@@ -15,19 +15,26 @@ class Admin::BulkActions::UsersController < ApplicationController
     if users_params[:file]
       CSV.parse(users_params[:file].read, headers: true) do |row|
         user = User.new
-        user.unique_id = row[0]
-        user.last_name = row[1].force_encoding("UTF-8").split('　').first
-        user.first_name = row[1].force_encoding("UTF-8").split('　').last
-        user.last_name_katakana = row[2].force_encoding("UTF-8").split(' ').first
-        user.first_name_katakana = row[2].force_encoding("UTF-8").split(' ').last
+        user.unique_id = encode_and_scrub(row[0])
+        user.last_name = encode_and_scrub(row[1]) ? encode_and_scrub(row[1]).split('　').first : nil
+        user.first_name = encode_and_scrub(row[1]) ? encode_and_scrub(row[1]).split('　').last : nil
+        user.last_name_katakana = encode_and_scrub(row[2]) ? encode_and_scrub(row[2]).split(' ').first : nil
+        user.first_name_katakana = encode_and_scrub(row[2]) ? encode_and_scrub(row[2]).split(' ').last : nil
         user.gender = row[3] == 'TRUE' ? :女性 : :男性
-        user.email = row[4]
-        user.email_confirmation = row[4]
-        user.phone = row[5]
+        user.email = encode_and_scrub(row[4])
+        user.email_confirmation = encode_and_scrub(row[4])
+        user.phone = encode_and_scrub(row[5])
 
-        user.birthday = Date.strptime(row[6], "%D")
+        begin
+          birthday_str = encode_and_scrub(row[6]).split('/')
+          user.birthday = Date.new(birthday_str[0].to_i, birthday_str[1].to_i, birthday_str[2].to_i)
+        rescue
+          user.birthday = nil
+        end
 
-        new_users << user if user.save
+        binding.pry
+
+        new_users << user if user.save!
       end
     else
       users_string_arr = users.split(/\r\n/)
@@ -61,5 +68,11 @@ class Admin::BulkActions::UsersController < ApplicationController
 
   def find_string_after(string, marker)
     string.split(marker).last
+  end
+
+  def encode_and_scrub(string)
+    return nil unless string
+
+    string.force_encoding('UTF-8').scrub
   end
 end
