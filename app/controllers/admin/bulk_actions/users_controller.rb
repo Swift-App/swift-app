@@ -13,7 +13,10 @@ class Admin::BulkActions::UsersController < ApplicationController
     current_date = nil
 
     if users_params[:file]
-      CSV.parse(users_params[:file].read, headers: true) do |row|
+      CSV.parse(users_params[:file].read.force_encoding("SJIS").encode("utf-8"), headers: true) do |row|
+        next if encode_and_scrub(row[4]).nil?
+        next if User.where("unique_id = ? OR email = ?", encode_and_scrub(row[0]), encode_and_scrub(row[4])).exists?
+
         user = User.new
         user.unique_id = encode_and_scrub(row[0])
         user.last_name = encode_and_scrub(row[1]) ? encode_and_scrub(row[1]).split('　').first : nil
